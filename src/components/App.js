@@ -2,11 +2,10 @@ import React, {PureComponent} from "react";
 import styled from "styled-components";
 import connect from "react-redux/es/connect/connect";
 import PropTypes from "prop-types";
-import {HashRouter, Route, Switch} from 'react-router-dom';
+import {HashRouter, Switch} from 'react-router-dom';
 import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import ReactTooltip from "react-tooltip";
-import { createGlobalStyle } from 'styled-components';
 
 const MainWrapper = styled.div`
 `;
