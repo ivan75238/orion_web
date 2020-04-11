@@ -1,0 +1,1 @@
+export const apiUrl = "https://api.orion38.pro/api_v2/?method=";
