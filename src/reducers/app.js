@@ -2,7 +2,8 @@ import {appActions} from "./actions";
 
 const initial = {
     auth: false,
-    user: null
+    user: null,
+    headerText: "Маршруты"
 };
 
 export function app(state = initial, action) {
@@ -19,6 +20,13 @@ export function app(state = initial, action) {
             return {
                 ...state,
                 user: action.user
+            };
+        }
+
+        case appActions.SET_HEADER_TEXT: {
+            return {
+                ...state,
+                headerText: action.text
             };
         }
 

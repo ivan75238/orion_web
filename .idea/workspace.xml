@@ -2,14 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dea06bd-7f6f-4bd8-84a3-10031ac33fcf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Auth/Auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Elements/Button.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Elements/Input.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Paths.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Elements/AuthLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Elements/LoaderSvg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Icons/Calendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Icons/Car.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Icons/News.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Icons/Orders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Icons/Peoples.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Icons/Price.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Icons/Report.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Icons/Rout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Icons/Sale.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Icons/Settings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Icons/Ticket.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Icons/WorkPlan.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Menu/Menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TopLine.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Elements/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elements/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Icons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +67,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Elements" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../on_tumor_board" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -66,11 +82,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Work\orion_web\src\components\Icons" />
+      <recent name="C:\Work\orion_web\src\components" />
       <recent name="C:\Work\orion_web\src\components\Elements" />
       <recent name="D:\Проекты\Проекты\orion38-react\src\components\Elements" />
       <recent name="D:\Проекты\Новая работа\cubekit-dashboard\src\components\ErrorBoundary" />
-      <recent name="D:\Проекты\Новая работа\cubekit-dashboard\src\components\Widgets\TypeWidgets" />
-      <recent name="D:\Проекты\Новая работа\cubekit-dashboard\src\components\Popups\WidgetSettingsType" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Проекты\Новая работа\cubekit-dashboard\src\components\MenuLeft" />
@@ -136,14 +152,12 @@
       <workItem from="1586612870642" duration="2040000" />
       <workItem from="1586615891617" duration="211000" />
       <workItem from="1586732309953" duration="104000" />
-      <workItem from="1588576883462" duration="11967000" />
-    </task>
-    <task id="LOCAL-00049" summary="6. когда повторно открываешь виджет - уже должны быть подгружены данные по идее... поэтому не должно быть прогресс бара... только при изменении РСМ... по ощущениям сейчас заново грузим каждый раз (возможно это тоже самое что в 5м пункте)">
-      <created>1575946306707</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1575946306707</updated>
+      <workItem from="1588576883462" duration="12139000" />
+      <workItem from="1588720077929" duration="126000" />
+      <workItem from="1588724458160" duration="2603000" />
+      <workItem from="1589073415916" duration="3768000" />
+      <workItem from="1589239469446" duration="463000" />
+      <workItem from="1589644772723" duration="10037000" />
     </task>
     <task id="LOCAL-00050" summary="- исправление ошибки">
       <created>1575973277967</created>
@@ -481,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586616088608</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="- Сделана система авторизайии и сессий">
+      <created>1588646721674</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1588646721675</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TodoView">
@@ -511,7 +532,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="- Сделаны настройки и много разных фич" />
     <MESSAGE value="- Исправлена ошибка доступка к глобальному стору при ресайзе виджета&#10;- Исправлена ошибка открытия окна настроек виджета, проблема с подгрузкой данных&#10;- Переделан фильтр допустимых список колонок, теперь имеется список разрешенных полей и по ним составляется итоговый список. Если поля такого нет то он не сломает.&#10;- Сделан новый тип виджета - круговая диаграмма" />
     <MESSAGE value="- Исправдление ошиюки" />
     <MESSAGE value="- Вынесены в конфиг пути к сервисам: /custom/ws/ws_sql_hs2.jsp, custom/ws/ws_dashboard.jsp, /custom/ws/ws_meas_last_values.jsp, /custom/jsp/auth/ksm_auth_helper.jsp&#10;- добавьте имя пользователя из ответа /custom/jsp/auth/ksm_auth_helper.jsp" />
@@ -536,45 +556,60 @@
     <MESSAGE value="- Внедрен компонент выбора из древа в найстроки виджета таблицы показателей" />
     <MESSAGE value="- И начал я все сначала =(" />
     <MESSAGE value="- Замена шрифтов&#10;- Чистый прокет" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Замена шрифтов&#10;- Чистый прокет" />
+    <MESSAGE value="- Сделана система авторизайии и сессий" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Сделана система авторизайии и сессий" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="311" y="7" key="CommitChangelistDialog2" timestamp="1586616087629">
+    <state x="311" y="0" key="CommitChangelistDialog2" timestamp="1588646720944">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="311" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586616087629" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1588577020979">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="311" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588646720944" />
+    <state x="686" y="211" key="FileChooserDialogImpl" timestamp="1589656543884">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588577020979" />
-    <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586732411389" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1588644912984">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588720198080" />
+    <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589656543884" />
+    <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589239929839" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1589644786935">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588644912984" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1588644912983">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588733251133" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589644786935" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589073796167" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1589644786935">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588644912983" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1588644912983">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588733251132" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589644786935" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589073796167" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1589644786935">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588644912983" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1588644912983">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588733251132" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589644786935" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589073796166" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1589644786935">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588644912983" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588733251133" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589644786935" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589073796167" />
     <state x="279" y="58" key="SettingsEditor" timestamp="1588576920743">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="279" y="58" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588576920743" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1586616090965">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1588646723698">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1586616090965" />
-    <state x="463" y="144" width="609" height="536" key="find.popup" timestamp="1588577015658">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588646723698" />
+    <state x="579" y="182" width="762" height="677" key="find.popup" timestamp="1589651276659">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="144" width="609" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1588577015658" />
+    <state x="579" y="182" width="762" height="677" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589651276659" />
+    <state x="616" y="173" width="670" height="676" key="search.everywhere.popup" timestamp="1589651381603">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="173" width="670" height="676" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589651381603" />
   </component>
 </project>

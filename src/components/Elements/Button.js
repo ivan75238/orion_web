@@ -10,6 +10,7 @@ const ButtonWrapper = styled.div`
     border-radius: 5px;
     background: ${props => props.background || "#00b700"};
     margin: ${props => props.margin};
+    padding: ${props => props.padding};
     width: ${props => props.width || "auto"};
     height: ${props => props.height || "auto"};
     cursor: pointer;
@@ -29,12 +30,13 @@ const Label = styled.p`
 class Button extends PureComponent {
 
     render() {
-        const {title, width, height, textColor, fontSize, margin, onClick, background} = this.props;
+        const {title, width, height, textColor, fontSize, margin, onClick, background, padding} = this.props;
         return (
             <ButtonWrapper width={width}
                            height={height}
                            background={background}
                            onClick={onClick ? onClick : null}
+                           padding={padding}
                            margin={margin}>
                 <Label fontSize={fontSize}
                        textColor={textColor}>
@@ -53,9 +55,10 @@ Button.propTypes = {
     textColor: PropTypes.string,
     fontSize: PropTypes.string,
     onClick: PropTypes.func,
-    width: PropTypes.number,
+    width: PropTypes.string,
     height: PropTypes.string,
     margin: PropTypes.string,
+    padding: PropTypes.string,
 };
 
 export default Button;

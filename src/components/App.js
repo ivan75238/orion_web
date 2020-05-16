@@ -1,6 +1,6 @@
 import React, {PureComponent} from "react";
 import styled from "styled-components";
-import connect from "react-redux/es/connect/connect";
+import {connect} from "react-redux";
 import PropTypes from "prop-types";
 import {HashRouter, Route, Switch} from 'react-router-dom';
 import _get from 'lodash/get';
@@ -11,6 +11,8 @@ import Auth from "components/Auth/Auth";
 import axios from "axios";
 import {apiUrl} from "config/config";
 import {appActions} from "reducers/actions";
+import AuthLoader from "components/Elements/AuthLoader";
+import Main from "components/Main";
 
 const MainWrapper = styled.div`
     width: 100vw;
@@ -50,7 +52,8 @@ const StyledToastContainer = styled(ToastContainer).attrs({
 }))
 class App extends PureComponent {
     state = {
-        timeoutSessionId: null
+        timeoutSessionId: null,
+        loading: true
     };
 
     constructor(props) {
@@ -62,17 +65,27 @@ class App extends PureComponent {
         const {dispatch} = this.props;
         const uid = localStorage.getItem("ori_uid");
 
-        if (!uid || uid === "undefined")
+        if (!uid || uid === "undefined") {
+            setTimeout(() => this.setState({loading: false}), 500);
             return;
+        }
 
         axios.get(`${apiUrl}User.CheckSession&uid=${uid}`)
             .then(response => {
                 const resp = response.data;
                 if (resp.result) {
-                    localStorage.setItem("ori_uid", resp.id);
+                    this.setState({loading: false});
+
+                    localStorage.setItem("ori_uid", resp.user.id);
                     dispatch({type: appActions.SET_AUTH_VALUE, auth: true});
                     dispatch({type: appActions.SET_AUTH_DATA, user: resp});
                 }
+                else {
+                    this.setState({loading: false});
+                }
+            })
+            .catch(() => {
+                this.setState({loading: false});
             });
     };
 
@@ -92,12 +105,13 @@ class App extends PureComponent {
                         this.updateSession();
                     }
                 });
-        }, 4 * 60 * 1000); //4 минут, хотя сессия держится 5 минут
+        }, 3 * 60 * 1000); //3 минут, хотя сессия держится 5 минут
         this.setState({timeoutSessionId: timeoutSessionIdNew});
     };
 
     render() {
         const {auth} = this.props;
+        const {loading} = this.state;
         return(
             <MainWrapper>
                 <ReactTooltip className="EventTooltip"/>
@@ -107,13 +121,16 @@ class App extends PureComponent {
                             <StyledToastContainer />
                             {
                                 auth ?
-                                    <Switch>
-                                    </Switch>
+                                    <Main/>
                                 :
                                     <Switch>
                                         <Route exact path='/' render={props => <Auth {...props}
                                                                                      updateSession={this.updateSession}/>}/>
                                     </Switch>
+                            }
+                            {
+                                loading &&
+                                    <AuthLoader />
                             }
                         </MainWrapperInner>
                 </HashRouter>
