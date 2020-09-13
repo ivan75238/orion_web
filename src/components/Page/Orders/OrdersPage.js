@@ -36,6 +36,7 @@ const Body = styled.div`
     width: 100%;
     padding: 8px;
     display: flex;
+    flex-direction: column;
     max-height: calc(100vh - 182px);
 `;
 

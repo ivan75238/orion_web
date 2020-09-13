@@ -59,6 +59,7 @@ class ClientsPage extends PureComponent {
             .then(response => {
                 const resp = response.data;
                 this.setState({clientsData: resp});
+                this.getAll();
             })
     };
 

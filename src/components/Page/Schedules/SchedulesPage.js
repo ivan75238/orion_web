@@ -38,6 +38,7 @@ const Body = styled.div`
     padding: 8px;
     display: flex;
     max-height: calc(100vh - 182px);
+    flex-direction: column;
 `;
 
 const ActionContainer = styled.div`
