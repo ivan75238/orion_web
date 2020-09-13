@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dea06bd-7f6f-4bd8-84a3-10031ac33fcf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Page/CarPark/CarParkPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Page/Prices/PricesPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuItems.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paths.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paths.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Elements/Table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elements/Table.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Stock/ClientsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Stock/StockPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Orders/OrdersPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Orders/OrdersPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +47,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Page" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Page/Prices" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -74,11 +69,11 @@
       <recent name="E:\Новая работа\cubekit-dashboard\src\components\Dashboard" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Work\orion_web\src\components\Page\Prices" />
       <recent name="C:\Work\orion_web\src\components\Page" />
       <recent name="C:\Work\orion_web\src\components\Page\Clients" />
       <recent name="C:\Work\orion_web\src\components\Page\Schedules" />
       <recent name="C:\Work\orion_web\src\components\Elements" />
-      <recent name="C:\Work\orion_web\src\components\Menu" />
     </key>
   </component>
   <component name="RunManager">
@@ -148,14 +143,7 @@
       <workItem from="1594650655037" duration="2327000" />
       <workItem from="1594734446662" duration="6276000" />
       <workItem from="1595201077792" duration="19000" />
-      <workItem from="1599974951862" duration="19788000" />
-    </task>
-    <task id="LOCAL-00053" summary="- Изменены контролы выбора строк и столбцов в попапе настроек виджетов">
-      <created>1576161915792</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1576161915792</updated>
+      <workItem from="1599974951862" duration="23009000" />
     </task>
     <task id="LOCAL-00054" summary="- Изменены контролы выбора строк и столбцов в попапе настроек виджетов&#10;- Сделано изменение позиций через dnd  в настройках виджетов">
       <created>1576165954454</created>
@@ -493,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599988708892</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="- Сделана страница с автопарком">
+      <created>1600007721131</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1600007721131</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TodoView">
@@ -523,7 +518,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="3. давай все-таки у нас будет один тип виджета - график, а дальше уже выбираем тип&#10;- линия&#10;- линия с заливкой&#10;- ломаная линия (отключать опцию сглаживания - будут просто точки соединенные прямыми)&#10;- ступенчатая линия (по идее должна быть такая https://excel2.ru/sites/default/files/pic_node/Diagramm/diag11png.png)&#10;- колонки - как у тебя сейчас сделано&#10;- столбчатая диаграмма - агрегируем данные&#10;- круговая диаграмма - агрегируем данные" />
     <MESSAGE value="- Исправлена ошибка в редактировании названия дашборда&#10;- Приведены к одному стандарту все названия для виджетов&#10;- Убраны контролы зумма с графиков&#10;- Убрана обрезка дат в легендах графиков&#10;- Отодвинута панель с контролами Plotly.js" />
     <MESSAGE value="- и справлена ошибка вылета при перемещениях" />
     <MESSAGE value="- Обработка запроса на авторизацию&#10;- Добавлена картинка пользователя (стандартная)" />
@@ -548,13 +542,14 @@
     <MESSAGE value="- Сделана верняя плашка&#10;- Сделано полностью меню и подобраны иконки" />
     <MESSAGE value="-  Сделана страница со списком клиентов" />
     <MESSAGE value="-  Сделана страница со списком акции" />
-    <option name="LAST_COMMIT_MESSAGE" value="-  Сделана страница со списком акции" />
+    <MESSAGE value="- Сделана страница с автопарком" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Сделана страница с автопарком" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="104" key="CommitChangelistDialog2" timestamp="1599988708372">
+    <state x="585" y="104" key="CommitChangelistDialog2" timestamp="1600007720471">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="104" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1599988708372" />
+    <state x="585" y="104" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1600007720471" />
     <state x="686" y="211" key="FileChooserDialogImpl" timestamp="1599984779439">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -580,10 +575,10 @@
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594716686807" />
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600006104232" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599988709812">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600007722199">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599988709812" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1600007722199" />
     <state x="758" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1594651267599">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
