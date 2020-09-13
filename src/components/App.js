@@ -13,6 +13,10 @@ import {apiUrl} from "config/config";
 import {appActions} from "reducers/actions";
 import AuthLoader from "components/Elements/AuthLoader";
 import Main from "components/Main";
+import {MenuItems} from "../MenuItems";
+import {registerLocale, setDefaultLocale} from "react-datepicker";
+import ru from 'date-fns/locale/ru';
+registerLocale('ru', ru);
 
 const MainWrapper = styled.div`
     width: 100vw;
@@ -59,7 +63,37 @@ class App extends PureComponent {
     constructor(props) {
         super(props);
         this.checkSession();
+        this.checkUrl();
+        this.getAllRout();
+        setDefaultLocale('ru');
     }
+
+    checkUrl = () => {
+        const {dispatch} = this.props;
+        MenuItems.map(item => {
+            if (window.location.hash.indexOf(item.link) > -1){
+                dispatch({type: appActions.SET_HEADER_TEXT, text: item.title});
+            }
+        });
+    };
+
+    getAllRout = () => {
+        const {dispatch} = this.props;
+
+        axios.get(`${apiUrl}Rout.GetAll`)
+            .then(response => {
+                const resp = response.data;
+                dispatch({type: appActions.SET_ALL_ROUTS, routs: resp});
+
+                resp.map(item => {
+                    axios.get(`${apiUrl}Rout.GetLocality&id_rout=${item.id}`)
+                        .then(response => {
+                            const resp = response.data;
+                            dispatch({type: appActions.SET_ROUT_LOCATIONS, locations: resp, routid: item.id});
+                        })
+                });
+            })
+    };
 
     checkSession = () => {
         const {dispatch} = this.props;
@@ -78,10 +112,13 @@ class App extends PureComponent {
 
                     localStorage.setItem("ori_uid", resp.user.id);
                     dispatch({type: appActions.SET_AUTH_VALUE, auth: true});
-                    dispatch({type: appActions.SET_AUTH_DATA, user: resp});
+                    dispatch({type: appActions.SET_AUTH_DATA, user: resp.user});
+                    this.updateSession();
                 }
                 else {
                     this.setState({loading: false});
+                    if (window.location.hash !== "#/")
+                        window.location.replace("/");
                 }
             })
             .catch(() => {
@@ -100,18 +137,20 @@ class App extends PureComponent {
                         toast.error("Истекла сессия пользователя, для продолжения работы необходимо повторно войти в приложение");
                         dispatch({type: appActions.SET_AUTH_VALUE, auth: false});
                         clearTimeout(timeoutSessionId);
+                        if (window.location.pathname !== "/")
+                            window.location.replace("/");
                     }
                     else {
                         this.updateSession();
                     }
                 });
-        }, 3 * 60 * 1000); //3 минут, хотя сессия держится 5 минут
+        }, 2 * 60 * 1000); //2 минут, хотя сессия держится 5 минут
         this.setState({timeoutSessionId: timeoutSessionIdNew});
     };
 
     render() {
         const {auth} = this.props;
-        const {loading} = this.state;
+        const {loading, timeoutSessionId} = this.state;
         return(
             <MainWrapper>
                 <ReactTooltip className="EventTooltip"/>
@@ -121,7 +160,7 @@ class App extends PureComponent {
                             <StyledToastContainer />
                             {
                                 auth ?
-                                    <Main/>
+                                    <Main timeoutSessionId={timeoutSessionId}/>
                                 :
                                     <Switch>
                                         <Route exact path='/' render={props => <Auth {...props}

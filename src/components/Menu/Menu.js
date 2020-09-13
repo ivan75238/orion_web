@@ -2,21 +2,10 @@ import React, {PureComponent} from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import {IconHumburger} from "components/Icons";
-import Button from "components/Elements/Button";
-import Orders from "components/Icons/Orders";
 import {Link} from "react-router-dom";
-import Calendar from "components/Icons/Calendar";
-import Sale from "components/Icons/Sale";
-import Peoples from "components/Icons/Peoples";
-import Car from "components/Icons/Car";
-import Price from "components/Icons/Price";
-import Rout from "components/Icons/Rout";
-import Ticket from "components/Icons/Ticket";
-import WorkPlan from "components/Icons/WorkPlan";
-import Report from "components/Icons/Report";
-import Settings from "components/Icons/Settings";
-import News from "components/Icons/News";
-import {Paths} from "../../Paths";
+import {appActions} from "reducers/actions";
+import {connect} from "react-redux";
+import {MenuItems} from "../../MenuItems";
 
 const Title = styled.p`
     text-transform: uppercase;
@@ -52,23 +41,13 @@ const ToggleContainer = styled.div`
     cursor: pointer;
 `;
 
-const Container = styled.div`
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    padding: ${props => props.isOpen ? "16px" : "8px"};
-    border-bottom: 1px solid #cdcdcd;
-`;
-
 const ItemsContainer = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    padding: ${props => props.isOpen ? "16px" : "0"};
+    padding: ${props => props.isOpen ? "16px" : "16px 0"};
     overflow-y: auto;
 `;
 
@@ -95,7 +74,7 @@ const LinkStyled = styled(Link)`
     padding: ${props => props.isOpen ? "8px" : "8px"};
     box-sizing: border-box;
     
-     ${props => props.isActive ? "border-left: 4px solid #00b700" : ""}
+    ${props => props.isActive ? "border-left: 4px solid #00b700" : ""}
     
     ${
         props => !props.isOpen &&
@@ -110,70 +89,17 @@ const LinkStyled = styled(Link)`
     }
 `;
 
-const MenuItems = [
-    {
-        title: "Заказы",
-        icon: Orders,
-        link: Paths.order.list.path()
-    },
-    {
-        title: "Рассписание",
-        icon: Calendar,
-        link: Paths.schedule.list.path()
-    },
-    {
-        title: "Клиенты",
-        icon: Peoples,
-        link: Paths.client.list.path()
-    },
-    {
-        title: "Акции",
-        icon: Sale,
-        link: Paths.sale.list.path()
-    },
-    {
-        title: "Автопарк",
-        icon: Car,
-        link: Paths.car.list.path()
-    },
-    {
-        title: "Прейскурант",
-        icon: Price,
-        link: Paths.price.list.path()
-    },
-    {
-        title: "Маршруты",
-        icon: Rout,
-        link: Paths.rout.list.path()
-    },
-    {
-        title: "Типы билетов",
-        icon: Ticket,
-        link: Paths.ticket.list.path()
-    },
-    {
-        title: "План работы",
-        icon: WorkPlan,
-        link: Paths.workplan.list.path()
-    },
-    {
-        title: "Отчеты",
-        icon: Report,
-        link: Paths.report.list.path()
-    },
-    {
-        title: "Настройки",
-        icon: Settings,
-        link: Paths.setting.list.path()
-    },
-    {
-        title: "Новости",
-        icon: News,
-        link: Paths.news.list.path()
-    },
-];
-
+@connect()
 class Menu extends PureComponent {
+    state = {
+        openCreateMenu: false
+    };
+
+    changeTitle = item => {
+        const {dispatch} = this.props;
+        dispatch({type: appActions.SET_HEADER_TEXT, text: item.title});
+    };
+
     render() {
         const {isOpen, onChangeIsOpen} = this.props;
         return (
@@ -182,17 +108,14 @@ class Menu extends PureComponent {
                     <IconHumburger onClick={() => onChangeIsOpen(!isOpen)}/>
                     <Title isOpen={isOpen}>ORION</Title>
                 </ToggleContainer>
-                <Container isOpen={isOpen}>
-                    <Button width="100%"
-                            height={isOpen ? "48px" : "32px"}
-                            title={isOpen ? "+ Создать" : "+"}/>
-                </Container>
                 <ItemsContainer isOpen={isOpen}>
                     {
                         MenuItems.map((item, i) => {
                             const Icon = item.icon;
                             return (
-                                <LinkStyled to={item.link} key={i}
+                                <LinkStyled to={item.link}
+                                            key={i}
+                                            onClick={() => this.changeTitle(item)}
                                             isOpen={isOpen}>
                                     <ItemContainer>
                                         <Icon/>
@@ -213,7 +136,8 @@ class Menu extends PureComponent {
 
 Menu.propTypes = {
     isOpen: PropTypes.bool,
-    onChangeIsOpen: PropTypes.func
+    onChangeIsOpen: PropTypes.func,
+    dispatch: PropTypes.func,
 };
 
 export default Menu;

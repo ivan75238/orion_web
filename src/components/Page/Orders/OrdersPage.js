@@ -1,0 +1,222 @@
+import React, {PureComponent} from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import connect from "react-redux/es/connect/connect";
+import CustomDatePicker from "components/Elements/DatePicker";
+import _get from "lodash/get";
+import ReactSelect from "components/Elements/ReactSelect";
+import Button from "components/Elements/Button";
+import {toast} from "react-toastify";
+import axios from "axios";
+import {apiUrl} from "config/config";
+import moment from "moment";
+import Table from "components/Elements/Table";
+import {CheckStatus} from "components/functions";
+
+const ContentWrapper = styled.div`
+    width: 100%;
+`;
+
+const Header = styled.div`
+    width: 100%;
+    padding: 8px;
+    border-bottom: 1px solid #cdcdcd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+const Filters = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+`;
+
+const Body = styled.div`
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    max-height: calc(100vh - 182px);
+`;
+
+@connect(state => ({
+    routs: _get(state.app, "routs"),
+}))
+class OrdersPage extends PureComponent {
+    state = {
+        date: new Date(),
+        rout: null,
+        orders: []
+    };
+
+    columns = [
+        {
+            name: "number",
+            title: "#",
+            justifyContent: "center",
+            flex: "0 0 30px"
+        },
+        {
+            name: "type_bilet",
+            title: "Тип билета",
+            justifyContent: "center",
+            flex: "0 0 90px"
+        },
+        {
+            name: "fio",
+            title: "ФИО",
+            justifyContent: "flex-start",
+            flex: "1 0 150px"
+        },
+        {
+            name: "phone",
+            title: "Телефон",
+            justifyContent: "center",
+            flex: "0 0 120px"
+        },
+        {
+            name: "data",
+            title: "Дата",
+            justifyContent: "center",
+            flex: "0 0 120px"
+        },
+        {
+            name: "name_marsh",
+            title: "Маршрут",
+            justifyContent: "center",
+            flex: "0 0 200px"
+        },
+        {
+            name: "otkyda",
+            title: "Место отправления",
+            justifyContent: "flex-start",
+            flex: "1 0 140px"
+        },
+        {
+            name: "kyda",
+            title: "Место назначения",
+            justifyContent: "flex-start",
+            flex: "1 0 140px"
+        },
+        {
+            name: "mesto",
+            title: "Место",
+            justifyContent: "center",
+            flex: "0 0 60px"
+        },
+        {
+            name: "voditel",
+            title: "Водитель",
+            justifyContent: "flex-start",
+            flex: "1 0 120px"
+        },
+        {
+            name: "gos_nimer",
+            title: "Машина",
+            justifyContent: "center",
+            flex: "0 0 90px"
+        },
+        {
+            name: "cost",
+            title: "Стоимость",
+            justifyContent: "center",
+            flex: "0 0 100px"
+        },
+        {
+            name: "cost_bron",
+            title: "Стоимость брони",
+            justifyContent: "center",
+            flex: "0 0 100px"
+        },
+        {
+            name: "status",
+            title: "Статус",
+            justifyContent: "center",
+            flex: "1 0 100px"
+        },
+
+    ];
+
+    componentDidMount() {
+        document.title = "Заказы";
+    }
+
+    lookLast = () => {
+        axios.get(`${apiUrl}Order.GetLastOrders`)
+            .then(response => {
+                const resp = response.data;
+                this.setState({orders: resp});
+            })
+    };
+
+    search = () => {
+        const {date, rout} = this.state;
+        if (!rout) {
+            toast.warn("Выберите маршрут");
+            return;
+        }
+        if (!date) {
+            toast.warn("Выберите день");
+            return;
+        }
+        axios.get(`${apiUrl}Order.GetAllOrders&date=${moment(date.toUTCString()).format("YYYY-MM-DD")}&id_marsh=${rout.value}`)
+            .then(response => {
+                const resp = response.data;
+                this.setState({orders: resp});
+            })
+    };
+
+    render() {
+        let {date, rout, orders} = this.state;
+        const {routs} = this.props;
+        const selectOptions = routs.map(i => {
+            return {value:i.id, label: i.name};
+        });
+
+        orders = orders.map((item, i) => {
+            return {
+                ...item,
+                status: CheckStatus(item.status),
+                number: i+1
+            }
+        });
+        return (
+            <ContentWrapper>
+                <Header>
+                    <Filters>
+                        <CustomDatePicker selected={date}
+                                          onChange={date => this.setState({date})}
+                                          height="40px"
+                                          width="140px"
+                                          dateFormat="dd.MM.yyyy"/>
+                        <ReactSelect value={rout}
+                                     height="40px"
+                                     width="220px"
+                                     margin={"0 0 0 16px"}
+                                     placeholder={"Выберите маршрут"}
+                                     onChange={value => this.setState({rout: value})}
+                                     options={selectOptions}/>
+                        <Button title={"Показать"}
+                                height="40px"
+                                onClick={this.search}
+                                margin="0 0 0 16px"/>
+                    </Filters>
+                    <Button title={"Показать последние"}
+                            height="40px"
+                            onClick={this.lookLast}/>
+                </Header>
+                <Body>
+                    <Table columns={this.columns}
+                           items={orders}/>
+                </Body>
+            </ContentWrapper>
+        )
+    }
+}
+
+OrdersPage.propTypes = {
+    dispatch: PropTypes.func,
+    routs: PropTypes.array,
+};
+
+export default OrdersPage;
