@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dea06bd-7f6f-4bd8-84a3-10031ac33fcf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Page/Prices/PricesPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Page/Routs/RoutsPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Orders/OrdersPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Orders/OrdersPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +46,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Page/Prices" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../on_tumor_board" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -69,8 +68,8 @@
       <recent name="E:\Новая работа\cubekit-dashboard\src\components\Dashboard" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Work\orion_web\src\components\Page\Prices" />
       <recent name="C:\Work\orion_web\src\components\Page" />
+      <recent name="C:\Work\orion_web\src\components\Page\Prices" />
       <recent name="C:\Work\orion_web\src\components\Page\Clients" />
       <recent name="C:\Work\orion_web\src\components\Page\Schedules" />
       <recent name="C:\Work\orion_web\src\components\Elements" />
@@ -143,14 +142,7 @@
       <workItem from="1594650655037" duration="2327000" />
       <workItem from="1594734446662" duration="6276000" />
       <workItem from="1595201077792" duration="19000" />
-      <workItem from="1599974951862" duration="23009000" />
-    </task>
-    <task id="LOCAL-00054" summary="- Изменены контролы выбора строк и столбцов в попапе настроек виджетов&#10;- Сделано изменение позиций через dnd  в настройках виджетов">
-      <created>1576165954454</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1576165954454</updated>
+      <workItem from="1599974951862" duration="24816000" />
     </task>
     <task id="LOCAL-00055" summary="- СОхранение настроек виджета">
       <created>1576177195804</created>
@@ -488,7 +480,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600007721131</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="- Сделана страница с прейскурантом&#10;- Переработано отображение статусов заказа">
+      <created>1600022576200</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1600022576200</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TodoView">
@@ -518,7 +517,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="- Исправлена ошибка в редактировании названия дашборда&#10;- Приведены к одному стандарту все названия для виджетов&#10;- Убраны контролы зумма с графиков&#10;- Убрана обрезка дат в легендах графиков&#10;- Отодвинута панель с контролами Plotly.js" />
     <MESSAGE value="- и справлена ошибка вылета при перемещениях" />
     <MESSAGE value="- Обработка запроса на авторизацию&#10;- Добавлена картинка пользователя (стандартная)" />
     <MESSAGE value="- библиотека Plotly запихана внутрь сборки" />
@@ -543,18 +541,19 @@
     <MESSAGE value="-  Сделана страница со списком клиентов" />
     <MESSAGE value="-  Сделана страница со списком акции" />
     <MESSAGE value="- Сделана страница с автопарком" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Сделана страница с автопарком" />
+    <MESSAGE value="- Сделана страница с прейскурантом&#10;- Переработано отображение статусов заказа" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Сделана страница с прейскурантом&#10;- Переработано отображение статусов заказа" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="104" key="CommitChangelistDialog2" timestamp="1600007720471">
+    <state x="585" y="104" key="CommitChangelistDialog2" timestamp="1600022575681">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="104" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1600007720471" />
-    <state x="686" y="211" key="FileChooserDialogImpl" timestamp="1599984779439">
+    <state x="585" y="104" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1600022575681" />
+    <state x="686" y="211" key="FileChooserDialogImpl" timestamp="1600024457489">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594520063226" />
-    <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599984779439" />
+    <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600024457489" />
     <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1600006104232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -575,19 +574,19 @@
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594716686807" />
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600006104232" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600007722199">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600022577511">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1600007722199" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1600022577511" />
     <state x="758" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1594651267599">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="758" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594651267599" />
-    <state x="579" y="182" width="762" height="677" key="find.popup" timestamp="1600007492664">
+    <state x="579" y="182" width="762" height="677" key="find.popup" timestamp="1600024519056">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="897" y="105" width="762" height="677" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594818335168" />
-    <state x="579" y="182" width="762" height="677" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600007492664" />
+    <state x="579" y="182" width="762" height="677" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600024519056" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1594112869027">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
