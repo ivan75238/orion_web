@@ -37,7 +37,7 @@ export const MenuItems = [
     {
         title: "Автопарк",
         icon: Car,
-        link: Paths.car.list.path()
+        link: Paths.carPark.list.path()
     },
     {
         title: "Прейскурант",

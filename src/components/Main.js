@@ -11,7 +11,8 @@ import {Paths} from "../Paths";
 import OrdersPage from "components/Page/Orders/OrdersPage";
 import SchedulesPage from "components/Page/Schedules/SchedulesPage";
 import ClientsPage from "components/Page/Clients/ClientsPage";
-import StockPage from "components/Page/Stock/ClientsPage";
+import StockPage from "components/Page/Stock/StockPage";
+import CarParkPage from "components/Page/CarPark/CarParkPage";
 
 const MainWrapper = styled.div`
     width: 100vw;
@@ -74,6 +75,7 @@ class Main extends PureComponent {
                                 <Route exact path={Paths.schedule.list.path()} render={props => <SchedulesPage {...props}/>}/>
                                 <Route exact path={Paths.client.list.path()} render={props => <ClientsPage {...props}/>}/>
                                 <Route exact path={Paths.sale.list.path()} render={props => <StockPage {...props}/>}/>
+                                <Route exact path={Paths.carPark.list.path()} render={props => <CarParkPage {...props}/>}/>
                                 <Redirect from="/" to={Paths.order.list.path()} />
                             </Switch>
                         </PageInnerContainer>

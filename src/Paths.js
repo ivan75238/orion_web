@@ -23,7 +23,7 @@ export const Paths = {
             mask : () => `/sale/list`,
         }
     },
-    car : {
+    carPark : {
         list : {
             path : () => `/car/list`,
             mask : () => `/car/list`,

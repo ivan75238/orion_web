@@ -4,12 +4,9 @@ import PropTypes from "prop-types";
 import connect from "react-redux/es/connect/connect";
 import _get from "lodash/get";
 import Button from "components/Elements/Button";
-import {toast} from "react-toastify";
 import axios from "axios";
 import {apiUrl} from "config/config";
 import Table from "components/Elements/Table";
-import Input from "components/Elements/Input";
-import Paginator from "components/Elements/Paginator";
 import moment from "moment";
 
 const ContentWrapper = styled.div`

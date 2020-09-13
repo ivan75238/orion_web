@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dea06bd-7f6f-4bd8-84a3-10031ac33fcf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Page/Stock/ClientsPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Page/CarPark/CarParkPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Paths.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paths.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Elements/Table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elements/Table.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Clients/ClientsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Clients/ClientsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Orders/OrdersPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Orders/OrdersPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Schedules/SchedulesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Schedules/SchedulesPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Stock/ClientsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Stock/StockPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,14 +148,7 @@
       <workItem from="1594650655037" duration="2327000" />
       <workItem from="1594734446662" duration="6276000" />
       <workItem from="1595201077792" duration="19000" />
-      <workItem from="1599974951862" duration="12507000" />
-    </task>
-    <task id="LOCAL-00052" summary="- Изменения механики (большие)">
-      <created>1576077257799</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1576077257799</updated>
+      <workItem from="1599974951862" duration="19788000" />
     </task>
     <task id="LOCAL-00053" summary="- Изменены контролы выбора строк и столбцов в попапе настроек виджетов">
       <created>1576161915792</created>
@@ -490,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599986155215</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="-  Сделана страница со списком акции">
+      <created>1599988708892</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1599988708892</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TodoView">
@@ -520,7 +523,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="- Вынесены в конфиг пути к сервисам: /custom/ws/ws_sql_hs2.jsp, custom/ws/ws_dashboard.jsp, /custom/ws/ws_meas_last_values.jsp, /custom/jsp/auth/ksm_auth_helper.jsp&#10;- добавьте имя пользователя из ответа /custom/jsp/auth/ksm_auth_helper.jsp" />
     <MESSAGE value="3. давай все-таки у нас будет один тип виджета - график, а дальше уже выбираем тип&#10;- линия&#10;- линия с заливкой&#10;- ломаная линия (отключать опцию сглаживания - будут просто точки соединенные прямыми)&#10;- ступенчатая линия (по идее должна быть такая https://excel2.ru/sites/default/files/pic_node/Diagramm/diag11png.png)&#10;- колонки - как у тебя сейчас сделано&#10;- столбчатая диаграмма - агрегируем данные&#10;- круговая диаграмма - агрегируем данные" />
     <MESSAGE value="- Исправлена ошибка в редактировании названия дашборда&#10;- Приведены к одному стандарту все названия для виджетов&#10;- Убраны контролы зумма с графиков&#10;- Убрана обрезка дат в легендах графиков&#10;- Отодвинута панель с контролами Plotly.js" />
     <MESSAGE value="- и справлена ошибка вылета при перемещениях" />
@@ -545,51 +547,52 @@
     <MESSAGE value="- Сделана система авторизайии и сессий" />
     <MESSAGE value="- Сделана верняя плашка&#10;- Сделано полностью меню и подобраны иконки" />
     <MESSAGE value="-  Сделана страница со списком клиентов" />
-    <option name="LAST_COMMIT_MESSAGE" value="-  Сделана страница со списком клиентов" />
+    <MESSAGE value="-  Сделана страница со списком акции" />
+    <option name="LAST_COMMIT_MESSAGE" value="-  Сделана страница со списком акции" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="104" key="CommitChangelistDialog2" timestamp="1599986154551">
+    <state x="585" y="104" key="CommitChangelistDialog2" timestamp="1599988708372">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="104" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1599986154551" />
+    <state x="585" y="104" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1599988708372" />
     <state x="686" y="211" key="FileChooserDialogImpl" timestamp="1599984779439">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594520063226" />
     <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599984779439" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1599980265842">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1600006104232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594716686807" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599980265842" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1599980265842">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600006104232" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1600006104232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594716686807" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599980265842" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1599980265842">
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600006104232" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1600006104232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594716686807" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599980265842" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1599980265842">
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600006104232" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1600006104232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594716686807" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599980265842" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599986156225">
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600006104232" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599988709812">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599986156225" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599988709812" />
     <state x="758" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1594651267599">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="758" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594651267599" />
-    <state x="579" y="182" width="762" height="677" key="find.popup" timestamp="1599981064934">
+    <state x="579" y="182" width="762" height="677" key="find.popup" timestamp="1600007492664">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="897" y="105" width="762" height="677" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594818335168" />
-    <state x="579" y="182" width="762" height="677" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599981064934" />
+    <state x="579" y="182" width="762" height="677" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600007492664" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1594112869027">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,6 +1,8 @@
 import React, {PureComponent} from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { Scrollbars } from 'react-custom-scrollbars';
+
 
 const StyledTable = styled.div`
   height: auto;
@@ -8,7 +10,6 @@ const StyledTable = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 200px;
-  overflow: auto;
   max-width: 100%;
 `;
 
@@ -93,30 +94,39 @@ class Table extends PureComponent {
                     }
                 </Header>
                 <StyledTable>
-                    <Body>
-                        {
-                            items.length > 0 ?
-                                items.map((item, i) => {
-                                    return (
-                                        <Row key={i}>
-                                            {
-                                                columns.map((col, j) => {
-                                                    return (
-                                                        <Column key={`${i}${j}`}
-                                                                justifyContent={col.justifyContent}
-                                                                flex={col.flex}>
-                                                            <p>{item[col.name]}</p>
-                                                        </Column>
-                                                    )
-                                                })
-                                            }
-                                        </Row>
-                                    )
-                                })
-                            :
-                                <NoItems>Данные отсутствуют</NoItems>
-                        }
-                    </Body>
+                    <Scrollbars style={{ width: "100%"}}
+                                autoHeight
+                                autoHeightMin={672}>
+                        <Body>
+                            {
+                                items.length > 0 ?
+                                    items.map((item, i) => {
+                                        return (
+                                            <Row key={i}>
+                                                {
+                                                    columns.map((col, j) => {
+                                                        return (
+                                                            <Column key={`${i}${j}`}
+                                                                    justifyContent={col.justifyContent}
+                                                                    flex={col.flex}>
+                                                                {
+                                                                    typeof item[col.name] === "string" ?
+                                                                        <p>{item[col.name]}</p>
+                                                                    :
+                                                                        item[col.name]
+                                                                }
+                                                            </Column>
+                                                        )
+                                                    })
+                                                }
+                                            </Row>
+                                        )
+                                    })
+                                :
+                                    <NoItems>Данные отсутствуют</NoItems>
+                            }
+                        </Body>
+                    </Scrollbars>
                 </StyledTable>
             </>
         )
