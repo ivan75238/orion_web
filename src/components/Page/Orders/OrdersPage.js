@@ -91,6 +91,10 @@ function switchColor(status) {
     }
 }
 
+const ButtonsContainer = styled.div`
+    display: flex;
+`;
+
 @connect(state => ({
     routs: _get(state.app, "routs"),
 }))
@@ -186,7 +190,6 @@ class OrdersPage extends PureComponent {
             justifyContent: "center",
             flex: "1 0 120px"
         },
-
     ];
 
     componentDidMount() {
@@ -253,9 +256,15 @@ class OrdersPage extends PureComponent {
                                 onClick={this.search}
                                 margin="0 0 0 16px"/>
                     </Filters>
-                    <Button title={"Показать последние"}
-                            height="40px"
-                            onClick={this.lookLast}/>
+                    <ButtonsContainer>
+                        <Button title={"Новый"}
+                                height="40px"
+                                margin={"0 8px 0 0"}
+                                onClick={() => {}}/>
+                        <Button title={"Показать последние"}
+                                height="40px"
+                                onClick={this.lookLast}/>
+                    </ButtonsContainer>
                 </Header>
                 <Body>
                     <Table columns={this.columns}

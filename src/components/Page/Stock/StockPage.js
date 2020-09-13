@@ -8,6 +8,8 @@ import axios from "axios";
 import {apiUrl} from "config/config";
 import Table from "components/Elements/Table";
 import moment from "moment";
+import Close from "components/Icons/Close";
+import Edit from "components/Icons/Edit";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -34,6 +36,29 @@ const Body = styled.div`
     display: flex;
     flex-direction: column;
     max-height: calc(100vh - 182px);
+`;
+
+const ActionContainer = styled.div`
+    display: flex;
+`;
+
+const IconContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    
+    &:hover {
+        border: 1px solid #cdcdcd;
+        border-radius: 3px;
+    }
+    
+    svg {
+        width: 16px;
+        height: 16px;
+    }
 `;
 
 @connect(state => ({
@@ -84,6 +109,12 @@ class StockPage extends PureComponent {
             title: "Стоимость",
             justifyContent: "center",
             flex: "1 0 200px"
+        },
+        {
+            name: "actions",
+            title: "",
+            justifyContent: "center",
+            flex: "0 0 70px"
         }
     ];
 
@@ -94,7 +125,15 @@ class StockPage extends PureComponent {
             return {
                 ...i,
                 data_nach: moment(i.data_nach, "YYYY-MM-DD").format("DD.MM.YYYY"),
-                data_konec: moment(i.data_konec, "YYYY-MM-DD").format("DD.MM.YYYY")
+                data_konec: moment(i.data_konec, "YYYY-MM-DD").format("DD.MM.YYYY"),
+                actions: <ActionContainer>
+                    <IconContainer onClick={() => {}}>
+                        <Edit/>
+                    </IconContainer>
+                    <IconContainer onClick={() => {}}>
+                        <Close/>
+                    </IconContainer>
+                </ActionContainer>
             }
         });
 

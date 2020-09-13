@@ -9,6 +9,9 @@ import {toast} from "react-toastify";
 import axios from "axios";
 import {apiUrl} from "config/config";
 import Table from "components/Elements/Table";
+import moment from "moment";
+import Edit from "components/Icons/Edit";
+import Close from "components/Icons/Close";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -35,6 +38,29 @@ const Body = styled.div`
     display: flex;
     flex-direction: column;
     max-height: calc(100vh - 182px);
+`;
+
+const ActionContainer = styled.div`
+    display: flex;
+`;
+
+const IconContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    
+    &:hover {
+        border: 1px solid #cdcdcd;
+        border-radius: 3px;
+    }
+    
+    svg {
+        width: 16px;
+        height: 16px;
+    }
 `;
 
 @connect(state => ({
@@ -74,6 +100,12 @@ class PricesPage extends PureComponent {
             title: "Стоимость",
             justifyContent: "center",
             flex: "1 0 150px"
+        },
+        {
+            name: "actions",
+            title: "",
+            justifyContent: "center",
+            flex: "0 0 70px"
         }
     ];
 
@@ -100,6 +132,21 @@ class PricesPage extends PureComponent {
         const selectOptions = routs.map(i => {
             return {value:i.id, label: i.name};
         });
+
+        prices = prices.map(i => {
+            return {
+                ...i,
+                actions: <ActionContainer>
+                    <IconContainer onClick={() => {}}>
+                        <Edit/>
+                    </IconContainer>
+                    <IconContainer onClick={() => {}}>
+                        <Close/>
+                    </IconContainer>
+                </ActionContainer>
+            }
+        });
+
         return (
             <ContentWrapper>
                 <Header>

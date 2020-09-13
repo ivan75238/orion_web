@@ -10,6 +10,8 @@ import Table from "components/Elements/Table";
 import moment from "moment";
 import ReactSelect from "components/Elements/ReactSelect";
 import Checkbox from 'react-simple-checkbox';
+import More from "components/Icons/More";
+import DropdownMenu from "components/Elements/DropdownMenu";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -48,6 +50,29 @@ const Status = styled.div`
     color: ${props => props.isActive ? "rgba(237, 186, 0, 1)" : "rgba(209, 23, 29, 1)"};    
     border: 1px solid ${props => props.isActive ? "rgba(209, 205, 23, 0.8)" : "rgba(209, 23, 29, 0.8)"};   
     border-radius: 5px; 
+`;
+
+const ActionContainer = styled.div`
+    display: flex;
+`;
+
+const IconContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    
+    &:hover {
+        border: 1px solid #cdcdcd;
+        border-radius: 3px;
+    }
+    
+    svg {
+        width: 16px;
+        height: 16px;
+    }
 `;
 
 @connect(state => ({
@@ -123,6 +148,12 @@ class CarParkPage extends PureComponent {
             title: "Статус",
             justifyContent: "center",
             flex: "1 0 140px"
+        },
+        {
+            name: "actions",
+            title: "",
+            justifyContent: "center",
+            flex: "0 0 70px"
         }
     ];
 
@@ -142,13 +173,23 @@ class CarParkPage extends PureComponent {
     render() {
         let {cars, status} = this.state;
 
-        cars = cars.map(i => {
+        cars = cars.map((i, j) => {
             return {
                 ...i,
                 arenda_nach: moment(i.arenda_nach, "YYYY-MM-DD").format("DD.MM.YYYY"),
                 arenda_konec: moment(i.arenda_konec, "YYYY-MM-DD").format("DD.MM.YYYY"),
                 status: <Status isActive={i.status === "0"}>{this.convertStatus(i.status)}</Status>,
-                teh_obslyzh: <Checkbox checked={i.teh_obslyzh === "1"}/>
+                teh_obslyzh: <Checkbox checked={i.teh_obslyzh === "1"}/>,
+                actions: <ActionContainer>
+                    <DropdownMenu items={[
+                                    {title: "Редактировать", onChange: null},
+                                    {title: "Уволить", onChange: null},
+                                    {title: "Продлить аренду", onChange: null},
+                                    {title: "Изменить тех. обслуживание", onChange: null},
+                                ]}
+                                position={j+4 >= cars.length ? "bottom" : "top"}
+                    />
+                </ActionContainer>
             }
         });
 

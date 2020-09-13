@@ -96,7 +96,7 @@ class Table extends PureComponent {
                 <StyledTable>
                     <Scrollbars style={{ width: "100%"}}
                                 autoHeight
-                                autoHeightMin={672}>
+                                autoHeightMin={630}>
                         <Body>
                             {
                                 items.length > 0 ?
