@@ -11,6 +11,7 @@ import WorkPlan from "components/Icons/WorkPlan";
 import Report from "components/Icons/Report";
 import Settings from "components/Icons/Settings";
 import News from "components/Icons/News";
+import Sms from "components/Icons/Sms";
 
 
 export const MenuItems = [
@@ -60,14 +61,19 @@ export const MenuItems = [
         link: Paths.workplan.list.path()
     },
     {
+        title: "Настройки",
+        icon: Settings,
+        link: Paths.setting.list.path()
+    },
+    {
         title: "Отчеты",
         icon: Report,
         link: Paths.report.list.path()
     },
     {
-        title: "Настройки",
-        icon: Settings,
-        link: Paths.setting.list.path()
+        title: "Управление СМС",
+        icon: Sms,
+        link: Paths.sms.list.path()
     },
     {
         title: "Новости",

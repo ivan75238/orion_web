@@ -71,4 +71,10 @@ export const Paths = {
             mask : () => `/news/list`,
         }
     },
+    sms : {
+        list : {
+            path : () => `/sms/list`,
+            mask : () => `/sms/list`,
+        }
+    },
 };

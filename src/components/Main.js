@@ -15,6 +15,12 @@ import StockPage from "components/Page/Stock/StockPage";
 import CarParkPage from "components/Page/CarPark/CarParkPage";
 import PricesPage from "components/Page/Prices/PricesPage";
 import RoutsPage from "components/Page/Routs/RoutsPage";
+import TypeTicketsPage from "components/Page/TypeTickets/TypeTicketsPage";
+import WorkPlanPage from "components/Page/WorkPlan/WorkPlanPage";
+import SettingsPage from "components/Page/Settings/SettingsPage";
+import SmsPage from "components/Page/Sms/SmsPage";
+import NewsPage from "components/Page/News/NewsPage";
+import ReportPage from "components/Page/Report/ReportPage";
 
 const MainWrapper = styled.div`
     width: 100vw;
@@ -80,6 +86,12 @@ class Main extends PureComponent {
                                 <Route exact path={Paths.carPark.list.path()} render={props => <CarParkPage {...props}/>}/>
                                 <Route exact path={Paths.price.list.path()} render={props => <PricesPage {...props}/>}/>
                                 <Route exact path={Paths.rout.list.path()} render={props => <RoutsPage {...props}/>}/>
+                                <Route exact path={Paths.ticket.list.path()} render={props => <TypeTicketsPage {...props}/>}/>
+                                <Route exact path={Paths.workplan.list.path()} render={props => <WorkPlanPage {...props}/>}/>
+                                <Route exact path={Paths.setting.list.path()} render={props => <SettingsPage {...props}/>}/>
+                                <Route exact path={Paths.report.list.path()} render={props => <ReportPage {...props}/>}/>
+                                <Route exact path={Paths.sms.list.path()} render={props => <SmsPage {...props}/>}/>
+                                <Route exact path={Paths.news.list.path()} render={props => <NewsPage {...props}/>}/>
                                 <Redirect from="/" to={Paths.order.list.path()} />
                             </Switch>
                         </PageInnerContainer>

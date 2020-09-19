@@ -2,15 +2,12 @@ import React, {PureComponent} from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import connect from "react-redux/es/connect/connect";
-import _get from "lodash/get";
-import ReactSelect from "components/Elements/ReactSelect";
 import Button from "components/Elements/Button";
-import {toast} from "react-toastify";
 import axios from "axios";
 import {apiUrl} from "config/config";
 import Table from "components/Elements/Table";
-import Edit from "components/Icons/Edit";
 import Close from "components/Icons/Close";
+import Edit from "components/Icons/Edit";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -62,41 +59,26 @@ const IconContainer = styled.div`
     }
 `;
 
-@connect(state => ({
-    routs: _get(state.app, "routs"),
-}))
-class PricesPage extends PureComponent {
+@connect(() => ({}))
+class UserPage extends PureComponent {
     constructor(props) {
         super(props);
-        let selectRout;
-        if (props.routs){
-            if (props.routs.length > 0)
-                selectRout = {value:props.routs[0].id, label: props.routs[0].name};
-        }
+        this.load();
         this.state = {
-            rout: selectRout,
-            prices: []
-        };
-        if (selectRout)
-            this.load();
+            users: []
+        }
     }
 
     columns = [
         {
-            name: "Kyda",
-            title: "Откуда",
+            name: "name",
+            title: "ФИО",
             justifyContent: "center",
             flex: "1 0 150px"
         },
         {
-            name: "Otkyda",
-            title: "Куда",
-            justifyContent: "center",
-            flex: "1 0 150px"
-        },
-        {
-            name: "cost",
-            title: "Стоимость",
+            name: "role",
+            title: "Роль",
             justifyContent: "center",
             flex: "1 0 150px"
         },
@@ -108,33 +90,30 @@ class PricesPage extends PureComponent {
         }
     ];
 
-    componentDidMount() {
-        document.title = "Прейскурант";
-    }
-
     load = () => {
-        const {rout} = this.state;
-        if (!rout) {
-            toast.warn("Выберите маршрут");
-            return;
-        }
-        axios.get(`${apiUrl}Price.GetPriceForMarsID&id_marsh=${rout.value}`)
+        axios.get(`${apiUrl}User.GetUsers`)
             .then(response => {
                 const resp = response.data;
-                this.setState({prices: resp});
+                this.setState({users: resp});
             })
     };
 
-    render() {
-        let {rout, prices} = this.state;
-        const {routs} = this.props;
-        const selectOptions = routs.map(i => {
-            return {value:i.id, label: i.name};
-        });
+    translateRole = role => {
+        switch(role) {
+            case "0":
+                return "Диспетчер";
+            case "1":
+                return "Администратор";
+        }
+    };
 
-        prices = prices.map(i => {
+    render() {
+        let {users} = this.state;
+
+        users = users.map(i => {
             return {
                 ...i,
+                role: this.translateRole(i.role),
                 actions: <ActionContainer>
                     <IconContainer onClick={() => {}}>
                         <Edit/>
@@ -149,31 +128,22 @@ class PricesPage extends PureComponent {
         return (
             <ContentWrapper>
                 <Header>
-                    <Filters>
-                        <ReactSelect value={rout}
-                                     height="40px"
-                                     width="220px"
-                                     margin={"0 0 0 16px"}
-                                     placeholder={"Выберите маршрут"}
-                                     onChange={value => this.setState({rout: value}, () => this.load())}
-                                     options={selectOptions}/>
-                    </Filters>
-                    <Button title={"Добавить запись"}
+                    <Filters/>
+                    <Button title={"Добавить"}
                             height="40px"
                             onClick={() => {}}/>
                 </Header>
                 <Body>
                     <Table columns={this.columns}
-                           items={prices}/>
+                           items={users}/>
                 </Body>
             </ContentWrapper>
         )
     }
 }
 
-PricesPage.propTypes = {
+UserPage.propTypes = {
     dispatch: PropTypes.func,
-    routs: PropTypes.array,
 };
 
-export default PricesPage;
+export default UserPage;

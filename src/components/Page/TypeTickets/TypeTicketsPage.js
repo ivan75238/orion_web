@@ -2,15 +2,12 @@ import React, {PureComponent} from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import connect from "react-redux/es/connect/connect";
-import _get from "lodash/get";
-import ReactSelect from "components/Elements/ReactSelect";
 import Button from "components/Elements/Button";
-import {toast} from "react-toastify";
 import axios from "axios";
 import {apiUrl} from "config/config";
 import Table from "components/Elements/Table";
-import Edit from "components/Icons/Edit";
 import Close from "components/Icons/Close";
+import Checkbox from "react-simple-checkbox";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -62,41 +59,32 @@ const IconContainer = styled.div`
     }
 `;
 
-@connect(state => ({
-    routs: _get(state.app, "routs"),
-}))
-class PricesPage extends PureComponent {
+@connect(() => ({}))
+class TypeTicketsPage extends PureComponent {
     constructor(props) {
         super(props);
-        let selectRout;
-        if (props.routs){
-            if (props.routs.length > 0)
-                selectRout = {value:props.routs[0].id, label: props.routs[0].name};
-        }
+        this.load();
         this.state = {
-            rout: selectRout,
-            prices: []
-        };
-        if (selectRout)
-            this.load();
+            typeTickets: []
+        }
     }
 
     columns = [
         {
-            name: "Kyda",
-            title: "Откуда",
+            name: "name",
+            title: "Тип билета",
             justifyContent: "center",
             flex: "1 0 150px"
         },
         {
-            name: "Otkyda",
-            title: "Куда",
+            name: "fix",
+            title: "Фикс. цена",
             justifyContent: "center",
             flex: "1 0 150px"
         },
         {
             name: "cost",
-            title: "Стоимость",
+            title: "Цена",
             justifyContent: "center",
             flex: "1 0 150px"
         },
@@ -109,36 +97,25 @@ class PricesPage extends PureComponent {
     ];
 
     componentDidMount() {
-        document.title = "Прейскурант";
+        document.title = "Типы билетов";
     }
 
     load = () => {
-        const {rout} = this.state;
-        if (!rout) {
-            toast.warn("Выберите маршрут");
-            return;
-        }
-        axios.get(`${apiUrl}Price.GetPriceForMarsID&id_marsh=${rout.value}`)
+        axios.get(`${apiUrl}Bilet.Get`)
             .then(response => {
                 const resp = response.data;
-                this.setState({prices: resp});
+                this.setState({typeTickets: resp});
             })
     };
 
     render() {
-        let {rout, prices} = this.state;
-        const {routs} = this.props;
-        const selectOptions = routs.map(i => {
-            return {value:i.id, label: i.name};
-        });
+        let {typeTickets} = this.state;
 
-        prices = prices.map(i => {
+        typeTickets = typeTickets.map(i => {
             return {
                 ...i,
+                fix: <Checkbox checked={i.fix === "1"}/>,
                 actions: <ActionContainer>
-                    <IconContainer onClick={() => {}}>
-                        <Edit/>
-                    </IconContainer>
                     <IconContainer onClick={() => {}}>
                         <Close/>
                     </IconContainer>
@@ -149,31 +126,22 @@ class PricesPage extends PureComponent {
         return (
             <ContentWrapper>
                 <Header>
-                    <Filters>
-                        <ReactSelect value={rout}
-                                     height="40px"
-                                     width="220px"
-                                     margin={"0 0 0 16px"}
-                                     placeholder={"Выберите маршрут"}
-                                     onChange={value => this.setState({rout: value}, () => this.load())}
-                                     options={selectOptions}/>
-                    </Filters>
+                    <Filters/>
                     <Button title={"Добавить запись"}
                             height="40px"
                             onClick={() => {}}/>
                 </Header>
                 <Body>
                     <Table columns={this.columns}
-                           items={prices}/>
+                           items={typeTickets}/>
                 </Body>
             </ContentWrapper>
         )
     }
 }
 
-PricesPage.propTypes = {
+TypeTicketsPage.propTypes = {
     dispatch: PropTypes.func,
-    routs: PropTypes.array,
 };
 
-export default PricesPage;
+export default TypeTicketsPage;

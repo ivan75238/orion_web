@@ -10,7 +10,6 @@ import Table from "components/Elements/Table";
 import moment from "moment";
 import ReactSelect from "components/Elements/ReactSelect";
 import Checkbox from 'react-simple-checkbox';
-import More from "components/Icons/More";
 import DropdownMenu from "components/Elements/DropdownMenu";
 
 const ContentWrapper = styled.div`
@@ -54,25 +53,6 @@ const Status = styled.div`
 
 const ActionContainer = styled.div`
     display: flex;
-`;
-
-const IconContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 22px;
-    height: 22px;
-    cursor: pointer;
-    
-    &:hover {
-        border: 1px solid #cdcdcd;
-        border-radius: 3px;
-    }
-    
-    svg {
-        width: 16px;
-        height: 16px;
-    }
 `;
 
 @connect(state => ({

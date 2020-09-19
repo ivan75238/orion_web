@@ -2,15 +2,13 @@ import React, {PureComponent} from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import connect from "react-redux/es/connect/connect";
-import _get from "lodash/get";
-import ReactSelect from "components/Elements/ReactSelect";
 import Button from "components/Elements/Button";
-import {toast} from "react-toastify";
 import axios from "axios";
 import {apiUrl} from "config/config";
 import Table from "components/Elements/Table";
-import Edit from "components/Icons/Edit";
 import Close from "components/Icons/Close";
+import Edit from "components/Icons/Edit";
+import moment from "moment";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -62,43 +60,54 @@ const IconContainer = styled.div`
     }
 `;
 
-@connect(state => ({
-    routs: _get(state.app, "routs"),
-}))
-class PricesPage extends PureComponent {
+const Status = styled.div`
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    background: ${props => props.isActive ? "rgba(209, 205, 23, 0.5)" : "rgba(209, 23, 29, 0.5)"};    
+    color: ${props => props.isActive ? "rgba(237, 186, 0, 1)" : "rgba(209, 23, 29, 1)"};    
+    border: 1px solid ${props => props.isActive ? "rgba(209, 205, 23, 0.8)" : "rgba(209, 23, 29, 0.8)"};   
+    border-radius: 5px; 
+`;
+
+@connect(() => ({}))
+class NewsPage extends PureComponent {
     constructor(props) {
         super(props);
-        let selectRout;
-        if (props.routs){
-            if (props.routs.length > 0)
-                selectRout = {value:props.routs[0].id, label: props.routs[0].name};
-        }
+        this.load();
         this.state = {
-            rout: selectRout,
-            prices: []
-        };
-        if (selectRout)
-            this.load();
+            news: []
+        }
     }
 
     columns = [
         {
-            name: "Kyda",
-            title: "Откуда",
-            justifyContent: "center",
+            name: "title",
+            title: "Заголовок",
+            justifyContent: "flex-start",
+            textAlign: "left",
             flex: "1 0 150px"
         },
         {
-            name: "Otkyda",
-            title: "Куда",
-            justifyContent: "center",
-            flex: "1 0 150px"
+            name: "messages",
+            title: "Текст новости",
+            justifyContent: "flex-start",
+            textAlign: "left",
+            flex: "1 0 300px"
         },
         {
-            name: "cost",
-            title: "Стоимость",
+            name: "date",
+            title: "Дата публикации",
             justifyContent: "center",
-            flex: "1 0 150px"
+            flex: "1 0 80px"
+        },
+        {
+            name: "status",
+            title: "Статус",
+            justifyContent: "center",
+            flex: "1 0 80px"
         },
         {
             name: "actions",
@@ -109,32 +118,34 @@ class PricesPage extends PureComponent {
     ];
 
     componentDidMount() {
-        document.title = "Прейскурант";
+        document.title = "Типы билетов";
     }
 
     load = () => {
-        const {rout} = this.state;
-        if (!rout) {
-            toast.warn("Выберите маршрут");
-            return;
-        }
-        axios.get(`${apiUrl}Price.GetPriceForMarsID&id_marsh=${rout.value}`)
+        axios.get(`${apiUrl}News.Get`)
             .then(response => {
                 const resp = response.data;
-                this.setState({prices: resp});
+                this.setState({news: resp});
             })
     };
 
-    render() {
-        let {rout, prices} = this.state;
-        const {routs} = this.props;
-        const selectOptions = routs.map(i => {
-            return {value:i.id, label: i.name};
-        });
+    convertStatus = status => {
+        switch (status) {
+            case "0":
+                return "Опубликована";
+            case "1":
+                return "Снята с публикации";
+        }
+    };
 
-        prices = prices.map(i => {
+    render() {
+        let {news} = this.state;
+
+        news = news.map(i => {
             return {
                 ...i,
+                date: moment(i.date).format("DD.MM.YYYY HH:mm"),
+                status: <Status isActive={i.status === "0"}>{this.convertStatus(i.status)}</Status>,
                 actions: <ActionContainer>
                     <IconContainer onClick={() => {}}>
                         <Edit/>
@@ -149,31 +160,22 @@ class PricesPage extends PureComponent {
         return (
             <ContentWrapper>
                 <Header>
-                    <Filters>
-                        <ReactSelect value={rout}
-                                     height="40px"
-                                     width="220px"
-                                     margin={"0 0 0 16px"}
-                                     placeholder={"Выберите маршрут"}
-                                     onChange={value => this.setState({rout: value}, () => this.load())}
-                                     options={selectOptions}/>
-                    </Filters>
-                    <Button title={"Добавить запись"}
+                    <Filters/>
+                    <Button title={"Добавить новость"}
                             height="40px"
                             onClick={() => {}}/>
                 </Header>
                 <Body>
                     <Table columns={this.columns}
-                           items={prices}/>
+                           items={news}/>
                 </Body>
             </ContentWrapper>
         )
     }
 }
 
-PricesPage.propTypes = {
+NewsPage.propTypes = {
     dispatch: PropTypes.func,
-    routs: PropTypes.array,
 };
 
-export default PricesPage;
+export default NewsPage;

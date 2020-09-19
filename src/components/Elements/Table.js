@@ -48,7 +48,7 @@ const Column = styled.div`
   
   p {
     margin: 0;
-    text-align: center;
+    text-align: ${props => props.textAlign || "center"};
   }
 `;
 
@@ -108,6 +108,7 @@ class Table extends PureComponent {
                                                         return (
                                                             <Column key={`${i}${j}`}
                                                                     justifyContent={col.justifyContent}
+                                                                    textAlign={col.textAlign}
                                                                     flex={col.flex}>
                                                                 {
                                                                     typeof item[col.name] === "string" ?
