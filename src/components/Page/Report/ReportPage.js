@@ -2,6 +2,7 @@ import React, {PureComponent} from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import connect from "react-redux/es/connect/connect";
+import ReportParkPage from "components/Page/Report/Subpage/ReportPark/ReportParkPage";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -48,7 +49,7 @@ class ReportPage extends PureComponent {
         {
             id: 1,
             title: "Парк",
-            component: null
+            component: ReportParkPage
         },
         {
             id: 2,

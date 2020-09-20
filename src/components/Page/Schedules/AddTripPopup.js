@@ -2,15 +2,12 @@ import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 import Popup from "components/Elements/Popup";
 import Button from "components/Elements/Button";
-import {getCars} from "components/functions";
 import CustomDatePicker from "components/Elements/DatePicker";
 import ReactSelect from "components/Elements/ReactSelect";
 import {connect} from "react-redux";
 import _get from "lodash/get";
 import {toast} from "react-toastify";
-import axios from "axios";
-import {apiUrl} from "config/config";
-import moment from "moment";
+import {API} from "components/API";
 
 
 @connect(state => ({
@@ -28,7 +25,7 @@ class AddTripPopup extends PureComponent {
     }
 
     componentDidMount() {
-        getCars(1)
+        API.park.getCars(1)
             .then(cars => {
                 this.setState({cars});
             })
@@ -45,7 +42,7 @@ class AddTripPopup extends PureComponent {
             toast.warn("Выберите водителя");
             return;
         }
-        axios.get(`${apiUrl}Trip.CreateTrip&date=${moment(date.toUTCString()).format("YYYY-MM-DD")}&id_marsh=${rout.value}&id_car=${car.value}`)
+        API.trip.createTrip(date, rout.value, car.value)
             .then(() => {
                 onClose();
                 onUpdate()

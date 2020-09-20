@@ -3,12 +3,10 @@ import styled from "styled-components";
 import Input from "components/Elements/Input";
 import Button from "components/Elements/Button";
 import {toast} from "react-toastify";
-import axios from "axios";
-import {apiUrl} from "config/config";
-import {sha512} from "js-sha512";
 import PropTypes from "prop-types";
 import {appActions} from "reducers/actions";
 import connect from "react-redux/es/connect/connect";
+import {API} from "components/API";
 
 const ContentWrapper = styled.div`
     width: 100vw;
@@ -71,7 +69,7 @@ class Auth extends PureComponent {
             return;
         }
 
-        axios.get(`${apiUrl}User.LoginV2&email=${email}&password=${sha512(pass)}`)
+        API.user.loginV2(email, pass)
             .then(response => {
                 const resp = response.data;
                 if (resp.result) {

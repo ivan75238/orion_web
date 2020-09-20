@@ -3,11 +3,10 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import connect from "react-redux/es/connect/connect";
 import Button from "components/Elements/Button";
-import axios from "axios";
-import {apiUrl} from "config/config";
 import Table from "components/Elements/Table";
 import Close from "components/Icons/Close";
 import Edit from "components/Icons/Edit";
+import {API} from "components/API";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -91,7 +90,7 @@ class UserPage extends PureComponent {
     ];
 
     load = () => {
-        axios.get(`${apiUrl}User.GetUsers`)
+        API.user.getUsers()
             .then(response => {
                 const resp = response.data;
                 this.setState({users: resp});

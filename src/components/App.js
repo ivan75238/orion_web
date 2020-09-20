@@ -8,14 +8,13 @@ import {toast, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import ReactTooltip from "react-tooltip";
 import Auth from "components/Auth/Auth";
-import axios from "axios";
-import {apiUrl} from "config/config";
 import {appActions} from "reducers/actions";
 import AuthLoader from "components/Elements/AuthLoader";
 import Main from "components/Main";
 import {MenuItems} from "../MenuItems";
 import {registerLocale, setDefaultLocale} from "react-datepicker";
 import ru from 'date-fns/locale/ru';
+import {API} from "components/API";
 registerLocale('ru', ru);
 
 const MainWrapper = styled.div`
@@ -80,13 +79,13 @@ class App extends PureComponent {
     getAllRout = () => {
         const {dispatch} = this.props;
 
-        axios.get(`${apiUrl}Rout.GetAll`)
+        API.rout.getAll()
             .then(response => {
                 const resp = response.data;
                 dispatch({type: appActions.SET_ALL_ROUTS, routs: resp});
 
                 resp.map(item => {
-                    axios.get(`${apiUrl}Rout.GetLocality&id_rout=${item.id}`)
+                    API.rout.getLocality(item.id)
                         .then(response => {
                             const resp = response.data;
                             dispatch({type: appActions.SET_ROUT_LOCATIONS, locations: resp, routid: item.id});
@@ -104,7 +103,7 @@ class App extends PureComponent {
             return;
         }
 
-        axios.get(`${apiUrl}User.CheckSession&uid=${uid}`)
+        API.user.checkSession(uid)
             .then(response => {
                 const resp = response.data;
                 if (resp.result) {
@@ -131,7 +130,7 @@ class App extends PureComponent {
         const {timeoutSessionId} = this.state;
         clearTimeout(timeoutSessionId);
         const timeoutSessionIdNew = setTimeout(() => {
-            axios.get(`${apiUrl}User.UpdateSession&uid=${user.id}`)
+            API.user.updateSession(user.id)
                 .then(response => {
                     if (!response.data.result) {
                         toast.error("Истекла сессия пользователя, для продолжения работы необходимо повторно войти в приложение");

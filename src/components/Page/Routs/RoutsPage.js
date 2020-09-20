@@ -5,10 +5,7 @@ import connect from "react-redux/es/connect/connect";
 import _get from "lodash/get";
 import ReactSelect from "components/Elements/ReactSelect";
 import Button from "components/Elements/Button";
-import axios from "axios";
-import {apiUrl} from "config/config";
 import Table from "components/Elements/Table";
-import {appActions} from "reducers/actions";
 import _orderBy from 'lodash/orderBy';
 
 const ContentWrapper = styled.div`
@@ -77,24 +74,6 @@ class RoutsPage extends PureComponent {
     componentDidMount() {
         document.title = "Маршруты";
     }
-
-    getAllRout = () => {
-        const {dispatch} = this.props;
-
-        axios.get(`${apiUrl}Rout.GetAll`)
-            .then(response => {
-                const resp = response.data;
-                dispatch({type: appActions.SET_ALL_ROUTS, routs: resp});
-
-                resp.map(item => {
-                    axios.get(`${apiUrl}Rout.GetLocality&id_rout=${item.id}`)
-                        .then(response => {
-                            const resp = response.data;
-                            dispatch({type: appActions.SET_ROUT_LOCATIONS, locations: resp, routid: item.id});
-                        })
-                });
-            })
-    };
 
     render() {
         let {rout} = this.state;

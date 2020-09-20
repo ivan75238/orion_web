@@ -7,12 +7,10 @@ import _get from "lodash/get";
 import ReactSelect from "components/Elements/ReactSelect";
 import Button from "components/Elements/Button";
 import {toast} from "react-toastify";
-import axios from "axios";
-import {apiUrl} from "config/config";
-import moment from "moment";
 import Table from "components/Elements/Table";
 import Close from "components/Icons/Close";
 import AddTripPopup from "components/Page/Schedules/AddTripPopup";
+import {API} from "components/API";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -119,7 +117,7 @@ class SchedulesPage extends PureComponent {
             return;
         }
         const routObj = routs.find(i => i.id === rout.value);
-        axios.get(`${apiUrl}Trip.GetTripDate&date=${moment(date.toUTCString()).format("YYYY-MM-DD")}&id_rout=${rout.value}&id_from=${routObj.locations[0].id}&id_to=${routObj.locations[routObj.locations.length-1].id}`)
+        API.trip.getTripDate(date, rout.value, routObj.locations[0].id, routObj.locations[routObj.locations.length-1].id)
             .then(response => {
                 const resp = response.data;
                 this.setState({trips: resp});
@@ -127,7 +125,7 @@ class SchedulesPage extends PureComponent {
     };
 
     removeTrip = trip => {
-        axios.get(`${apiUrl}Trip.DeleteTrip&id=${trip.id}`)
+        API.trip.deleteTrip(trip.id)
             .then(() => {
                 this.search();
             })

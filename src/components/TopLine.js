@@ -3,10 +3,9 @@ import styled from "styled-components";
 import {connect} from "react-redux";
 import _get from "lodash/get";
 import PropTypes from "prop-types";
-import axios from "axios";
-import {apiUrl} from "config/config";
 import {appActions} from "reducers/actions";
 import {withRouter} from "react-router-dom";
+import {API} from "components/API";
 
 const LineWrapper = styled.div`
     width: 100%;
@@ -87,7 +86,7 @@ const ContextMenuItem = styled.p`
 class TopLine extends PureComponent {
     logout = () => {
         const {user, dispatch, history} = this.props;
-        axios.get(`${apiUrl}User.LogoutV2&uid=${user.id}`)
+        API.user.logoutV2(user.id)
             .then(response => {
                 const resp = response.data;
                 if (resp.result) {

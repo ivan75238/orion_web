@@ -6,11 +6,10 @@ import _get from "lodash/get";
 import ReactSelect from "components/Elements/ReactSelect";
 import Button from "components/Elements/Button";
 import {toast} from "react-toastify";
-import axios from "axios";
-import {apiUrl} from "config/config";
 import Table from "components/Elements/Table";
 import Edit from "components/Icons/Edit";
 import Close from "components/Icons/Close";
+import {API} from "components/API";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -118,9 +117,9 @@ class PricesPage extends PureComponent {
             toast.warn("Выберите маршрут");
             return;
         }
-        axios.get(`${apiUrl}Price.GetPriceForMarsID&id_marsh=${rout.value}`)
+        API.price.getPriceForMarsID(rout.value)
             .then(response => {
-                const resp = response.data;
+                const resp = response.data === "" ? [] : response.data;
                 this.setState({prices: resp});
             })
     };

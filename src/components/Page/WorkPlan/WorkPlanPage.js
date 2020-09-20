@@ -3,11 +3,10 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import connect from "react-redux/es/connect/connect";
 import Button from "components/Elements/Button";
-import axios from "axios";
-import {apiUrl} from "config/config";
 import Table from "components/Elements/Table";
 import moment from "moment";
 import ReactSelect from "components/Elements/ReactSelect";
+import {API} from "components/API";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -74,7 +73,7 @@ class WorkPlanPage extends PureComponent {
     }
 
     load = () => {
-        axios.get(`${apiUrl}WorkPlan.Get`)
+        API.workPlan.get()
             .then(response => {
                 const resp = response.data;
                 this.setState({plans: resp});
@@ -89,7 +88,7 @@ class WorkPlanPage extends PureComponent {
         this.setState({loading: true});
         let date_start = moment(`01.01.${selectedPlan.label}`);
         let date_end = date_start.clone().endOf('month');
-        axios.get(`${apiUrl}WorkPlan.GetCountOrder&date_start=${date_start.format('YYYY-MM-DD')}&date_end=${date_end.format('YYYY-MM-DD')}`)
+        API.workPlan.getCountOrder(date_start, date_end)
             .then(response => {
                 const resp = response.data;
                 newData.push({month: "Январь", plan: plan.january, real: resp});
@@ -97,7 +96,7 @@ class WorkPlanPage extends PureComponent {
                 //Данные за февраль
                 date_start = moment(`01.02.${selectedPlan.label}`);
                 date_end = date_start.clone().endOf('month');
-                axios.get(`${apiUrl}WorkPlan.GetCountOrder&date_start=${date_start.format('YYYY-MM-DD')}&date_end=${date_end.format('YYYY-MM-DD')}`)
+                API.workPlan.getCountOrder(date_start, date_end)
                     .then(response => {
                         const resp = response.data;
                         newData.push({month: "Февраль", plan: plan.february, real: resp});
@@ -105,7 +104,7 @@ class WorkPlanPage extends PureComponent {
                         //Данные за март
                         date_start = moment(`01.03.${selectedPlan.label}`);
                         date_end = date_start.clone().endOf('month');
-                        axios.get(`${apiUrl}WorkPlan.GetCountOrder&date_start=${date_start.format('YYYY-MM-DD')}&date_end=${date_end.format('YYYY-MM-DD')}`)
+                        API.workPlan.getCountOrder(date_start, date_end)
                             .then(response => {
                                 const resp = response.data;
                                 newData.push({month: "Март", plan: plan.march, real: resp});
@@ -113,7 +112,7 @@ class WorkPlanPage extends PureComponent {
                                 //Данные за апрель
                                 date_start = moment(`01.04.${selectedPlan.label}`);
                                 date_end = date_start.clone().endOf('month');
-                                axios.get(`${apiUrl}WorkPlan.GetCountOrder&date_start=${date_start.format('YYYY-MM-DD')}&date_end=${date_end.format('YYYY-MM-DD')}`)
+                                API.workPlan.getCountOrder(date_start, date_end)
                                     .then(response => {
                                         const resp = response.data;
                                         newData.push({month: "Апрель", plan: plan.april, real: resp});
@@ -121,7 +120,7 @@ class WorkPlanPage extends PureComponent {
                                         //Данные за май
                                         date_start = moment(`01.05.${selectedPlan.label}`);
                                         date_end = date_start.clone().endOf('month');
-                                        axios.get(`${apiUrl}WorkPlan.GetCountOrder&date_start=${date_start.format('YYYY-MM-DD')}&date_end=${date_end.format('YYYY-MM-DD')}`)
+                                        API.workPlan.getCountOrder(date_start, date_end)
                                             .then(response => {
                                                 const resp = response.data;
                                                 newData.push({month: "Май", plan: plan.may, real: resp});
@@ -129,7 +128,7 @@ class WorkPlanPage extends PureComponent {
                                                 //Данные за июнь
                                                 date_start = moment(`01.06.${selectedPlan.label}`);
                                                 date_end = date_start.clone().endOf('month');
-                                                axios.get(`${apiUrl}WorkPlan.GetCountOrder&date_start=${date_start.format('YYYY-MM-DD')}&date_end=${date_end.format('YYYY-MM-DD')}`)
+                                                API.workPlan.getCountOrder(date_start, date_end)
                                                     .then(response => {
                                                         const resp = response.data;
                                                         newData.push({month: "Июнь", plan: plan.june, real: resp});
@@ -137,7 +136,7 @@ class WorkPlanPage extends PureComponent {
                                                         //Данные за июль
                                                         date_start = moment(`01.07.${selectedPlan.label}`);
                                                         date_end = date_start.clone().endOf('month');
-                                                        axios.get(`${apiUrl}WorkPlan.GetCountOrder&date_start=${date_start.format('YYYY-MM-DD')}&date_end=${date_end.format('YYYY-MM-DD')}`)
+                                                        API.workPlan.getCountOrder(date_start, date_end)
                                                             .then(response => {
                                                                 const resp = response.data;
                                                                 newData.push({month: "Июль", plan: plan.july, real: resp});
@@ -145,7 +144,7 @@ class WorkPlanPage extends PureComponent {
                                                                 //Данные за август
                                                                 date_start = moment(`01.08.${selectedPlan.label}`);
                                                                 date_end = date_start.clone().endOf('month');
-                                                                axios.get(`${apiUrl}WorkPlan.GetCountOrder&date_start=${date_start.format('YYYY-MM-DD')}&date_end=${date_end.format('YYYY-MM-DD')}`)
+                                                                API.workPlan.getCountOrder(date_start, date_end)
                                                                     .then(response => {
                                                                         const resp = response.data;
                                                                         newData.push({month: "Август", plan: plan.august, real: resp});
@@ -153,7 +152,7 @@ class WorkPlanPage extends PureComponent {
                                                                         //Данные за сентябрь
                                                                         date_start = moment(`01.09.${selectedPlan.label}`);
                                                                         date_end = date_start.clone().endOf('month');
-                                                                        axios.get(`${apiUrl}WorkPlan.GetCountOrder&date_start=${date_start.format('YYYY-MM-DD')}&date_end=${date_end.format('YYYY-MM-DD')}`)
+                                                                        API.workPlan.getCountOrder(date_start, date_end)
                                                                             .then(response => {
                                                                                 const resp = response.data;
                                                                                 newData.push({month: "Сентябрь", plan: plan.september, real: resp});
@@ -161,7 +160,7 @@ class WorkPlanPage extends PureComponent {
                                                                                 //Данные за октябрь
                                                                                 date_start = moment(`01.10.${selectedPlan.label}`);
                                                                                 date_end = date_start.clone().endOf('month');
-                                                                                axios.get(`${apiUrl}WorkPlan.GetCountOrder&date_start=${date_start.format('YYYY-MM-DD')}&date_end=${date_end.format('YYYY-MM-DD')}`)
+                                                                                API.workPlan.getCountOrder(date_start, date_end)
                                                                                     .then(response => {
                                                                                         const resp = response.data;
                                                                                         newData.push({month: "Октябрь", plan: plan.october, real: resp});
@@ -169,7 +168,7 @@ class WorkPlanPage extends PureComponent {
                                                                                         //Данные за ноябрь
                                                                                         date_start = moment(`01.11.${selectedPlan.label}`);
                                                                                         date_end = date_start.clone().endOf('month');
-                                                                                        axios.get(`${apiUrl}WorkPlan.GetCountOrder&date_start=${date_start.format('YYYY-MM-DD')}&date_end=${date_end.format('YYYY-MM-DD')}`)
+                                                                                        API.workPlan.getCountOrder(date_start, date_end)
                                                                                             .then(response => {
                                                                                                 const resp = response.data;
                                                                                                 newData.push({month: "Ноябрь", plan: plan.november, real: resp});
@@ -177,7 +176,7 @@ class WorkPlanPage extends PureComponent {
                                                                                                 //Данные за декабрь
                                                                                                 date_start = moment(`01.12.${selectedPlan.label}`);
                                                                                                 date_end = date_start.clone().endOf('month');
-                                                                                                axios.get(`${apiUrl}WorkPlan.GetCountOrder&date_start=${date_start.format('YYYY-MM-DD')}&date_end=${date_end.format('YYYY-MM-DD')}`)
+                                                                                                API.workPlan.getCountOrder(date_start, date_end)
                                                                                                     .then(response => {
                                                                                                         const resp = response.data;
                                                                                                         newData.push({month: "Декабрь", plan: plan.december, real: resp});

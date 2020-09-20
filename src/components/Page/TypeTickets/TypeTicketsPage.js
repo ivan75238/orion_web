@@ -3,11 +3,10 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import connect from "react-redux/es/connect/connect";
 import Button from "components/Elements/Button";
-import axios from "axios";
-import {apiUrl} from "config/config";
 import Table from "components/Elements/Table";
 import Close from "components/Icons/Close";
 import Checkbox from "react-simple-checkbox";
+import {API} from "components/API";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -101,7 +100,7 @@ class TypeTicketsPage extends PureComponent {
     }
 
     load = () => {
-        axios.get(`${apiUrl}Bilet.Get`)
+        API.bilet.get()
             .then(response => {
                 const resp = response.data;
                 this.setState({typeTickets: resp});

@@ -7,11 +7,9 @@ import _get from "lodash/get";
 import ReactSelect from "components/Elements/ReactSelect";
 import Button from "components/Elements/Button";
 import {toast} from "react-toastify";
-import axios from "axios";
-import {apiUrl} from "config/config";
-import moment from "moment";
 import Table from "components/Elements/Table";
 import {CheckStatus} from "components/functions";
+import {API} from "../../API";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -197,7 +195,7 @@ class OrdersPage extends PureComponent {
     }
 
     lookLast = () => {
-        axios.get(`${apiUrl}Order.GetLastOrders`)
+        API.order.getLastOrders()
             .then(response => {
                 const resp = response.data;
                 this.setState({orders: resp});
@@ -214,7 +212,7 @@ class OrdersPage extends PureComponent {
             toast.warn("Выберите день");
             return;
         }
-        axios.get(`${apiUrl}Order.GetAllOrders&date=${moment(date.toUTCString()).format("YYYY-MM-DD")}&id_marsh=${rout.value}`)
+        API.order.getAllOrders(date, rout.value)
             .then(response => {
                 const resp = response.data;
                 this.setState({orders: resp});

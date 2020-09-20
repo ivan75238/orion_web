@@ -2,21 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dea06bd-7f6f-4bd8-84a3-10031ac33fcf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Icons/Sms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/News/NewsPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/Report/ReportPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/Settings/SettingsPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/Settings/Subpage/User/UserPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/Sms/SmsPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/TypeTickets/TypeTicketsPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/WorkPlan/WorkPlanPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/API.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Page/Report/Subpage/ReportPark/ReportParkPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuItems.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paths.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paths.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Elements/Table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elements/Table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth/Auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/CarPark/CarParkPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/CarPark/CarParkPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Clients/ClientsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Clients/ClientsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/News/NewsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/News/NewsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Orders/OrdersPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Orders/OrdersPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/Prices/PricesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Prices/PricesPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Report/ReportPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Report/ReportPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Routs/RoutsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Routs/RoutsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Schedules/AddTripPopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Schedules/AddTripPopup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Schedules/SchedulesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Schedules/SchedulesPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Settings/Subpage/User/UserPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Settings/Subpage/User/UserPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Sms/SmsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Sms/SmsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Stock/StockPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Stock/StockPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/TypeTickets/TypeTicketsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/TypeTickets/TypeTicketsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/WorkPlan/WorkPlanPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/WorkPlan/WorkPlanPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TopLine.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopLine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/functions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +64,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Page" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Page/Report/Subpage" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -73,11 +79,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Work\orion_web\src\components\Page\Report\Subpage" />
       <recent name="C:\Work\orion_web\src\components\Page" />
       <recent name="C:\Work\orion_web\src\components\Page\Settings\Subpage" />
       <recent name="C:\Work\orion_web\src\components\Icons" />
       <recent name="C:\Work\orion_web\src\components\Page\Prices" />
-      <recent name="C:\Work\orion_web\src\components\Page\Clients" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Проекты\Новая работа\cubekit-dashboard\src\components\MenuLeft" />
@@ -156,14 +162,7 @@
       <workItem from="1595201077792" duration="19000" />
       <workItem from="1599974951862" duration="29054000" />
       <workItem from="1600053888509" duration="9000" />
-      <workItem from="1600494012022" duration="16257000" />
-    </task>
-    <task id="LOCAL-00057" summary="- Удаление дашборда&#10;- Фильтрация списка меню, только активные попадают">
-      <created>1576209974120</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1576209974120</updated>
+      <workItem from="1600494012022" duration="33911000" />
     </task>
     <task id="LOCAL-00058" summary="- Подготовка к сборке">
       <created>1576211407677</created>
@@ -501,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600028987562</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="- остались только страницы с отчетами">
+      <created>1600546330786</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1600546330787</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TodoView">
@@ -531,7 +537,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="- библиотека Plotly запихана внутрь сборки" />
     <MESSAGE value="2. При запросе списка КЕ нужно использовать ID РСМ, у вас видимо используется view_name.&#10;3. Список КЕ отсортирован по алфавиту (это хорошо). Но тут важна информация о типе КЕ (ci_type_name). Нужна иконка типа и сортировка сначала по типу, затем по имени КЕ. &#10;Если иконку сложно добавить, добавьте имя типа в кв. скобках, например [BusinessApplication] Billing Gateway. (БЕЗ ИКОНКИ)&#10;4. Для списка Показателей важно отображение индикатора (hi_name) и ед. измерения (unit), сортировка списка должна быть по индикатору, имени и ед. измерения.&#10;5. При добавлении линий графика цвет не изменяется, хотелось бы, чтобы подставлялся следующий в палитре цвет." />
     <MESSAGE value="6. В наименовании колонки используется служебное имя, нужно заменить на человеческие. веб-сервиса колонок пока нет, используйте названия из предудщего моего письма, предлагаю завести объект {&lt;служебное имя&gt;: {display_name: '&lt;отображаемое имя колонки&gt;'}, ..}" />
     <MESSAGE value="7. Нужен предзаполненный набор колонок по умолчанию:&#10;&#9;Таблица метрик: meas_severity, meas_name, meas_value, unit, trend, utm&#10;&#9;Таблица событий: utm, duration, state, severity, ci_type_icon, ci_name, title, group_name, user_name&#10;Все даты/время нужно отображать чч:мм, если разница с текущим временем менее 24ч, если больше, то в формате ДД.ММ чч:мм&#10;Все длительности нужно отображать чч:мм, если длительнось менее 24ч, если больше, то в формате ДД чч:мм&#10;10. При содании дашборда &quot;Автор доски&quot; не заполняется именем пользователя.&#10;2.При создании нового дашборд, в поле Автор указывается тестовый пользователь.&#10;5. При выборе типа графика «Колонки», не применяется выбранный цвет для каждой метрики.&#10;7. Открываем настройки виджета (который уже что-то отображает) и выбираем любую другую РСМ,&#10;   потом выбираем предыдущую РСМ. Виджет уходит в долгую загрузку. В консоли получаем следующую ошибку&#10; 8.  Выносим на дашборд два виджет графика, которые смотрят на разные РСМ. После этого открываем&#10;   настройки одного из виджетов и выбираем в нем РСМ, на которую смотрит другой виджет. Виджеn    уходит в долгую загрузку." />
@@ -556,13 +561,14 @@
     <MESSAGE value="- Сделана страница с прейскурантом&#10;- Переработано отображение статусов заказа" />
     <MESSAGE value="- Сделана страница с маршрутами" />
     <MESSAGE value="- Сделана много поготовительно и нужного" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Сделана много поготовительно и нужного" />
+    <MESSAGE value="- остались только страницы с отчетами" />
+    <option name="LAST_COMMIT_MESSAGE" value="- остались только страницы с отчетами" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="104" key="CommitChangelistDialog2" timestamp="1600497756408">
+    <state x="585" y="104" key="CommitChangelistDialog2" timestamp="1600546330202">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="104" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1600497756408" />
+    <state x="585" y="104" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1600546330202" />
     <state x="686" y="211" key="FileChooserDialogImpl" timestamp="1600494230037">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -588,19 +594,19 @@
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594716686807" />
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600500944416" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600028989479">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600546332414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1600028989479" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1600546332414" />
     <state x="758" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1594651267599">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="758" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594651267599" />
-    <state x="897" y="198" width="762" height="677" key="find.popup" timestamp="1600545609817">
+    <state x="932" y="164" width="762" height="677" key="find.popup" timestamp="1600606233160">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="897" y="105" width="762" height="677" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594818335168" />
-    <state x="897" y="198" width="762" height="677" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600545609817" />
+    <state x="932" y="164" width="762" height="677" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600606233160" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1600543208582">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

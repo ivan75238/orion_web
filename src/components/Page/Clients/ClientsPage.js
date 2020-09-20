@@ -5,11 +5,10 @@ import connect from "react-redux/es/connect/connect";
 import _get from "lodash/get";
 import Button from "components/Elements/Button";
 import {toast} from "react-toastify";
-import axios from "axios";
-import {apiUrl} from "config/config";
 import Table from "components/Elements/Table";
 import Input from "components/Elements/Input";
 import Paginator from "components/Elements/Paginator";
+import {API} from "components/API";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -55,7 +54,7 @@ class ClientsPage extends PureComponent {
     }
 
     load = () => {
-        axios.get(`${apiUrl}Client.GetAllClient`)
+        API.client.getAllClient()
             .then(response => {
                 const resp = response.data;
                 this.setState({clientsData: resp});

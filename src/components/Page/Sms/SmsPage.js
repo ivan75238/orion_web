@@ -3,8 +3,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import connect from "react-redux/es/connect/connect";
 import Button from "components/Elements/Button";
-import axios from "axios";
-import {apiUrl} from "config/config";
+import {API} from "components/API";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -45,7 +44,7 @@ class SmsPage extends PureComponent {
     }
 
     load = () => {
-        axios.get(`${apiUrl}SMS.GetBalance`)
+        API.sms.getBalance()
             .then(response => this.setState({balance: response.data}))
     };
 
@@ -55,7 +54,7 @@ class SmsPage extends PureComponent {
             <ContentWrapper>
                 <Header>
                     <Filters>
-                        <SmsText>Баланс: {balance}</SmsText>
+                        <SmsText>Баланс: {balance} Р</SmsText>
                         <Button title={"Обновить"}
                                 height="40px"
                                 margin={"0 0 0 16px"}

@@ -4,12 +4,11 @@ import PropTypes from "prop-types";
 import connect from "react-redux/es/connect/connect";
 import _get from "lodash/get";
 import Button from "components/Elements/Button";
-import axios from "axios";
-import {apiUrl} from "config/config";
 import Table from "components/Elements/Table";
 import moment from "moment";
 import Close from "components/Icons/Close";
 import Edit from "components/Icons/Edit";
+import {API} from "components/API";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -74,7 +73,7 @@ class StockPage extends PureComponent {
     }
 
     load = () => {
-        axios.get(`${apiUrl}Action.Get`)
+        API.stock.get()
             .then(response => {
                 const resp = response.data;
                 this.setState({stock: resp});

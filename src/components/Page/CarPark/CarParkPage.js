@@ -4,13 +4,12 @@ import PropTypes from "prop-types";
 import connect from "react-redux/es/connect/connect";
 import _get from "lodash/get";
 import Button from "components/Elements/Button";
-import axios from "axios";
-import {apiUrl} from "config/config";
 import Table from "components/Elements/Table";
 import moment from "moment";
 import ReactSelect from "components/Elements/ReactSelect";
 import Checkbox from 'react-simple-checkbox';
 import DropdownMenu from "components/Elements/DropdownMenu";
+import {API} from "components/API";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -69,7 +68,7 @@ class CarParkPage extends PureComponent {
     }
 
     load = () => {
-        axios.get(`${apiUrl}Park.GetCars&type_get=${this.state.status.value}`)
+        API.park.getCars(this.state.status.value)
             .then(response => {
                 const resp = response.data;
                 this.setState({cars: resp});
