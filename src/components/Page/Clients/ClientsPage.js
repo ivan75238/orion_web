@@ -35,6 +35,7 @@ const Body = styled.div`
     display: flex;
     flex-direction: column;
     max-height: calc(100vh - 182px);
+    overflow-x: auto;
 `;
 
 @connect(state => ({

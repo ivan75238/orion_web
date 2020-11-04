@@ -37,6 +37,7 @@ const Body = styled.div`
     display: flex;
     max-height: calc(100vh - 182px);
     flex-direction: column;
+    overflow-x: auto;
 `;
 
 const ActionContainer = styled.div`

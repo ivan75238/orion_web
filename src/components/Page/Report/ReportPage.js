@@ -2,7 +2,8 @@ import React, {PureComponent} from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import connect from "react-redux/es/connect/connect";
-import ReportParkPage from "components/Page/Report/Subpage/ReportPark/ReportParkPage";
+import ReportParkPage from "./Subpage/ReportPark/ReportParkPage";
+import GraphLoadPage from "./Subpage/GraphLoad/GraphLoadPage";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -54,7 +55,7 @@ class ReportPage extends PureComponent {
         {
             id: 2,
             title: "График загруженности",
-            component: null
+            component: GraphLoadPage
         },
         {
             id: 3,

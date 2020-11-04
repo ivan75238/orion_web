@@ -2,32 +2,127 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dea06bd-7f6f-4bd8-84a3-10031ac33fcf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/API.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/Report/Subpage/ReportPark/ReportParkPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Page/Report/Subpage/GraphLoad/GraphLoadPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/API.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Elements/DropdownMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elements/DropdownMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Elements/Table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elements/Table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/CarPark/CarParkPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/CarPark/CarParkPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/Clients/ClientsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Clients/ClientsPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/News/NewsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/News/NewsPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/Orders/OrdersPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Orders/OrdersPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/Prices/PricesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Prices/PricesPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/Report/ReportPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Report/ReportPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Report/Subpage/ReportPark/ReportParkPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Report/Subpage/ReportPark/ReportParkPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/Routs/RoutsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Routs/RoutsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Schedules/AddTripPopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Schedules/AddTripPopup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/Schedules/SchedulesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Schedules/SchedulesPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/Settings/Subpage/User/UserPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Settings/Subpage/User/UserPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Sms/SmsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Sms/SmsPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/Stock/StockPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Stock/StockPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/TypeTickets/TypeTicketsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/TypeTickets/TypeTicketsPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/WorkPlan/WorkPlanPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/WorkPlan/WorkPlanPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TopLine.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopLine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/functions.js" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="2135551380">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="js" value="12" />
+          <entry key="json" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JSON" value="1" />
+          <entry key="JavaScript" value="12" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="js" value="926" />
+          <entry key="json" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JSON" value="1" />
+          <entry key="JavaScript" value="926" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.51876235">
+      <split-first>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/Page/Report/ReportPage.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-901">
+                  <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/components/Page/Report/Subpage/GraphLoad/GraphLoadPage.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="413">
+                  <caret line="125" column="32" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
+                  <folding>
+                    <element signature="e#0#43#0" expanded="true" />
+                    <element signature="e#1315#2382#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/package.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="102">
+                  <caret line="6" column="58" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/components/API.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="187">
+                  <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -35,6 +130,14 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Body = styled.div`</find>
+      <find>.getAll</find>
+      <find>routs</find>
+      <find>fill</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
@@ -45,15 +148,129 @@
       </map>
     </option>
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/components/Main.js" />
+        <option value="$PROJECT_DIR$/src/components/Page/Orders/OrdersPage.js" />
+        <option value="$PROJECT_DIR$/src/components/Page/CarPark/CarParkPage.js" />
+        <option value="$PROJECT_DIR$/src/components/Elements/DropdownMenu.js" />
+        <option value="$PROJECT_DIR$/src/components/Elements/Table.js" />
+        <option value="$PROJECT_DIR$/src/components/Page/Report/ReportPage.js" />
+        <option value="$PROJECT_DIR$/src/components/API.js" />
+        <option value="$PROJECT_DIR$/src/components/Page/Report/Subpage/ReportPark/ReportParkPage.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/components/Page/Report/Subpage/GraphLoad/GraphLoadPage.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1047" />
+  </component>
   <component name="ProjectId" id="1aO0b6wnQ2XTRQwK4Gq5DD4NEhE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="orion_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="orion_web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="orion_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="orion_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="orion_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="orion_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="orion_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="orion_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Elements" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="orion_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="orion_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="orion_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="orion_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Page" type="462c0819:PsiDirectoryNode" />
+              <item name="Report" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="orion_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="orion_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Page" type="462c0819:PsiDirectoryNode" />
+              <item name="Report" type="462c0819:PsiDirectoryNode" />
+              <item name="Subpage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="orion_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="orion_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Page" type="462c0819:PsiDirectoryNode" />
+              <item name="Report" type="462c0819:PsiDirectoryNode" />
+              <item name="Subpage" type="462c0819:PsiDirectoryNode" />
+              <item name="ReportPark" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="orion_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="orion_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -64,7 +281,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Page/Report/Subpage" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -78,13 +295,6 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2018.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Work\orion_web\src\components\Page\Report\Subpage" />
-      <recent name="C:\Work\orion_web\src\components\Page" />
-      <recent name="C:\Work\orion_web\src\components\Page\Settings\Subpage" />
-      <recent name="C:\Work\orion_web\src\components\Icons" />
-      <recent name="C:\Work\orion_web\src\components\Page\Prices" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Проекты\Новая работа\cubekit-dashboard\src\components\MenuLeft" />
       <recent name="D:\Проекты\Новая работа\cubekit-dashboard\src\components\Elements\EditArrayLineChart" />
@@ -92,9 +302,28 @@
       <recent name="E:\Новая работа\cubekit-dashboard\src\components\Windows\AllWidgets" />
       <recent name="E:\Новая работа\cubekit-dashboard\src\components\Dashboard" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Work\orion_web\src\components\Page\Report\Subpage\GraphLoad" />
+      <recent name="C:\Work\orion_web\src\components\Page\Report\Subpage" />
+      <recent name="C:\Work\orion_web\src\components\Page" />
+      <recent name="C:\Work\orion_web\src\components\Page\Settings\Subpage" />
+      <recent name="C:\Work\orion_web\src\components\Icons" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="js.build_tools.npm">
+    <configuration name="Unnamed" type="js.build_tools.npm" factoryName="npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -163,6 +392,8 @@
       <workItem from="1599974951862" duration="29054000" />
       <workItem from="1600053888509" duration="9000" />
       <workItem from="1600494012022" duration="33911000" />
+      <workItem from="1602733154565" duration="1170000" />
+      <workItem from="1604480192726" duration="9857000" />
     </task>
     <task id="LOCAL-00058" summary="- Подготовка к сборке">
       <created>1576211407677</created>
@@ -510,6 +741,9 @@
     <option name="localTasksCounter" value="107" />
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="11027000" />
+  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -518,6 +752,30 @@
       <are-packages-shown value="true" />
       <is-autoscroll-to-source value="true" />
     </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="0" width="1936" height="1047" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="npm" order="0" side_tool="true" />
+      <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3242059" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32968238" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.19029851" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -528,6 +786,12 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -535,8 +799,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="2. При запросе списка КЕ нужно использовать ID РСМ, у вас видимо используется view_name.&#10;3. Список КЕ отсортирован по алфавиту (это хорошо). Но тут важна информация о типе КЕ (ci_type_name). Нужна иконка типа и сортировка сначала по типу, затем по имени КЕ. &#10;Если иконку сложно добавить, добавьте имя типа в кв. скобках, например [BusinessApplication] Billing Gateway. (БЕЗ ИКОНКИ)&#10;4. Для списка Показателей важно отображение индикатора (hi_name) и ед. измерения (unit), сортировка списка должна быть по индикатору, имени и ед. измерения.&#10;5. При добавлении линий графика цвет не изменяется, хотелось бы, чтобы подставлялся следующий в палитре цвет." />
     <MESSAGE value="6. В наименовании колонки используется служебное имя, нужно заменить на человеческие. веб-сервиса колонок пока нет, используйте названия из предудщего моего письма, предлагаю завести объект {&lt;служебное имя&gt;: {display_name: '&lt;отображаемое имя колонки&gt;'}, ..}" />
     <MESSAGE value="7. Нужен предзаполненный набор колонок по умолчанию:&#10;&#9;Таблица метрик: meas_severity, meas_name, meas_value, unit, trend, utm&#10;&#9;Таблица событий: utm, duration, state, severity, ci_type_icon, ci_name, title, group_name, user_name&#10;Все даты/время нужно отображать чч:мм, если разница с текущим временем менее 24ч, если больше, то в формате ДД.ММ чч:мм&#10;Все длительности нужно отображать чч:мм, если длительнось менее 24ч, если больше, то в формате ДД чч:мм&#10;10. При содании дашборда &quot;Автор доски&quot; не заполняется именем пользователя.&#10;2.При создании нового дашборд, в поле Автор указывается тестовый пользователь.&#10;5. При выборе типа графика «Колонки», не применяется выбранный цвет для каждой метрики.&#10;7. Открываем настройки виджета (который уже что-то отображает) и выбираем любую другую РСМ,&#10;   потом выбираем предыдущую РСМ. Виджет уходит в долгую загрузку. В консоли получаем следующую ошибку&#10; 8.  Выносим на дашборд два виджет графика, которые смотрят на разные РСМ. После этого открываем&#10;   настройки одного из виджетов и выбираем в нем РСМ, на которую смотрит другой виджет. Виджеn    уходит в долгую загрузку." />
@@ -616,5 +882,112 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600541428780" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="34" column="57" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Page/Orders/OrdersPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="26" column="27" lean-forward="true" selection-start-line="26" selection-start-column="27" selection-end-line="27" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Elements/DropdownMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="53" column="4" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Elements/Table.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Page/CarPark/CarParkPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Page/Report/ReportPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-901">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/API.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Page/Report/Subpage/ReportPark/ReportParkPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="58" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Page/Report/Subpage/GraphLoad/GraphLoadPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="125" column="32" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#1315#2382#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

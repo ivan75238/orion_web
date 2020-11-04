@@ -1,7 +1,6 @@
 import React, {PureComponent} from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { Scrollbars } from 'react-custom-scrollbars';
 
 
 const StyledTable = styled.div`
@@ -94,9 +93,6 @@ class Table extends PureComponent {
                     }
                 </Header>
                 <StyledTable>
-                    <Scrollbars style={{ width: "100%"}}
-                                autoHeight
-                                autoHeightMin={630}>
                         <Body>
                             {
                                 items.length > 0 ?
@@ -127,7 +123,6 @@ class Table extends PureComponent {
                                     <NoItems>Данные отсутствуют</NoItems>
                             }
                         </Body>
-                    </Scrollbars>
                 </StyledTable>
             </>
         )

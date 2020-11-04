@@ -32,7 +32,7 @@ const MainWrapper = styled.div`
 `;
 
 const PageContainer = styled.div`
-    width: 100%;
+    width: ${props => props.isOpenMenu === 1 ? "calc(100% - 260px)" : "100%"};
     display: flex;
     flex-direction: column;
 `;
@@ -74,7 +74,7 @@ class Main extends PureComponent {
             <MainWrapper>
                 <Menu isOpen={isOpenMenu}
                       onChangeIsOpen={val => this.setState({isOpenMenu: val})}/>
-                <PageContainer>
+                <PageContainer isOpenMenu={isOpenMenu ? 1 : 0}>
                     <TopLine timeoutSessionId={timeoutSessionId}/>
                     <PageInner>
                         <PageInnerContainer>

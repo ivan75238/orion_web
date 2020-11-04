@@ -4,7 +4,7 @@
   "description": "node 10.15.2",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --chrome --eval --mode development",
+    "start": "webpack-dev-server --max-old-space-size=4096 --open --chrome --eval --mode development",
     "build": "webpack --mode production"
   },
   "repository": {

@@ -51,6 +51,7 @@ const Item = styled.div`
     color: #000;
     font-size: 14px;
     cursor: pointer;
+    border-radius: 5px;
     
     &:hover {
         background: rgba(0,0,0,0.1);

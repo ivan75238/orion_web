@@ -32,6 +32,7 @@ const Body = styled.div`
     padding: 8px;
     display: flex;
     max-height: calc(100vh - 182px);
+    overflow-x: auto;
 `;
 
 const TableWrapper = styled.div`

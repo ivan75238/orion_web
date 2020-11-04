@@ -13,6 +13,21 @@ const API = {
         getOrdersForOtchetPark(id_trip) {
             return axios.get(`${apiUrl}Order.GetOrdersForOtchetPark&id_trip=${id_trip}`)
         },
+        async getOrderCount(date, param, type_method) {
+            let response = {data:0};
+            switch (type_method){
+                case 0:
+                    response = await axios.get(`${apiUrl}Order.GetOrderCountForGraphicZagr&id_marsh=${param}&date=${date.format("YYYY-MM-DD")}`);
+                    break;
+                case 1:
+                    response = await axios.get(`${apiUrl}Order.GetOrderCountForGraphicTypeBilet&id_marsh=${param}&date=${date.format("YYYY-MM-DD")}`);
+                    break;
+                case 2:
+                    response = await axios.get(`${apiUrl}Order.GetOrderCountForGraphicFromOrder&id_marsh=${param}&date=${date.format("YYYY-MM-DD")}`);
+                    break;
+            }
+            return response.data;
+        },
         getLastOrders() {
             return axios.get(`${apiUrl}Order.GetLastOrders`)
         }

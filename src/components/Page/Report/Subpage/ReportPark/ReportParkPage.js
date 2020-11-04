@@ -33,7 +33,8 @@ const Body = styled.div`
     padding: 8px;
     display: flex;
     flex-direction: column;
-    max-height: calc(100vh - 182px);
+    max-height: calc(100vh - 222px);
+    overflow-x: auto;
 `;
 
 const Text = styled.p`
