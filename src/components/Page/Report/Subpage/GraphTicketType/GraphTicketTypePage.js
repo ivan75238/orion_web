@@ -61,9 +61,9 @@ const Text = styled.p`
 `;
 
 @connect(state => ({
-    routs: _get(state.app, "routs"),
+    ticketTypes: _get(state.app, "ticketTypes"),
 }))
-class GraphLoadPage extends PureComponent {
+class GraphTicketTypePage extends PureComponent {
     state = {
         dateStart: new Date(new Date().setMonth(new Date().getMonth()-1)),
         dateEnd: new Date(),
@@ -113,7 +113,7 @@ class GraphLoadPage extends PureComponent {
 
     search = async () => {
         let {dateStart, dateEnd} = this.state;
-        let {routs} = this.props;
+        let {ticketTypes} = this.props;
         if (!dateStart) {
             toast.warn("Выберите первый день");
             return;
@@ -130,10 +130,10 @@ class GraphLoadPage extends PureComponent {
             axisXData.push(dateStartClone.format("DD.MM.YYYY"));
             dateStartClone.add(1, "days");
         });
-        await Promise.all(routs.map(async (item) => {
+        await Promise.all(ticketTypes.map(async (item) => {
             const axisYData = [];
             await Promise.all(axisXData.map(async (day) => {
-                const countOrder = await API.order.getOrderCount(moment(day, "DD.MM.YYYY"), item.id, 0);
+                const countOrder = await API.order.getOrderCount(moment(day, "DD.MM.YYYY"), item.id, 1);
                 axisYData.push(countOrder);
             }));
             lines.push({
@@ -213,9 +213,9 @@ class GraphLoadPage extends PureComponent {
     }
 }
 
-GraphLoadPage.propTypes = {
+GraphTicketTypePage.propTypes = {
     dispatch: PropTypes.func,
-    routs: PropTypes.array
+    ticketTypes: PropTypes.array
 };
 
-export default GraphLoadPage;
+export default GraphTicketTypePage;

@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import connect from "react-redux/es/connect/connect";
 import Button from "components/Elements/Button";
 import {API} from "components/API";
+import _get from "lodash/get";
+import AccessRights from "components/Elements/AccessRights";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -29,7 +31,9 @@ const SmsText = styled.p`
     font-size: 14px;
 `;
 
-@connect(() => ({}))
+@connect(state => ({
+    user: _get(state.app, "user")
+}))
 class SmsPage extends PureComponent {
     constructor(props) {
         super(props);
@@ -50,6 +54,11 @@ class SmsPage extends PureComponent {
 
     render() {
         let {balance} = this.state;
+        const {user} = this.props;
+
+        if (user.role === "0")
+            return <AccessRights/>;
+
         return (
             <ContentWrapper>
                 <Header>
@@ -68,6 +77,7 @@ class SmsPage extends PureComponent {
 
 SmsPage.propTypes = {
     dispatch: PropTypes.func,
+    user: PropTypes.object,
 };
 
 export default SmsPage;

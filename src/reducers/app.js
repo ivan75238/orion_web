@@ -4,7 +4,8 @@ const initial = {
     auth: false,
     user: null,
     headerText: "Заказы",
-    routs: []
+    routs: [],
+    ticketTypes: [],
 };
 
 export function app(state = initial, action) {
@@ -38,6 +39,12 @@ export function app(state = initial, action) {
             };
         }
 
+        case appActions.SET_TICKET_TYPES: {
+            return {
+                ...state,
+                ticketTypes: action.ticketTypes
+            };
+        }
 
         case appActions.SET_ROUT_LOCATIONS: {
             const {routs} = state;

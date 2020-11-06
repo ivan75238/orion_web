@@ -3,6 +3,8 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import connect from "react-redux/es/connect/connect";
 import UserPage from "components/Page/Settings/Subpage/User/UserPage";
+import _get from "lodash/get";
+import AccessRights from "components/Elements/AccessRights";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -31,7 +33,9 @@ const Tab = styled.div`
     }
 `;
 
-@connect(() => ({}))
+@connect(state => ({
+    user: _get(state.app, "user")
+}))
 class SettingsPage extends PureComponent {
     constructor(props) {
         super(props);
@@ -54,6 +58,12 @@ class SettingsPage extends PureComponent {
 
     render() {
         let {selectedTabId} = this.state;
+
+        const {user} = this.props;
+
+        if (user.role === "0")
+            return <AccessRights/>;
+
         const SubPageComponent = this.pages.find(i => i.id === selectedTabId).component;
 
         return (
@@ -84,6 +94,7 @@ class SettingsPage extends PureComponent {
 
 SettingsPage.propTypes = {
     routs: PropTypes.array,
+    user: PropTypes.object,
 };
 
 export default SettingsPage;

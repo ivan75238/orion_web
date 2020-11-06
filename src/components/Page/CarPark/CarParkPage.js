@@ -10,6 +10,7 @@ import ReactSelect from "components/Elements/ReactSelect";
 import Checkbox from 'react-simple-checkbox';
 import DropdownMenu from "components/Elements/DropdownMenu";
 import {API} from "components/API";
+import AccessRights from "components/Elements/AccessRights";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -55,8 +56,10 @@ const ActionContainer = styled.div`
     display: flex;
 `;
 
+
 @connect(state => ({
     routs: _get(state.app, "routs"),
+    user: _get(state.app, "user")
 }))
 class CarParkPage extends PureComponent {
     constructor(props) {
@@ -152,6 +155,10 @@ class CarParkPage extends PureComponent {
 
     render() {
         let {cars, status} = this.state;
+        const {user} = this.props;
+
+        if (user.role === "0")
+            return <AccessRights/>;
 
         cars = cars.map((i, j) => {
             return {
@@ -208,6 +215,7 @@ class CarParkPage extends PureComponent {
 CarParkPage.propTypes = {
     dispatch: PropTypes.func,
     routs: PropTypes.array,
+    user: PropTypes.object,
 };
 
 export default CarParkPage;

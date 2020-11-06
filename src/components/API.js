@@ -20,10 +20,10 @@ const API = {
                     response = await axios.get(`${apiUrl}Order.GetOrderCountForGraphicZagr&id_marsh=${param}&date=${date.format("YYYY-MM-DD")}`);
                     break;
                 case 1:
-                    response = await axios.get(`${apiUrl}Order.GetOrderCountForGraphicTypeBilet&id_marsh=${param}&date=${date.format("YYYY-MM-DD")}`);
+                    response = await axios.get(`${apiUrl}Order.GetOrderCountForGraphicTypeBilet&id_type=${param}&date=${date.format("YYYY-MM-DD")}`);
                     break;
                 case 2:
-                    response = await axios.get(`${apiUrl}Order.GetOrderCountForGraphicFromOrder&id_marsh=${param}&date=${date.format("YYYY-MM-DD")}`);
+                    response = await axios.get(`${apiUrl}Order.GetOrderCountForGraphicFromOrder&id_type=${param}&date=${date.format("YYYY-MM-DD")}`);
                     break;
             }
             return response.data;
@@ -107,6 +107,15 @@ const API = {
             return axios.get(`${apiUrl}Trip.GetTripsForOtchetPark&id_car=${id_car}&date_nach=${moment(date_nach.toUTCString()).format("YYYY-MM-DD")}&date_konec=${moment(date_konec.toUTCString()).format("YYYY-MM-DD")}`)
         },
 
+    },
+
+    ticket: {
+        async getTypes() {
+            return await axios.get(`${apiUrl}Bilet.Get`)
+                .then(response => {
+                    return response.data;
+                })
+        }
     },
 
     user: {

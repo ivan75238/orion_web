@@ -12,6 +12,7 @@ import {API} from "components/API";
 
 @connect(state => ({
     routs: _get(state.app, "routs"),
+    user: _get(state.app, "user"),
 }))
 class AddTripPopup extends PureComponent {
     constructor(props) {
@@ -26,13 +27,13 @@ class AddTripPopup extends PureComponent {
 
     componentDidMount() {
         API.park.getCars(1)
-            .then(cars => {
-                this.setState({cars});
+            .then(response => {
+                this.setState({cars: response.data});
             })
     }
 
-    create = () => {
-        const {onClose, onUpdate} = this.props;
+    create = async() => {
+        const {onClose, onUpdate, routs, user} = this.props;
         const {rout, car, date} = this.state;
         if (!rout) {
             toast.warn("Выберите маршрут");
@@ -42,6 +43,18 @@ class AddTripPopup extends PureComponent {
             toast.warn("Выберите водителя");
             return;
         }
+
+        const routObj = routs.find(i => i.id === rout.value);
+        const trips = await API.trip.getTripDate(date, rout.value, routObj.locations[0].id, routObj.locations[routObj.locations.length-1].id)
+            .then(response => {
+                return response.data;
+            });
+
+        if (user.role === "0" && trips.length >= 3) {
+            toast.error("Для добавления 4 поездки недостаточно прав");
+            return;
+        }
+
         API.trip.createTrip(date, rout.value, car.value)
             .then(() => {
                 onClose();
@@ -94,6 +107,7 @@ AddTripPopup.propTypes = {
     onClose: PropTypes.func,
     onUpdate: PropTypes.func,
     routs: PropTypes.array,
+    user: PropTypes.object,
 };
 
 export default AddTripPopup;

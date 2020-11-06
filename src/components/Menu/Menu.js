@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 import {appActions} from "reducers/actions";
 import {connect} from "react-redux";
 import {MenuItems} from "../../MenuItems";
+import _get from "lodash/get";
 
 const Title = styled.p`
     text-transform: uppercase;
@@ -89,7 +90,9 @@ const LinkStyled = styled(Link)`
     }
 `;
 
-@connect()
+@connect(state => ({
+    user: _get(state.app, "user")
+}))
 class Menu extends PureComponent {
     state = {
         openCreateMenu: false
@@ -101,7 +104,7 @@ class Menu extends PureComponent {
     };
 
     render() {
-        const {isOpen, onChangeIsOpen} = this.props;
+        const {isOpen, onChangeIsOpen, user} = this.props;
         return (
             <MainWrapper isOpen={isOpen}>
                 <ToggleContainer>
@@ -112,6 +115,8 @@ class Menu extends PureComponent {
                     {
                         MenuItems.map((item, i) => {
                             const Icon = item.icon;
+                            if (user.role === "0" && item.adminRights)
+                                return null;
                             return (
                                 <LinkStyled to={item.link}
                                             key={i}
@@ -138,6 +143,7 @@ Menu.propTypes = {
     isOpen: PropTypes.bool,
     onChangeIsOpen: PropTypes.func,
     dispatch: PropTypes.func,
+    user: PropTypes.object,
 };
 
 export default Menu;

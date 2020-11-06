@@ -3,7 +3,6 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import connect from "react-redux/es/connect/connect";
 import CustomDatePicker from "components/Elements/DatePicker";
-import _get from "lodash/get";
 import Button from "components/Elements/Button";
 import {toast} from "react-toastify";
 import {API} from "components/API";
@@ -60,10 +59,14 @@ const Text = styled.p`
     margin-bottom: 0;
 `;
 
-@connect(state => ({
-    routs: _get(state.app, "routs"),
-}))
-class GraphLoadPage extends PureComponent {
+const FromOrderList = [
+    {value: 0, label: "Диспетчер"},
+    {value: 1, label: "Сайт"},
+    {value: 2, label: "Приложение"},
+];
+
+@connect(() => ({}))
+class GraphTypeBuyTicketPage extends PureComponent {
     state = {
         dateStart: new Date(new Date().setMonth(new Date().getMonth()-1)),
         dateEnd: new Date(),
@@ -113,7 +116,6 @@ class GraphLoadPage extends PureComponent {
 
     search = async () => {
         let {dateStart, dateEnd} = this.state;
-        let {routs} = this.props;
         if (!dateStart) {
             toast.warn("Выберите первый день");
             return;
@@ -130,17 +132,17 @@ class GraphLoadPage extends PureComponent {
             axisXData.push(dateStartClone.format("DD.MM.YYYY"));
             dateStartClone.add(1, "days");
         });
-        await Promise.all(routs.map(async (item) => {
+        await Promise.all(FromOrderList.map(async (item) => {
             const axisYData = [];
             await Promise.all(axisXData.map(async (day) => {
-                const countOrder = await API.order.getOrderCount(moment(day, "DD.MM.YYYY"), item.id, 0);
+                const countOrder = await API.order.getOrderCount(moment(day, "DD.MM.YYYY"), item.value, 2);
                 axisYData.push(countOrder);
             }));
             lines.push({
                 x: axisXData,
                 y: axisYData,
-                text: item.name,
-                name: item.name,
+                text: item.label,
+                name: item.label,
                 hoverinfo: "y+text",
                 line: {
                     shape: "spline",
@@ -213,9 +215,8 @@ class GraphLoadPage extends PureComponent {
     }
 }
 
-GraphLoadPage.propTypes = {
-    dispatch: PropTypes.func,
-    routs: PropTypes.array
+GraphTypeBuyTicketPage.propTypes = {
+    dispatch: PropTypes.func
 };
 
-export default GraphLoadPage;
+export default GraphTypeBuyTicketPage;

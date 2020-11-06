@@ -7,6 +7,8 @@ import Table from "components/Elements/Table";
 import moment from "moment";
 import ReactSelect from "components/Elements/ReactSelect";
 import {API} from "components/API";
+import AccessRights from "components/Elements/AccessRights";
+import _get from "lodash/get";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -60,7 +62,9 @@ const ButtonsContainer = styled.div`
     display: flex;
 `;
 
-@connect(() => ({}))
+@connect(state => ({
+    user: _get(state.app, "user")
+}))
 class WorkPlanPage extends PureComponent {
     constructor(props) {
         super(props);
@@ -232,6 +236,10 @@ class WorkPlanPage extends PureComponent {
 
     render() {
         let {plans, selectedPlan, tableData, loading} = this.state;
+        const {user} = this.props;
+
+        if (user.role === "0")
+            return <AccessRights/>;
 
         const renderPlans = plans.map(i => {return {value:i.id, label: moment(i.year).format("YYYY")}});
 
@@ -279,6 +287,7 @@ class WorkPlanPage extends PureComponent {
 WorkPlanPage.propTypes = {
     dispatch: PropTypes.func,
     routs: PropTypes.array,
+    user: PropTypes.object,
 };
 
 export default WorkPlanPage;

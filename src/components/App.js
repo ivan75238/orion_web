@@ -64,6 +64,7 @@ class App extends PureComponent {
         this.checkSession();
         this.checkUrl();
         this.getAllRout();
+        this.getTicketTypes();
         setDefaultLocale('ru');
     }
 
@@ -92,6 +93,13 @@ class App extends PureComponent {
                         })
                 });
             })
+    };
+
+    getTicketTypes = async () => {
+        const {dispatch} = this.props;
+
+        const ticketTypes = await API.ticket.getTypes();
+        dispatch({type: appActions.SET_TICKET_TYPES, ticketTypes});
     };
 
     checkSession = () => {

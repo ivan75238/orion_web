@@ -99,7 +99,7 @@ class Popup extends PureComponent {
                     <Header>
                         {title}
                         <IconContainer onClick={onClose ? onClose : null}>
-                            <Close/>
+                            <Close color={"#fff"}/>
                         </IconContainer>
                     </Header>
                     <Content>{children}</Content>
@@ -109,8 +109,6 @@ class Popup extends PureComponent {
         )
     }
 }
-
-
 
 Popup.propTypes = {
     title: PropTypes.string,

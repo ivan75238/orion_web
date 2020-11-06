@@ -8,4 +8,5 @@ export const appActions = keyMirror({
     SET_HEADER_TEXT: undefined,
     SET_ALL_ROUTS: undefined,
     SET_ROUT_LOCATIONS: undefined,
+    SET_TICKET_TYPES: undefined,
 });

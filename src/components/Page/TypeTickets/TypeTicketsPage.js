@@ -7,6 +7,8 @@ import Table from "components/Elements/Table";
 import Close from "components/Icons/Close";
 import Checkbox from "react-simple-checkbox";
 import {API} from "components/API";
+import AccessRights from "components/Elements/AccessRights";
+import _get from "lodash/get";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -59,7 +61,9 @@ const IconContainer = styled.div`
     }
 `;
 
-@connect(() => ({}))
+@connect(state => ({
+    user: _get(state.app, "user")
+}))
 class TypeTicketsPage extends PureComponent {
     constructor(props) {
         super(props);
@@ -110,6 +114,10 @@ class TypeTicketsPage extends PureComponent {
 
     render() {
         let {typeTickets} = this.state;
+        const {user} = this.props;
+
+        if (user.role === "0")
+            return <AccessRights/>;
 
         typeTickets = typeTickets.map(i => {
             return {
@@ -142,6 +150,7 @@ class TypeTicketsPage extends PureComponent {
 
 TypeTicketsPage.propTypes = {
     dispatch: PropTypes.func,
+    user: PropTypes.object,
 };
 
 export default TypeTicketsPage;

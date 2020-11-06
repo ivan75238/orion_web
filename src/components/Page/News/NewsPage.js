@@ -8,6 +8,9 @@ import Close from "components/Icons/Close";
 import Edit from "components/Icons/Edit";
 import moment from "moment";
 import {API} from "components/API";
+import _get from "lodash/get";
+import AccessRights from "components/Elements/AccessRights";
+import EditNewsPopup from "./EditNewsPopup";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -72,13 +75,16 @@ const Status = styled.div`
     border-radius: 5px; 
 `;
 
-@connect(() => ({}))
+@connect(state => ({
+    user: _get(state.app, "user")
+}))
 class NewsPage extends PureComponent {
     constructor(props) {
         super(props);
         this.load();
         this.state = {
-            news: []
+            news: [],
+            openPopup: false
         }
     }
 
@@ -107,7 +113,7 @@ class NewsPage extends PureComponent {
             name: "status",
             title: "Статус",
             justifyContent: "center",
-            flex: "1 0 80px"
+            flex: "1 0 170px"
         },
         {
             name: "actions",
@@ -139,7 +145,11 @@ class NewsPage extends PureComponent {
     };
 
     render() {
-        let {news} = this.state;
+        let {news, openPopup} = this.state;
+        const {user} = this.props;
+
+        if (user.role === "0")
+            return <AccessRights/>;
 
         news = news.map(i => {
             return {
@@ -147,7 +157,7 @@ class NewsPage extends PureComponent {
                 date: moment(i.date).format("DD.MM.YYYY HH:mm"),
                 status: <Status isActive={i.status === "0"}>{this.convertStatus(i.status)}</Status>,
                 actions: <ActionContainer>
-                    <IconContainer onClick={() => {}}>
+                    <IconContainer onClick={() => this.setState({openPopup: i.id})}>
                         <Edit/>
                     </IconContainer>
                     <IconContainer onClick={() => {}}>
@@ -163,12 +173,18 @@ class NewsPage extends PureComponent {
                     <Filters/>
                     <Button title={"Добавить новость"}
                             height="40px"
-                            onClick={() => {}}/>
+                            onClick={() => this.setState({openPopup: "new"})}/>
                 </Header>
                 <Body>
                     <Table columns={this.columns}
                            items={news}/>
                 </Body>
+                {
+                    openPopup &&
+                    <EditNewsPopup onClose={() => this.setState({openPopup: false})}
+                                   id={openPopup}
+                                   onUpdate={this.load}/>
+                }
             </ContentWrapper>
         )
     }
@@ -176,6 +192,7 @@ class NewsPage extends PureComponent {
 
 NewsPage.propTypes = {
     dispatch: PropTypes.func,
+    user: PropTypes.object,
 };
 
 export default NewsPage;

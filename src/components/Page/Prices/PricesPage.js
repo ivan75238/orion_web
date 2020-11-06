@@ -10,6 +10,7 @@ import Table from "components/Elements/Table";
 import Edit from "components/Icons/Edit";
 import Close from "components/Icons/Close";
 import {API} from "components/API";
+import AccessRights from "components/Elements/AccessRights";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -64,6 +65,7 @@ const IconContainer = styled.div`
 
 @connect(state => ({
     routs: _get(state.app, "routs"),
+    user: _get(state.app, "user")
 }))
 class PricesPage extends PureComponent {
     constructor(props) {
@@ -127,7 +129,11 @@ class PricesPage extends PureComponent {
 
     render() {
         let {rout, prices} = this.state;
-        const {routs} = this.props;
+        const {routs, user} = this.props;
+
+        if (user.role === "0")
+            return <AccessRights/>;
+
         const selectOptions = routs.map(i => {
             return {value:i.id, label: i.name};
         });
@@ -174,6 +180,7 @@ class PricesPage extends PureComponent {
 PricesPage.propTypes = {
     dispatch: PropTypes.func,
     routs: PropTypes.array,
+    user: PropTypes.object,
 };
 
 export default PricesPage;

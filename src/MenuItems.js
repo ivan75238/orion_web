@@ -18,66 +18,79 @@ export const MenuItems = [
     {
         title: "Заказы",
         icon: Orders,
+        adminRights: false,
         link: Paths.order.list.path()
     },
     {
         title: "Рассписание",
         icon: Calendar,
+        adminRights: false,
         link: Paths.schedule.list.path()
     },
     {
         title: "Клиенты",
         icon: Peoples,
+        adminRights: false,
         link: Paths.client.list.path()
     },
     {
         title: "Акции",
         icon: Sale,
+        adminRights: false,
         link: Paths.sale.list.path()
     },
     {
         title: "Автопарк",
         icon: Car,
+        adminRights: true,
         link: Paths.carPark.list.path()
     },
     {
         title: "Прейскурант",
         icon: Price,
+        adminRights: true,
         link: Paths.price.list.path()
     },
     {
         title: "Маршруты",
         icon: Rout,
+        adminRights: false,
         link: Paths.rout.list.path()
     },
     {
         title: "Типы билетов",
         icon: Ticket,
+        adminRights: true,
         link: Paths.ticket.list.path()
     },
     {
         title: "План работы",
         icon: WorkPlan,
+        adminRights: true,
         link: Paths.workplan.list.path()
     },
     {
         title: "Настройки",
         icon: Settings,
+        adminRights: true,
         link: Paths.setting.list.path()
     },
     {
         title: "Отчеты",
         icon: Report,
+        adminRights: true,
         link: Paths.report.list.path()
     },
     {
         title: "Управление СМС",
         icon: Sms,
+        adminRights: true,
         link: Paths.sms.list.path()
     },
     {
         title: "Новости",
         icon: News,
+        adminRights: true,
         link: Paths.news.list.path()
     },
 ];

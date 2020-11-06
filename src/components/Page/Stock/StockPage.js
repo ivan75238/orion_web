@@ -63,6 +63,7 @@ const IconContainer = styled.div`
 
 @connect(state => ({
     routs: _get(state.app, "routs"),
+    user: _get(state.app, "user"),
 }))
 class StockPage extends PureComponent {
     constructor(props) {
@@ -120,6 +121,7 @@ class StockPage extends PureComponent {
 
     render() {
         let {stock} = this.state;
+        const {user} = this.props;
 
         stock = stock.map(i => {
             return {
@@ -127,12 +129,17 @@ class StockPage extends PureComponent {
                 data_nach: moment(i.data_nach, "YYYY-MM-DD").format("DD.MM.YYYY"),
                 data_konec: moment(i.data_konec, "YYYY-MM-DD").format("DD.MM.YYYY"),
                 actions: <ActionContainer>
-                    <IconContainer onClick={() => {}}>
-                        <Edit/>
-                    </IconContainer>
-                    <IconContainer onClick={() => {}}>
-                        <Close/>
-                    </IconContainer>
+                    {
+                        user.role === "1" &&
+                            <>
+                                <IconContainer onClick={() => {}}>
+                                    <Edit/>
+                                </IconContainer>
+                                <IconContainer onClick={() => {}}>
+                                    <Close/>
+                                </IconContainer>
+                            </>
+                    }
                 </ActionContainer>
             }
         });
@@ -141,9 +148,12 @@ class StockPage extends PureComponent {
             <ContentWrapper>
                 <Header>
                     <Filters/>
-                    <Button title={"Создать акцию"}
-                            height="40px"
-                            onClick={() => {}}/>
+                    {
+                        user.role === "1" &&
+                        <Button title={"Создать акцию"}
+                                height="40px"
+                                onClick={() => {}}/>
+                    }
                 </Header>
                 <Body>
                     <Table columns={this.columns}
@@ -157,6 +167,7 @@ class StockPage extends PureComponent {
 StockPage.propTypes = {
     dispatch: PropTypes.func,
     routs: PropTypes.array,
+    user: PropTypes.object,
 };
 
 export default StockPage;

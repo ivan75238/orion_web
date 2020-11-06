@@ -23,13 +23,22 @@ const Label = styled.p`
     color: #000;
 `;
 
+const LoaderWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+`;
+
 class AuthLoader extends PureComponent {
 
     render() {
         return (
             <Wrapper>
                 <Label>Загрузка</Label>
-                <LoaderSvg />
+                <LoaderWrapper>
+                    <LoaderSvg />
+                </LoaderWrapper>
             </Wrapper>
         )
     }
