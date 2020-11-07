@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Popup from "components/Elements/Popup";
 import Button from "components/Elements/Button";
 import CustomDatePicker from "components/Elements/DatePicker";
-import ReactSelect from "components/Elements/ReactSelect";
 import {connect} from "react-redux";
 import _get from "lodash/get";
 import {toast} from "react-toastify";
@@ -49,7 +48,7 @@ class EditNewsPopup extends PureComponent {
         }
 
         if (typeof item !== "string"){
-            let uploadFileNamePath = this.props.image_url;
+            let uploadFileNamePath = this.props.item.image_url;
             if (this.props.item.image_url !== image_url) {
                 uploadFileNamePath = await API.file.uploadNews(file);
             }

@@ -42,32 +42,6 @@ const InputWrapper = styled.div`
     }
 `;
 
-function labelColor(type) {
-    switch(type){
-        /*case "focus":
-            return "#65A7D8";
-        case "error":
-            return "#D04747";
-        case "active":
-            return "#737A80";*/
-        default:
-            return "#51565B";
-    }
-}
-
-function borderColor(type) {
-    switch(type){
-        /*case "focus":
-            return "#65A7D8";
-        case "error":
-            return "#D04747";
-        case "disable":
-            return "#C4C4C4";*/
-        default:
-            return "#2C4C64";
-    }
-}
-
 function auxiliaryTextColor(type) {
     switch(type){
         /*case "error":

@@ -146,6 +146,18 @@ const API = {
         getUsers() {
             return axios.get(`${apiUrl}User.GetUsers`)
         },
+        create(user) {
+            return axios.get(`${apiUrl}User.CreateUser&fio=${user.name}&pass=${sha512(user.pass)}&role=${user.role}`)
+        },
+        edit(user) {
+            if (user.pass)
+                return axios.get(`${apiUrl}User.SetUser&id_user=${user.id}&fio=${user.name}&pass=${sha512(user.pass)}&role=${user.role}`);
+            else
+                return axios.get(`${apiUrl}User.SetUser&id_user=${user.id}&fio=${user.name}&role=${user.role}`);
+        },
+        del(userid) {
+            return axios.get(`${apiUrl}User.RemoveUser&id_user=${userid}`)
+        },
     },
 
     file: {

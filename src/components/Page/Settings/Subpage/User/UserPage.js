@@ -7,6 +7,7 @@ import Table from "components/Elements/Table";
 import Close from "components/Icons/Close";
 import Edit from "components/Icons/Edit";
 import {API} from "components/API";
+import EditUserPopup from "./EditUserPopup";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -65,7 +66,8 @@ class UserPage extends PureComponent {
         super(props);
         this.load();
         this.state = {
-            users: []
+            users: [],
+            openPopupUser: false
         }
     }
 
@@ -108,17 +110,17 @@ class UserPage extends PureComponent {
     };
 
     render() {
-        let {users} = this.state;
+        let {users, openPopupUser} = this.state;
 
         users = users.map(i => {
             return {
                 ...i,
                 role: this.translateRole(i.role),
                 actions: <ActionContainer>
-                    <IconContainer onClick={() => {}}>
+                    <IconContainer onClick={() => {this.setState({openPopupUser: i})}}>
                         <Edit/>
                     </IconContainer>
-                    <IconContainer onClick={() => {}}>
+                    <IconContainer onClick={async () => {await API.user.del(i.id); this.load()}}>
                         <Close/>
                     </IconContainer>
                 </ActionContainer>
@@ -131,12 +133,18 @@ class UserPage extends PureComponent {
                     <Filters/>
                     <Button title={"Добавить"}
                             height="40px"
-                            onClick={() => {}}/>
+                            onClick={() => this.setState({openPopupUser: "new"})}/>
                 </Header>
                 <Body>
                     <Table columns={this.columns}
                            items={users}/>
                 </Body>
+                {
+                    openPopupUser &&
+                    <EditUserPopup onClose={() => this.setState({openPopupUser: false})}
+                                   item={openPopupUser}
+                                   onUpdate={this.load}/>
+                }
             </ContentWrapper>
         )
     }

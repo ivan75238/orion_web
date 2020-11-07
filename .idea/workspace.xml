@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dea06bd-7f6f-4bd8-84a3-10031ac33fcf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Elements/CustomTextArea.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Icons/ArrowTop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Page/Settings/Subpage/User/EditUserPopup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Elements/DatePicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elements/DatePicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Elements/CustomTextArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elements/CustomTextArea.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/News/EditNewsPopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/News/EditNewsPopup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/News/NewsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/News/NewsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Settings/Subpage/User/UserPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Settings/Subpage/User/UserPage.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,28 +32,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="71" />
+          <entry key="js" value="79" />
           <entry key="json" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="71" />
+          <entry key="JavaScript" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="3228" />
+          <entry key="js" value="3788" />
           <entry key="json" value="1" />
-          <entry key="txt" value="161" />
+          <entry key="txt" value="191" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="3228" />
-          <entry key="PLAIN_TEXT" value="161" />
+          <entry key="JavaScript" value="3788" />
+          <entry key="PLAIN_TEXT" value="191" />
         </counts>
       </usages-collector>
     </session>
@@ -68,8 +65,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/API.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="688">
-                  <caret line="88" column="63" selection-start-line="88" selection-start-column="63" selection-end-line="88" selection-end-column="63" />
+                <state relative-caret-position="314">
+                  <caret line="158" column="71" selection-start-line="158" selection-start-column="71" selection-end-line="158" selection-end-column="71" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -78,22 +75,13 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/Page/Schedules/AddTripPopup.js">
+            <entry file="file://$PROJECT_DIR$/src/components/Auth/Auth.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="398">
-                  <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+                <state relative-caret-position="391">
+                  <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
                   <folding>
                     <element signature="e#0#43#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/Elements/Input.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-199">
-                  <caret line="40" column="23" lean-forward="true" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
                 </state>
               </provider>
             </entry>
@@ -103,19 +91,22 @@
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/Page/News/EditNewsPopup.js">
+            <entry file="file://$PROJECT_DIR$/src/components/Page/Settings/Subpage/User/EditUserPopup.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="544">
-                  <caret line="61" column="24" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+                <state relative-caret-position="204">
+                  <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+                  <folding>
+                    <element signature="e#0#43#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/components/Page/News/NewsPage.js">
+            <entry file="file://$PROJECT_DIR$/src/components/Page/Settings/Subpage/User/UserPage.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="313">
-                  <caret line="169" column="71" selection-start-line="169" selection-start-column="71" selection-end-line="169" selection-end-column="71" />
+                <state relative-caret-position="340">
+                  <caret line="122" column="94" selection-start-line="122" selection-start-column="94" selection-end-line="122" selection-end-column="94" />
                   <folding>
                     <element signature="e#0#43#0" expanded="true" />
                   </folding>
@@ -124,10 +115,13 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/Icons/ArrowTop.js">
+            <entry file="file://$PROJECT_DIR$/src/components/Page/News/NewsPage.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="19" column="23" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="23" />
+                <state relative-caret-position="447">
+                  <caret line="189" column="17" lean-forward="true" selection-start-line="189" selection-start-column="17" selection-end-line="189" selection-end-column="17" />
+                  <folding>
+                    <element signature="e#0#43#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -184,7 +178,6 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/reducers/actions.js" />
         <option value="$PROJECT_DIR$/src/reducers/app.js" />
-        <option value="$PROJECT_DIR$/src/components/App.js" />
         <option value="$PROJECT_DIR$/src/components/Elements/LoaderSvg.js" />
         <option value="$PROJECT_DIR$/src/components/Page/Report/Subpage/GraphTicketType/GraphTicketTypePage.js" />
         <option value="$PROJECT_DIR$/src/components/Page/Report/Subpage/GraphLoad/GraphLoadPage.js" />
@@ -205,11 +198,14 @@
         <option value="$PROJECT_DIR$/src/components/Elements/Popup.js" />
         <option value="$PROJECT_DIR$/src/components/Icons/Close.js" />
         <option value="$PROJECT_DIR$/src/components/Elements/DatePicker.js" />
+        <option value="$PROJECT_DIR$/src/components/Icons/ArrowTop.js" />
+        <option value="$PROJECT_DIR$/src/components/Page/News/NewsPage.js" />
         <option value="$PROJECT_DIR$/src/components/Elements/CustomTextArea.js" />
         <option value="$PROJECT_DIR$/src/components/Page/News/EditNewsPopup.js" />
-        <option value="$PROJECT_DIR$/src/components/Icons/ArrowTop.js" />
+        <option value="$PROJECT_DIR$/src/components/App.js" />
+        <option value="$PROJECT_DIR$/src/components/Page/Settings/Subpage/User/EditUserPopup.js" />
         <option value="$PROJECT_DIR$/src/components/API.js" />
-        <option value="$PROJECT_DIR$/src/components/Page/News/NewsPage.js" />
+        <option value="$PROJECT_DIR$/src/components/Page/Settings/Subpage/User/UserPage.js" />
       </list>
     </option>
   </component>
@@ -272,14 +268,7 @@
               <item name="orion_web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Elements" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="orion_web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="orion_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Icons" type="462c0819:PsiDirectoryNode" />
+              <item name="Auth" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="orion_web" type="b2602c69:ProjectViewProjectNode" />
@@ -303,6 +292,33 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Page" type="462c0819:PsiDirectoryNode" />
               <item name="Schedules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="orion_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="orion_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Page" type="462c0819:PsiDirectoryNode" />
+              <item name="Settings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="orion_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="orion_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Page" type="462c0819:PsiDirectoryNode" />
+              <item name="Settings" type="462c0819:PsiDirectoryNode" />
+              <item name="Subpage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="orion_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="orion_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Page" type="462c0819:PsiDirectoryNode" />
+              <item name="Settings" type="462c0819:PsiDirectoryNode" />
+              <item name="Subpage" type="462c0819:PsiDirectoryNode" />
+              <item name="User" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="orion_web" type="b2602c69:ProjectViewProjectNode" />
@@ -341,11 +357,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Work\orion_web\src\components\Page\Settings\Subpage\User" />
       <recent name="E:\Work\orion_web\src\components\Icons" />
       <recent name="E:\Work\orion_web\src\components\Elements" />
       <recent name="E:\Work\orion_web\src\components\Page\News" />
       <recent name="E:\Work\orion_web\src\components\Page\Report\Subpage\GraphTypeBuyTicket" />
-      <recent name="E:\Work\orion_web\src\components\Page\Report\Subpage\GraphTicketType" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Проекты\Новая работа\cubekit-dashboard\src\components\MenuLeft" />
@@ -441,14 +457,7 @@
       <workItem from="1604480192726" duration="10512000" />
       <workItem from="1604560408500" duration="21000" />
       <workItem from="1604560463663" duration="4000" />
-      <workItem from="1604671962748" duration="11742000" />
-    </task>
-    <task id="LOCAL-00060" summary="1) ошибка c названием редактирвоания +&#10;2) ошибка с системой мониторинга +&#10;3) ошибка сос кролами в графиках +&#10;4) стандартно - линии+&#10;5) стандратно 12 часов+&#10;6) Попросить измениьт палитру различимее  +&#10;7) сдвигать в днд вниз а не менять позици +&#10;8) изменениен позиций в таблице показателей +&#10;9) проверить сохарнение настроек таблицы событий +">
-      <created>1576225291539</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1576225291539</updated>
+      <workItem from="1604671962748" duration="14410000" />
     </task>
     <task id="LOCAL-00061" summary="- много чегое">
       <created>1576245501216</created>
@@ -786,11 +795,18 @@
       <option name="project" value="LOCAL" />
       <updated>1604677691628</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="- Сделано управление новостями">
+      <created>1604757762468</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1604757762469</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23449000" />
+    <option name="totallyTimeSpent" value="26117000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -851,7 +867,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="7. Нужен предзаполненный набор колонок по умолчанию:&#10;&#9;Таблица метрик: meas_severity, meas_name, meas_value, unit, trend, utm&#10;&#9;Таблица событий: utm, duration, state, severity, ci_type_icon, ci_name, title, group_name, user_name&#10;Все даты/время нужно отображать чч:мм, если разница с текущим временем менее 24ч, если больше, то в формате ДД.ММ чч:мм&#10;Все длительности нужно отображать чч:мм, если длительнось менее 24ч, если больше, то в формате ДД чч:мм&#10;10. При содании дашборда &quot;Автор доски&quot; не заполняется именем пользователя.&#10;2.При создании нового дашборд, в поле Автор указывается тестовый пользователь.&#10;5. При выборе типа графика «Колонки», не применяется выбранный цвет для каждой метрики.&#10;7. Открываем настройки виджета (который уже что-то отображает) и выбираем любую другую РСМ,&#10;   потом выбираем предыдущую РСМ. Виджет уходит в долгую загрузку. В консоли получаем следующую ошибку&#10; 8.  Выносим на дашборд два виджет графика, которые смотрят на разные РСМ. После этого открываем&#10;   настройки одного из виджетов и выбираем в нем РСМ, на которую смотрит другой виджет. Виджеn    уходит в долгую загрузку." />
     <MESSAGE value="- fix" />
     <MESSAGE value="- работа с рутами" />
     <MESSAGE value="- Обработка ошибок" />
@@ -876,7 +891,8 @@
     <MESSAGE value="- остались только страницы с отчетами" />
     <MESSAGE value="- Сделан график загруженности" />
     <MESSAGE value="- Доделаны все графики&#10;- Прописаны ограничения по ролям пользователей&#10;- Начало работы над попапом редактирпования новости" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Доделаны все графики&#10;- Прописаны ограничения по ролям пользователей&#10;- Начало работы над попапом редактирпования новости" />
+    <MESSAGE value="- Сделано управление новостями" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Сделано управление новостями" />
   </component>
   <component name="WindowStateProjectService">
     <state x="585" y="104" key="CommitChangelistDialog2" timestamp="1600546330202">
@@ -994,13 +1010,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1287">
-          <caret line="66" column="27" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1184,16 +1193,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Elements/CustomTextArea.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-323">
-          <caret line="88" column="2" selection-start-line="88" selection-start-column="2" selection-end-line="88" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Elements/Input.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-199">
@@ -1201,37 +1200,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Page/Schedules/AddTripPopup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Page/News/EditNewsPopup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="61" column="24" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Icons/ArrowTop.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="19" column="23" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/API.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="88" column="63" selection-start-line="88" selection-start-column="63" selection-end-line="88" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1245,10 +1217,97 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Elements/Button.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Elements/CustomTextArea.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="42" column="2" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Page/News/NewsPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="169" column="71" selection-start-line="169" selection-start-column="71" selection-end-line="169" selection-end-column="71" />
+        <state relative-caret-position="447">
+          <caret line="189" column="17" lean-forward="true" selection-start-line="189" selection-start-column="17" selection-end-line="189" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Page/News/EditNewsPopup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-289">
+          <caret line="52" column="31" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="102" column="6" selection-start-line="102" selection-start-column="6" selection-end-line="102" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Page/Schedules/AddTripPopup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="86" column="59" lean-forward="true" selection-start-line="86" selection-start-column="59" selection-end-line="93" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Auth/Auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Page/Settings/Subpage/User/EditUserPopup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/API.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="158" column="71" selection-start-line="158" selection-start-column="71" selection-end-line="158" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Page/Settings/Subpage/User/UserPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="122" column="94" selection-start-line="122" selection-start-column="94" selection-end-line="122" selection-end-column="94" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
