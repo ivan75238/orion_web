@@ -11,6 +11,7 @@ import {API} from "components/API";
 import _get from "lodash/get";
 import AccessRights from "components/Elements/AccessRights";
 import EditNewsPopup from "./EditNewsPopup";
+import ArrowTop from "components/Icons/ArrowTop";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -124,7 +125,7 @@ class NewsPage extends PureComponent {
     ];
 
     componentDidMount() {
-        document.title = "Типы билетов";
+        document.title = "Новости";
     }
 
     load = () => {
@@ -157,12 +158,19 @@ class NewsPage extends PureComponent {
                 date: moment(i.date).format("DD.MM.YYYY HH:mm"),
                 status: <Status isActive={i.status === "0"}>{this.convertStatus(i.status)}</Status>,
                 actions: <ActionContainer>
-                    <IconContainer onClick={() => this.setState({openPopup: i.id})}>
+                    <IconContainer onClick={() => this.setState({openPopup: i})}>
                         <Edit/>
                     </IconContainer>
-                    <IconContainer onClick={() => {}}>
-                        <Close/>
-                    </IconContainer>
+                    {
+                        i.status === "0" ?
+                            <IconContainer onClick={async () => {await API.news.unpublished(i.id); this.load()}}>
+                                <Close/>
+                            </IconContainer>
+                        :
+                            <IconContainer onClick={async () => {await API.news.published(i.id); this.load()}}>
+                                <ArrowTop/>
+                            </IconContainer>
+                    }
                 </ActionContainer>
             }
         });
@@ -182,7 +190,7 @@ class NewsPage extends PureComponent {
                 {
                     openPopup &&
                     <EditNewsPopup onClose={() => this.setState({openPopup: false})}
-                                   id={openPopup}
+                                   item={openPopup}
                                    onUpdate={this.load}/>
                 }
             </ContentWrapper>

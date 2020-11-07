@@ -75,6 +75,18 @@ const API = {
     news: {
         get() {
             return axios.get(`${apiUrl}News.Get`)
+        },
+        edit(news) {
+            return axios.get(`${apiUrl}News.Edit&news=${JSON.stringify(news)}`);
+        },
+        create(news) {
+            return axios.get(`${apiUrl}News.Create&news=${JSON.stringify(news)}`);
+        },
+        published(newsid) {
+            return axios.get(`${apiUrl}News.Published&id_news=${newsid}`);
+        },
+        unpublished(newsid) {
+            return axios.get(`${apiUrl}News.Unpublished&id_news=${newsid}`);
         }
     },
 
@@ -134,6 +146,22 @@ const API = {
         getUsers() {
             return axios.get(`${apiUrl}User.GetUsers`)
         },
+    },
+
+    file: {
+        async uploadNews(file) {
+            const formData = new FormData();
+
+            const fileName = `news_${moment().unix()}`;
+
+            formData.append(
+                "file",
+                file,
+                file.name
+            );
+            return await axios.post(`${apiUrl}File.Upload&filename=${fileName}&path=image/News/`, formData)
+                .then(response => {return response.data});
+        }
     }
 };
 

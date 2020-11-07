@@ -8,6 +8,11 @@ const DPInputWrapper = styled.div`
   height: ${props => props.inputHeight || "auto"};
   width: ${props => props.inputWidth || "auto"};
   margin: ${props => props.margin || "auto"};
+    position: relative;
+  
+  .react-datepicker-wrapper {
+      width: 100%;
+  }
 
   input{
       width: 100%;
@@ -42,15 +47,31 @@ const DPInputWrapper = styled.div`
   }
 `;
 
+const Label = styled.p`
+    font-family: Roboto,sans-serif;
+    position: absolute;
+    top: -5px;
+    padding: 0 6px;
+    left: 7px;
+    z-index: 1;
+    font-size: 12px;
+    color: #cecece;
+    background: #fff;
+`;
+
 //Стилизованный button
 class CustomDatePicker extends PureComponent {
 
     render() {
-        const {height, selected, margin, onChange, width} = this.props;
+        const {height, selected, margin, onChange, width, hideTitle, title} = this.props;
         return (
             <DPInputWrapper inputHeight={height}
                             margin={margin}
                             inputWidth={width}>
+                {
+                    hideTitle ? null :
+                        <Label>{title}</Label>
+                }
                 <DatePicker selected={selected}
                             onChange={onChange}
                             dateFormat="dd.MM.yyyy"/>
@@ -62,7 +83,9 @@ class CustomDatePicker extends PureComponent {
 CustomDatePicker.propTypes = {
     height: PropTypes.string,
     margin: PropTypes.string,
+    title: PropTypes.string,
     width: PropTypes.string,
+    hideTitle: PropTypes.bool,
     selected: PropTypes.object,
     onChange: PropTypes.func,
 };
