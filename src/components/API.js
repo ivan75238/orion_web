@@ -102,6 +102,15 @@ const API = {
         },
         getCountOrder(date_start, date_end) {
             return axios.get(`${apiUrl}WorkPlan.GetCountOrder&date_start=${date_start.format('YYYY-MM-DD')}&date_end=${date_end.format('YYYY-MM-DD')}`)
+        },
+        create(plan) {
+            return axios.get(`${apiUrl}WorkPlan.Create&plan=${JSON.stringify(plan)}`)
+        },
+        edit(plan) {
+            return axios.get(`${apiUrl}WorkPlan.Edit&plan=${JSON.stringify(plan)}`)
+        },
+        del(planid) {
+            return axios.get(`${apiUrl}WorkPlan.Delete&id=${planid}`)
         }
     },
 

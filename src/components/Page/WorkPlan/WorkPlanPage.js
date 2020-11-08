@@ -9,6 +9,7 @@ import ReactSelect from "components/Elements/ReactSelect";
 import {API} from "components/API";
 import AccessRights from "components/Elements/AccessRights";
 import _get from "lodash/get";
+import EditWorkPlanPopup from "./EditWorkPlanPopup";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -72,16 +73,21 @@ class WorkPlanPage extends PureComponent {
             plans: [],
             selectedPlan: null,
             tableData: [],
-            loading: false
+            loading: false,
+            openPopup: false
         };
         this.load();
     }
 
     load = () => {
+        const {selectedPlan} = this.state;
         API.workPlan.get()
             .then(response => {
                 const resp = response.data;
                 this.setState({plans: resp});
+                if (selectedPlan) {
+                    this.loadTableData(selectedPlan);
+                }
             })
     };
 
@@ -235,7 +241,7 @@ class WorkPlanPage extends PureComponent {
     };
 
     render() {
-        let {plans, selectedPlan, tableData, loading} = this.state;
+        let {plans, selectedPlan, tableData, loading, openPopup} = this.state;
         const {user} = this.props;
 
         if (user.role === "0")
@@ -257,7 +263,7 @@ class WorkPlanPage extends PureComponent {
                                      height="40px"
                                      width="220px"
                                      margin={"0 0 0 16px"}
-                                     placeholder={"Выберите тип"}
+                                     placeholder={"Выберите год"}
                                      onChange={this.onChange}
                                      options={renderPlans}/>
                     </Filters>
@@ -265,20 +271,36 @@ class WorkPlanPage extends PureComponent {
                         <Button title={"Создать"}
                                 height="40px"
                                 margin={"0 8px 0 0"}
-                                onClick={() => {}}/>
-                        <Button title={"Редактировать"}
-                                height="40px"
-                                margin={"0 8px 0 0"}
-                                onClick={() => {}}/>
-                        <Button title={"Удалить"}
-                                height="40px"
-                                onClick={() => {}}/>
+                                onClick={() => this.setState({openPopup: "new"})}/>
+                        {
+                            selectedPlan &&
+                                <>
+                                    <Button title={"Редактировать"}
+                                            height="40px"
+                                            margin={"0 8px 0 0"}
+                                            onClick={() => this.setState({openPopup: plans.find(i => i.id === selectedPlan.value)})}/>
+                                    <Button title={"Удалить"}
+                                            height="40px"
+                                            onClick={async () => {
+                                                await API.workPlan.del(selectedPlan.value);
+                                                this.setState({selectedPlan: null, tableData: []}, () => {
+                                                    this.load();
+                                                })
+                                            }}/>
+                                </>
+                        }
                     </ButtonsContainer>
                 </Header>
                 <Body>
                     <Table columns={this.columns}
                            items={tableData}/>
                 </Body>
+                {
+                    openPopup &&
+                    <EditWorkPlanPopup onClose={() => this.setState({openPopup: false})}
+                                   item={openPopup}
+                                   onUpdate={this.load}/>
+                }
             </ContentWrapper>
         )
     }

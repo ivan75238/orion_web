@@ -63,7 +63,7 @@ const Label = styled.p`
 class CustomDatePicker extends PureComponent {
 
     render() {
-        const {height, selected, margin, onChange, width, hideTitle, title} = this.props;
+        const {height, selected, margin, onChange, width, hideTitle, title, format = "dd.MM.yyyy"} = this.props;
         return (
             <DPInputWrapper inputHeight={height}
                             margin={margin}
@@ -74,7 +74,7 @@ class CustomDatePicker extends PureComponent {
                 }
                 <DatePicker selected={selected}
                             onChange={onChange}
-                            dateFormat="dd.MM.yyyy"/>
+                            dateFormat={format}/>
             </DPInputWrapper>
         )
     }
@@ -88,6 +88,7 @@ CustomDatePicker.propTypes = {
     hideTitle: PropTypes.bool,
     selected: PropTypes.object,
     onChange: PropTypes.func,
+    format: PropTypes.string,
 };
 
 export default CustomDatePicker;
