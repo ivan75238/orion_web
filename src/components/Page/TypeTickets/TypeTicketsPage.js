@@ -9,6 +9,8 @@ import Checkbox from "react-simple-checkbox";
 import {API} from "components/API";
 import AccessRights from "components/Elements/AccessRights";
 import _get from "lodash/get";
+import Edit from "../../Icons/Edit";
+import EditTipeTicketPopup from "./EditTipeTicketPopup";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -69,7 +71,8 @@ class TypeTicketsPage extends PureComponent {
         super(props);
         this.load();
         this.state = {
-            typeTickets: []
+            typeTickets: [],
+            openPopup: false
         }
     }
 
@@ -113,7 +116,7 @@ class TypeTicketsPage extends PureComponent {
     };
 
     render() {
-        let {typeTickets} = this.state;
+        let {typeTickets, openPopup} = this.state;
         const {user} = this.props;
 
         if (user.role === "0")
@@ -124,7 +127,10 @@ class TypeTicketsPage extends PureComponent {
                 ...i,
                 fix: <Checkbox checked={i.fix === "1"}/>,
                 actions: <ActionContainer>
-                    <IconContainer onClick={() => {}}>
+                    <IconContainer onClick={() => this.setState({openPopup: i})}>
+                        <Edit/>
+                    </IconContainer>
+                    <IconContainer onClick={async () => {await API.bilet.del(i.id); this.load()}}>
                         <Close/>
                     </IconContainer>
                 </ActionContainer>
@@ -137,12 +143,18 @@ class TypeTicketsPage extends PureComponent {
                     <Filters/>
                     <Button title={"Добавить запись"}
                             height="40px"
-                            onClick={() => {}}/>
+                            onClick={() => this.setState({openPopup: "new"})}/>
                 </Header>
                 <Body>
                     <Table columns={this.columns}
                            items={typeTickets}/>
                 </Body>
+                {
+                    openPopup &&
+                    <EditTipeTicketPopup onClose={() => this.setState({openPopup: false})}
+                                         item={openPopup}
+                                         onUpdate={this.load}/>
+                }
             </ContentWrapper>
         )
     }

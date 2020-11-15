@@ -63,7 +63,16 @@ const API = {
     bilet: {
         get() {
             return axios.get(`${apiUrl}Bilet.Get`)
-        }
+        },
+        create(tt) {
+            return axios.get(`${apiUrl}Bilet.Create&name=${tt.name}&cost=${tt.price}&fix=${tt.fixed}`);
+        },
+        edit(tt) {
+            return axios.get(`${apiUrl}Bilet.Set&id=${tt.id}&name=${tt.name}&cost=${tt.price}&fix=${tt.fixed}`)
+        },
+        del(id) {
+            return axios.get(`${apiUrl}Bilet.Delete&id=${id}`);
+        },
     },
 
     client: {
