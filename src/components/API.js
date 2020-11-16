@@ -45,6 +45,27 @@ const API = {
         },
         getLocality(id_rout) {
             return axios.get(`${apiUrl}Rout.GetLocality&id_rout=${id_rout}`)
+        },
+        getAllLocality() {
+            return axios.get(`${apiUrl}Rout.GetAllLocality`)
+        },
+        getArchived() {
+            return axios.get(`${apiUrl}Rout.GetRoutsInArchive`)
+        },
+        createLocality(loc) {
+            return axios.get(`${apiUrl}Rout.CreateLocality&name=${loc.name}`)
+        },
+        editLocality(loc) {
+            return axios.get(`${apiUrl}Rout.SetLocality&name=${loc.name}&id=${loc.id}`)
+        },
+        delLocality(id) {
+            return axios.get(`${apiUrl}Rout.DeleteLocality&id=${id}`)
+        },
+        unarchive(id) {
+            return axios.get(`${apiUrl}Rout.Unarchive&id=${id}`)
+        },
+        archive(id) {
+            return axios.get(`${apiUrl}Rout.ToArchive&id=${id}`)
         }
     },
 

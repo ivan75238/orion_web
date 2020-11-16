@@ -7,6 +7,10 @@ import ReactSelect from "components/Elements/ReactSelect";
 import Button from "components/Elements/Button";
 import Table from "components/Elements/Table";
 import _orderBy from 'lodash/orderBy';
+import DictionaryLocalityPopup from "./DictionaryLocality/DictionaryLocalityPopup";
+import ArchivedRoutsPopup from "components/Page/Routs/ArchivedRoutsPopup";
+import {API} from "components/API";
+import {appActions} from "reducers/actions";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -59,7 +63,9 @@ class RoutsPage extends PureComponent {
                 selectRout = {value:props.routs[0].id, label: props.routs[0].name};
         }
         this.state = {
-            rout: selectRout
+            rout: selectRout,
+            openPopupDictionary: false,
+            openPopupArchived: false,
         };
     }
 
@@ -76,8 +82,32 @@ class RoutsPage extends PureComponent {
         document.title = "Маршруты";
     }
 
-    render() {
+    load = () => {
+        const {dispatch} = this.props;
+
+        API.rout.getAll()
+            .then(response => {
+                const resp = response.data;
+                dispatch({type: appActions.SET_ALL_ROUTS, routs: resp});
+
+                resp.map(item => {
+                    API.rout.getLocality(item.id)
+                        .then(response => {
+                            const resp = response.data;
+                            dispatch({type: appActions.SET_ROUT_LOCATIONS, locations: resp, routid: item.id});
+                        })
+                });
+            })
+    };
+
+    archive = async () => {
         let {rout} = this.state;
+        await API.rout.archive(rout.value);
+        this.load();
+    };
+
+    render() {
+        let {rout, openPopupDictionary, openPopupArchived} = this.state;
         const {routs} = this.props;
         const selectOptions = routs.map(i => {
             return {value:i.id, label: i.name};
@@ -85,7 +115,12 @@ class RoutsPage extends PureComponent {
         let selectedRoutData, locations = [];
         if (rout){
             selectedRoutData = routs.find(i => i.id === rout.value);
-            locations = _orderBy(selectedRoutData.locations, i => i.position);
+            if (!selectedRoutData){
+                this.setState({rout: null});
+            }
+            else {
+                locations = _orderBy(selectedRoutData.locations, i => parseInt(i.position));
+            }
         }
         return (
             <ContentWrapper>
@@ -104,21 +139,26 @@ class RoutsPage extends PureComponent {
                                 height="40px"
                                 margin={"0 8px 0 0"}
                                 onClick={() => {}}/>
-                        <Button title={"Изменить"}
-                                height="40px"
-                                margin={"0 8px 0 0"}
-                                onClick={() => {}}/>
-                        <Button title={"Удалить"}
-                                height="40px"
-                                margin={"0 8px 0 0"}
-                                onClick={() => {}}/>
+                        {
+                            rout &&
+                                <>
+                                    <Button title={"Изменить"}
+                                            height="40px"
+                                            margin={"0 8px 0 0"}
+                                            onClick={() => {}}/>
+                                    <Button title={"Отправить в архив"}
+                                            height="40px"
+                                            margin={"0 8px 0 0"}
+                                            onClick={() => this.archive()}/>
+                                </>
+                        }
                         <Button title={"Архив"}
                                 height="40px"
                                 margin={"0 8px 0 0"}
-                                onClick={() => {}}/>
+                                onClick={() => this.setState({openPopupArchived: true})}/>
                         <Button title={"Справочник пунктов"}
                                 height="40px"
-                                onClick={() => {}}/>
+                                onClick={() => this.setState({openPopupDictionary: true})}/>
                     </ButtonsContainer>
                 </Header>
                 <Body>
@@ -129,6 +169,15 @@ class RoutsPage extends PureComponent {
                                items={locations}/>
                     </TableWrapper>
                 </Body>
+                {
+                    openPopupDictionary &&
+                    <DictionaryLocalityPopup onClose={() => this.setState({openPopupDictionary: false})}/>
+                }
+                {
+                    openPopupArchived &&
+                    <ArchivedRoutsPopup onClose={() => this.setState({openPopupArchived: false})}
+                                        onUpdate={this.load}/>
+                }
             </ContentWrapper>
         )
     }

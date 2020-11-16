@@ -129,7 +129,7 @@ class TypeTicketsPage extends PureComponent {
                 actions: <ActionContainer>
                     <IconContainer onClick={() => this.setState({openPopup: i})}>
                         <Edit/>
-                    </IconContainer>
+                    </IconContainer>y
                     <IconContainer onClick={async () => {await API.bilet.del(i.id); this.load()}}>
                         <Close/>
                     </IconContainer>

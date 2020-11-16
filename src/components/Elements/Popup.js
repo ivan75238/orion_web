@@ -33,7 +33,6 @@ const PopupContainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    position: relative;
     z-index: 15;
     border-radius: 5px;
 `;

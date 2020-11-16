@@ -82,11 +82,11 @@ const Status = styled.div`
 class NewsPage extends PureComponent {
     constructor(props) {
         super(props);
-        this.load();
         this.state = {
             news: [],
             openPopup: false
-        }
+        };
+        this.load();
     }
 
     columns = [
@@ -128,7 +128,7 @@ class NewsPage extends PureComponent {
         document.title = "Новости";
     }
 
-    load = () => {
+    load =  async () => {
         API.news.get()
             .then(response => {
                 const resp = response.data;
