@@ -36,6 +36,15 @@ const API = {
     price: {
         getPriceForMarsID(id_marsh) {
             return axios.get(`${apiUrl}Price.GetPriceForMarsID&id_marsh=${id_marsh}`)
+        },
+        set(id, price) {
+            return axios.get(`${apiUrl}Price.SetPrice&id=${id}&new_cost=${price}`)
+        },
+        create(price) {
+            return axios.get(`${apiUrl}Price.CreateNewPrice&cost=${price.cost}&otkyda=${price.otkyda}&kyda=${price.kyda}&id_marsh=${price.id_marsh}`)
+        },
+        del(id) {
+            return axios.get(`${apiUrl}Price.RemovePrice&id=${id}`)
         }
     },
 

@@ -7,10 +7,11 @@ import ReactSelect from "components/Elements/ReactSelect";
 import Button from "components/Elements/Button";
 import {toast} from "react-toastify";
 import Table from "components/Elements/Table";
-import Edit from "components/Icons/Edit";
-import Close from "components/Icons/Close";
 import {API} from "components/API";
 import AccessRights from "components/Elements/AccessRights";
+import DropdownMenu from "components/Elements/DropdownMenu";
+import EditPricePopup from "./EditPricePopup";
+import CreatePricePopup from "components/Page/Prices/CreatePricePopup";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -44,25 +45,6 @@ const ActionContainer = styled.div`
     display: flex;
 `;
 
-const IconContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 22px;
-    height: 22px;
-    cursor: pointer;
-    
-    &:hover {
-        border: 1px solid #cdcdcd;
-        border-radius: 3px;
-    }
-    
-    svg {
-        width: 16px;
-        height: 16px;
-    }
-`;
-
 @connect(state => ({
     routs: _get(state.app, "routs"),
     user: _get(state.app, "user")
@@ -77,7 +59,9 @@ class PricesPage extends PureComponent {
         }
         this.state = {
             rout: selectRout,
-            prices: []
+            prices: [],
+            openPopupEditPrice: false,
+            openPopupCreatePrice: false,
         };
         if (selectRout)
             this.load();
@@ -128,7 +112,7 @@ class PricesPage extends PureComponent {
     };
 
     render() {
-        let {rout, prices} = this.state;
+        let {rout, prices, openPopupEditPrice, openPopupCreatePrice} = this.state;
         const {routs, user} = this.props;
 
         if (user.role === "0")
@@ -138,16 +122,16 @@ class PricesPage extends PureComponent {
             return {value:i.id, label: i.name};
         });
 
-        prices = prices.map(i => {
+        prices = prices.map((i, j) => {
             return {
                 ...i,
                 actions: <ActionContainer>
-                    <IconContainer onClick={() => {}}>
-                        <Edit/>
-                    </IconContainer>
-                    <IconContainer onClick={() => {}}>
-                        <Close/>
-                    </IconContainer>
+                    <DropdownMenu items={[
+                        {title: "Изменить стоимость", onClick: () => this.setState({openPopupEditPrice: i})},
+                        {title: "Удалить", onClick: async () => {await await API.price.del(i.id); await this.load()}},
+                    ]}
+                                  position={j+4 >= prices.length ? "bottom" : "top"}
+                    />
                 </ActionContainer>
             }
         });
@@ -166,12 +150,23 @@ class PricesPage extends PureComponent {
                     </Filters>
                     <Button title={"Добавить запись"}
                             height="40px"
-                            onClick={() => {}}/>
+                            onClick={() => this.setState({openPopupCreatePrice: true})}/>
                 </Header>
                 <Body>
                     <Table columns={this.columns}
                            items={prices}/>
                 </Body>
+                {
+                    openPopupEditPrice &&
+                    <EditPricePopup onClose={() => this.setState({openPopupEditPrice: false})}
+                                       item={openPopupEditPrice}
+                                       onUpdate={this.load}/>
+                }
+                {
+                    openPopupCreatePrice &&
+                    <CreatePricePopup onClose={() => this.setState({openPopupCreatePrice: false})}
+                                      onUpdate={this.load}/>
+                }
             </ContentWrapper>
         )
     }

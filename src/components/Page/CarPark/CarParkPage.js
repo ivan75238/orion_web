@@ -199,7 +199,7 @@ class CarParkPage extends PureComponent {
                                      onChange={this.onChangeType}
                                      options={selectOptions}/>
                     </Filters>
-                    <Button title={"Создать акцию"}
+                    <Button title={"Добавить водителя"}
                             height="40px"
                             onClick={() => {}}/>
                 </Header>
