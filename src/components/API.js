@@ -66,6 +66,14 @@ const API = {
         },
         archive(id) {
             return axios.get(`${apiUrl}Rout.ToArchive&id=${id}`)
+        },
+        create(rout) {
+            const pp = rout.locations.map(i => i.id).join(",");
+            return axios.get(`${apiUrl}Rout.Create&name=${rout.name}&url_map=${rout.url_map}&pp=${pp}`)
+        },
+        edit(rout) {
+            const pp = rout.locations.map(i => i.id).join(",");
+            return axios.get(`${apiUrl}Rout.Set&name=${rout.name}&url_map=${rout.url_map}&pp=${pp}&id=${rout.id}`)
         }
     },
 

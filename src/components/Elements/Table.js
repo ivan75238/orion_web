@@ -18,6 +18,7 @@ const Row = styled.div`
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
+  background: ${props => props.isActive ? "rgba(1, 21, 117, 0.15)" : "transparent"};
 `;
 
 const Header = styled(Row)`
@@ -76,7 +77,7 @@ const NoItems = styled.div`
 class Table extends PureComponent {
 
     render() {
-        const {columns, items} = this.props;
+        const {columns, items,} = this.props;
         return (
             <>
                 <Header>
@@ -98,7 +99,10 @@ class Table extends PureComponent {
                                 items.length > 0 ?
                                     items.map((item, i) => {
                                         return (
-                                            <Row key={i}>
+                                            <Row key={i}
+                                                 isActive={item.isActive}
+                                                 onClick={item.rowClick ? item.rowClick : null}
+                                                 onDoubleClick={item.doubleClick ? item.doubleClick : null}>
                                                 {
                                                     columns.map((col, j) => {
                                                         return (

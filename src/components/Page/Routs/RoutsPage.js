@@ -11,6 +11,7 @@ import DictionaryLocalityPopup from "./DictionaryLocality/DictionaryLocalityPopu
 import ArchivedRoutsPopup from "components/Page/Routs/ArchivedRoutsPopup";
 import {API} from "components/API";
 import {appActions} from "reducers/actions";
+import EditRoutsPopup from "components/Page/Routs/EditRoutsPopup";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -66,6 +67,7 @@ class RoutsPage extends PureComponent {
             rout: selectRout,
             openPopupDictionary: false,
             openPopupArchived: false,
+            openPopupEditRout: false,
         };
     }
 
@@ -107,7 +109,7 @@ class RoutsPage extends PureComponent {
     };
 
     render() {
-        let {rout, openPopupDictionary, openPopupArchived} = this.state;
+        let {rout, openPopupDictionary, openPopupArchived, openPopupEditRout} = this.state;
         const {routs} = this.props;
         const selectOptions = routs.map(i => {
             return {value:i.id, label: i.name};
@@ -138,14 +140,14 @@ class RoutsPage extends PureComponent {
                         <Button title={"Новый"}
                                 height="40px"
                                 margin={"0 8px 0 0"}
-                                onClick={() => {}}/>
+                                onClick={() => this.setState({openPopupEditRout: "new"})}/>
                         {
                             rout &&
                                 <>
                                     <Button title={"Изменить"}
                                             height="40px"
                                             margin={"0 8px 0 0"}
-                                            onClick={() => {}}/>
+                                            onClick={() => this.setState({openPopupEditRout: selectedRoutData})}/>
                                     <Button title={"Отправить в архив"}
                                             height="40px"
                                             margin={"0 8px 0 0"}
@@ -177,6 +179,12 @@ class RoutsPage extends PureComponent {
                     openPopupArchived &&
                     <ArchivedRoutsPopup onClose={() => this.setState({openPopupArchived: false})}
                                         onUpdate={this.load}/>
+                }
+                {
+                    openPopupEditRout &&
+                    <EditRoutsPopup onClose={() => this.setState({openPopupEditRout: false})}
+                                    item={openPopupEditRout}
+                                    onUpdate={this.load}/>
                 }
             </ContentWrapper>
         )
