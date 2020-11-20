@@ -95,7 +95,28 @@ const API = {
     park: {
         getCars(type) {
             return axios.get(`${apiUrl}Park.GetCars&type_get=${type}`)
-        }
+        },
+        changeTechObsluzh(id_car, value) {
+            return axios.get(`${apiUrl}Park.ChangeTehObsluzh&id_car=${id_car}&teh_obslyzh=${value}`);
+        },
+        renewLease(id_car, arenda_nach, arenda_konec) {
+            arenda_nach = moment(arenda_nach).format("YYYY-MM-DD");
+            arenda_konec = moment(arenda_konec).format("YYYY-MM-DD");
+            return axios.get(`${apiUrl}Park.RenewLease&id_car=${id_car}&arenda_nach=${arenda_nach}&arenda_konec=${arenda_konec}`);
+        },
+        create( marka, gos_nomer, teh_obsyzh, voditel, arenda_nach, arenda_konec) {
+            arenda_nach = moment(arenda_nach).format("YYYY-MM-DD");
+            arenda_konec = moment(arenda_konec).format("YYYY-MM-DD");
+            return axios.get(`${apiUrl}Park.CreateCar&marka=${marka}&gos_nomer=${gos_nomer}&voditel=${voditel}&teh_obslyzh=${teh_obsyzh}&arenda_nach=${arenda_nach}&arenda_konec=${arenda_konec}`);
+        },
+        edit(id, marka, gos_nomer, teh_obsyzh, voditel, arenda_nach, arenda_konec) {
+            arenda_nach = moment(arenda_nach).format("YYYY-MM-DD");
+            arenda_konec = moment(arenda_konec).format("YYYY-MM-DD");
+            return axios.get(`${apiUrl}Park.Set&id=${id}&marka=${marka}&gos_nomer=${gos_nomer}&voditel=${voditel}&teh_obslyzh=${teh_obsyzh}&arenda_nach=${arenda_nach}&arenda_konec=${arenda_konec}`);
+        },
+        del(id) {
+            return axios.get(`${apiUrl}Park.Delete&id_car=${id}`);
+        },
     },
 
     bilet: {

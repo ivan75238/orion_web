@@ -11,6 +11,8 @@ import Checkbox from 'react-simple-checkbox';
 import DropdownMenu from "components/Elements/DropdownMenu";
 import {API} from "components/API";
 import AccessRights from "components/Elements/AccessRights";
+import ChangeLicensePopup from "components/Page/CarPark/ChangeLicensePopup";
+import CreateCarParkPopup from "components/Page/CarPark/CreateCarParkPopup";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -66,7 +68,9 @@ class CarParkPage extends PureComponent {
         super(props);
         this.state = {
             cars: [],
-            status: {value:0, label: "Все"}
+            status: {value:0, label: "Все"},
+            openPopupLicense: false,
+            openPopupCreate: false,
         };
         this.load();
     }
@@ -153,14 +157,19 @@ class CarParkPage extends PureComponent {
         }
     };
 
+    changeTechObsluzh = async (id_car, value) => {
+        await API.park.changeTechObsluzh(id_car, value);
+        this.load();
+    };
+
     render() {
-        let {cars, status} = this.state;
+        let {cars, status, openPopupLicense, openPopupCreate} = this.state;
         const {user} = this.props;
 
         if (user.role === "0")
             return <AccessRights/>;
 
-        cars = cars.map((i, j) => {
+        cars = cars.filter(i => i.id !== "0").map((i, j) => {
             return {
                 ...i,
                 arenda_nach: moment(i.arenda_nach, "YYYY-MM-DD").format("DD.MM.YYYY"),
@@ -169,10 +178,25 @@ class CarParkPage extends PureComponent {
                 teh_obslyzh: <Checkbox checked={i.teh_obslyzh === "1"}/>,
                 actions: <ActionContainer>
                     <DropdownMenu items={[
-                                    {title: "Редактировать", onChange: null},
-                                    {title: "Уволить", onChange: null},
-                                    {title: "Продлить аренду", onChange: null},
-                                    {title: "Изменить тех. обслуживание", onChange: null},
+                                    {
+                                        title: "Редактировать",
+                                        onClick: () => this.setState({openPopupCreate: i})
+                                    },
+                                    {
+                                        title: "Уволить",
+                                        onClick: async () => {
+                                            await API.park.del(i.id);
+                                            await this.load();
+                                        }
+                                    },
+                                    {
+                                        title: "Продлить аренду",
+                                        onClick: () => this.setState({openPopupLicense: i})
+                                    },
+                                    {
+                                        title: "Изменить тех. обслуживание",
+                                        onClick: () => this.changeTechObsluzh(i.id, i.teh_obslyzh === "1" ? "0" : "1")
+                                    },
                                 ]}
                                 position={j+4 >= cars.length ? "bottom" : "top"}
                     />
@@ -201,12 +225,24 @@ class CarParkPage extends PureComponent {
                     </Filters>
                     <Button title={"Добавить водителя"}
                             height="40px"
-                            onClick={() => {}}/>
+                            onClick={() => this.setState({openPopupCreate: "new"})}/>
                 </Header>
                 <Body>
                     <Table columns={this.columns}
                            items={cars}/>
                 </Body>
+                {
+                    openPopupLicense &&
+                    <ChangeLicensePopup onClose={() => this.setState({openPopupLicense: false})}
+                                        item={openPopupLicense}
+                                        onUpdate={this.load}/>
+                }
+                {
+                    openPopupCreate &&
+                    <CreateCarParkPopup onClose={() => this.setState({openPopupCreate: false})}
+                                        item={openPopupCreate}
+                                        onUpdate={this.load}/>
+                }
             </ContentWrapper>
         )
     }
