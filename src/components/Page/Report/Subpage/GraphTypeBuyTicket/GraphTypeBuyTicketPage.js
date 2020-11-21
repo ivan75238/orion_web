@@ -52,6 +52,7 @@ const Body = styled.div`
     flex-direction: column;
     max-height: calc(100vh - 222px);
     overflow-x: auto;
+    position: relative;
 `;
 
 const Text = styled.p`

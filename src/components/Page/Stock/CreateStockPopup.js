@@ -8,27 +8,7 @@ import _get from "lodash/get";
 import {toast} from "react-toastify";
 import {API} from "components/API";
 import Input from "components/Elements/Input";
-import Checkbox from "react-simple-checkbox";
-import styled from "styled-components";
 import moment from "moment";
-
-const LabelBox = styled.div`
-    display: flex;
-    height: 36px;
-    align-items: center;
-    margin-bottom: 8px;
-    
-    .Checkbox {
-        top: unset;
-    }
-`;
-
-const Label = styled.p`
-    margin-right: 8px;
-    font-family: Roboto,sans-serif;
-    font-size: 12px;
-    color: #000;
-`;
 
 @connect(state => ({
     user: _get(state.app, "user"),

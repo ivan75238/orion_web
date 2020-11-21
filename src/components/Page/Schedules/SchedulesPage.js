@@ -35,9 +35,10 @@ const Body = styled.div`
     width: 100%;
     padding: 8px;
     display: flex;
-    max-height: calc(100vh - 182px);
+    max-height: calc(100vh - 238px);
     flex-direction: column;
     overflow-x: auto;
+    position: relative;
 `;
 
 const ActionContainer = styled.div`

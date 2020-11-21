@@ -50,7 +50,7 @@ class Button extends PureComponent {
 
 
 Button.propTypes = {
-    title: PropTypes.string,
+    title: PropTypes.any,
     background: PropTypes.string,
     textColor: PropTypes.string,
     fontSize: PropTypes.string,

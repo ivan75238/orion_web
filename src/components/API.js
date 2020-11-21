@@ -30,7 +30,10 @@ const API = {
         },
         getLastOrders() {
             return axios.get(`${apiUrl}Order.GetLastOrders`)
-        }
+        },
+        getClientHistory(id_client) {
+            return axios.get(`${apiUrl}Order.GetClientHistory&id_client=${id_client}`)
+        },
     },
 
     price: {
@@ -137,6 +140,13 @@ const API = {
     client: {
         getAllClient() {
             return axios.get(`${apiUrl}Client.GetAllClient`)
+        },
+        get(id) {
+            return axios.get(`${apiUrl}Client.GetClient&id=${id}`)
+        },
+        edit(id, fio, date, phone, email) {
+            date = moment(date).format("YYYY-MM-DD");
+            return axios.get(`${apiUrl}Client.EditClient&id=${id}&fio=${fio}&phone=${phone}&date=${date}&email=${email}`)
         }
     },
 

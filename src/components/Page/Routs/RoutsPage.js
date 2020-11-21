@@ -36,8 +36,9 @@ const Body = styled.div`
     width: 100%;
     padding: 8px;
     display: flex;
-    max-height: calc(100vh - 182px);
+    max-height: calc(100vh - 238px);
     overflow-x: auto;
+    position: relative;
 `;
 
 const TableWrapper = styled.div`
@@ -45,7 +46,7 @@ const TableWrapper = styled.div`
     padding-left: 8px;
     display: flex;
     flex-direction: column;
-    max-height: calc(100vh - 182px);
+    max-height: calc(100vh - 238px);
 `;
 
 const ButtonsContainer = styled.div`

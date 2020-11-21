@@ -35,8 +35,9 @@ const Body = styled.div`
     padding: 8px;
     display: flex;
     flex-direction: column;
-    max-height: calc(100vh - 182px);
+    max-height: calc(100vh - 238px);
     overflow-x: auto;
+    position: relative;
 `;
 
 const Status = styled.div`
@@ -166,7 +167,7 @@ class OrdersPage extends PureComponent {
             flex: "1 0 120px"
         },
         {
-            name: "gos_nimer",
+            name: "gos_nomer",
             title: "Машина",
             justifyContent: "center",
             flex: "0 0 90px"
