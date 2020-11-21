@@ -11,6 +11,8 @@ import Table from "components/Elements/Table";
 import Close from "components/Icons/Close";
 import AddTripPopup from "components/Page/Schedules/AddTripPopup";
 import {API} from "components/API";
+import Edit from "components/Icons/Edit";
+import EditTripPopup from "components/Page/Schedules/EditTripPopup";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -73,7 +75,8 @@ class SchedulesPage extends PureComponent {
         date: new Date(),
         rout: null,
         trips: [],
-        openPopupCreate: false
+        openPopupCreate: false,
+        openPopupEdit: false,
     };
 
     columns = [
@@ -134,7 +137,7 @@ class SchedulesPage extends PureComponent {
     };
 
     render() {
-        let {date, rout, trips, openPopupCreate} = this.state;
+        let {date, rout, trips, openPopupCreate, openPopupEdit} = this.state;
         const {routs, user} = this.props;
         const selectOptions = routs.map(i => {
             return {value:i.id, label: i.name};
@@ -145,6 +148,14 @@ class SchedulesPage extends PureComponent {
                 ...item,
                 name: `Микроавтобус ${i+1}`,
                 actions: <ActionContainer>
+                        <IconContainer onClick={() => this.setState({
+                            openPopupEdit: {
+                                ...item,
+                                busName: `Микроавтобус ${i+1}`
+                            }
+                        })}>
+                            <Edit/>
+                        </IconContainer>
                         <IconContainer onClick={() => this.removeTrip(item)}>
                             <Close/>
                         </IconContainer>
@@ -193,6 +204,13 @@ class SchedulesPage extends PureComponent {
                     openPopupCreate &&
                         <AddTripPopup onClose={() => this.setState({openPopupCreate: false})}
                                       onUpdate={this.search}/>
+                }
+                {
+                    openPopupEdit &&
+                        <EditTripPopup onClose={() => this.setState({openPopupEdit: false})}
+                                       item={openPopupEdit}
+                                       rout={routs.find(i => i.id === rout.value)}
+                                       onUpdate={this.search}/>
                 }
             </ContentWrapper>
         )

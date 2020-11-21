@@ -2,29 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dea06bd-7f6f-4bd8-84a3-10031ac33fcf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Icons/Passcard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/Clients/ClientCardPopup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/Clients/ClientHistoryPopup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/Clients/EditClientPopup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Page/Schedules/EditTripPopup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Elements/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elements/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/CarPark/CarParkPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/CarPark/CarParkPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Clients/ClientsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Clients/ClientsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/News/NewsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/News/NewsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Orders/OrdersPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Orders/OrdersPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Prices/PricesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Prices/PricesPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Report/Subpage/GraphLoad/GraphLoadPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Report/Subpage/GraphLoad/GraphLoadPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Report/Subpage/GraphTicketType/GraphTicketTypePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Report/Subpage/GraphTicketType/GraphTicketTypePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Report/Subpage/GraphTypeBuyTicket/GraphTypeBuyTicketPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Report/Subpage/GraphTypeBuyTicket/GraphTypeBuyTicketPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Report/Subpage/ReportPark/ReportParkPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Report/Subpage/ReportPark/ReportParkPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Routs/RoutsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Routs/RoutsPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/Schedules/SchedulesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Schedules/SchedulesPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Settings/Subpage/User/UserPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Settings/Subpage/User/UserPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Stock/CreateStockPopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Stock/CreateStockPopup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Stock/StockPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Stock/StockPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/TypeTickets/TypeTicketsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/TypeTickets/TypeTicketsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/WorkPlan/WorkPlanPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/WorkPlan/WorkPlanPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +47,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Page/Clients" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Page/Schedules" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -81,11 +62,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Work\orion_web\src\components\Page\Schedules" />
       <recent name="D:\Work\orion_web\src\components\Page\Clients" />
       <recent name="D:\Work\orion_web\src\components\Icons" />
       <recent name="D:\Work\orion_web\src\components\Page\Stock" />
       <recent name="D:\Work\orion_web\src\components\Page\CarPark" />
-      <recent name="E:\Work\orion_web\src\components\Page\Prices" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Work\orion_web\src\components\Page\Routs" />
@@ -174,14 +155,7 @@
       <workItem from="1605573451632" duration="93000" />
       <workItem from="1605583652003" duration="5572000" />
       <workItem from="1605594176823" duration="3880000" />
-      <workItem from="1605660101379" duration="13562000" />
-    </task>
-    <task id="LOCAL-00068" summary="- в левой панели где список дашбордов драг энд дропом перемещение дашбордов между категориями&#10;- Попытки разбора IE11">
-      <created>1576648083608</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1576648083609</updated>
+      <workItem from="1605660101379" duration="17353000" />
     </task>
     <task id="LOCAL-00069" summary="- в левой панели где список дашбордов драг энд дропом перемещение дашбордов между категориями&#10;- Попытки разбора IE11">
       <created>1576656684142</created>
@@ -519,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605952720945</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="- Закончены клиенты">
+      <created>1605957829780</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1605957829780</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TodoView">
@@ -548,7 +529,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- Исправлено некорректное поведение полей формы редактирования настроек виджета при смене типа виджета&#10;- Исправлено некорректное поведение размеров самого виджета при изменении типа виджета в настройках&#10;- Исправлены ошибки в конструкторах компонент: TypeEvents, TypeGraphic, TypeMeasList. Они приводили к выводу массивных ошибок в консоль и плавающим ошибкам в получении данных для виджетов.&#10;- Исправлена ошибка, при которой не получалось сохранить настройки виджета, если они заполнены не корректно. Добавлена детальная валидация полей и вывод Toast сообщений." />
     <MESSAGE value="- Сделаны проверки на больше число в инпутах на форме редактирования настроек графика:&#10;  -- Количество часов, выставлено максимально значение 1460 (2 месяца)&#10;  -- Толщина линии, выставлено максимально значение 20&#10;- Исправлены ошибки в конструкторах компонент: SettingsEvents, SettingsGraphic, SettingsList. Они приводили к выводу массивных ошибок в консоль и плавающим ошибкам в получении данных для виджетов." />
     <MESSAGE value="- Исправлена ошибка получения данных в браузере IE 11&#10;- Решена проблема отображения контента виджета &quot;Таблица событий&quot; в IE 11" />
     <MESSAGE value="- Внедрен компонент выбора из древа в найстроки виджета таблицы показателей" />
@@ -573,13 +553,14 @@
     <MESSAGE value="- Закончены маршруты" />
     <MESSAGE value="- Закончен автопарк" />
     <MESSAGE value="- Закончены акции" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Закончены акции" />
+    <MESSAGE value="- Закончены клиенты" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Закончены клиенты" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="104" key="CommitChangelistDialog2" timestamp="1605957817668">
+    <state x="585" y="104" key="CommitChangelistDialog2" timestamp="1605957829288">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="104" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605957817668" />
+    <state x="585" y="104" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605957829288" />
     <state x="585" y="104" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1600546330202" />
     <state x="686" y="211" key="FileChooserDialogImpl" timestamp="1600494230037">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -605,15 +586,15 @@
     </state>
     <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605951698644" />
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600500944416" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605952722083">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605957833413">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605952722083" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605957833413" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1600546332414" />
-    <state x="932" y="164" width="762" height="677" key="find.popup" timestamp="1605954954135">
+    <state x="932" y="164" width="762" height="677" key="find.popup" timestamp="1605960793280">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="932" y="164" width="762" height="677" key="find.popup/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605954954135" />
+    <state x="932" y="164" width="762" height="677" key="find.popup/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605960793280" />
     <state x="932" y="164" width="762" height="677" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600606233160" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1605952157638">
       <screen x="0" y="0" width="1920" height="1040" />

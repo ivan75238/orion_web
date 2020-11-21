@@ -218,7 +218,12 @@ const API = {
         getTripsForOtchetPark(id_car, date_nach, date_konec) {
             return axios.get(`${apiUrl}Trip.GetTripsForOtchetPark&id_car=${id_car}&date_nach=${moment(date_nach.toUTCString()).format("YYYY-MM-DD")}&date_konec=${moment(date_konec.toUTCString()).format("YYYY-MM-DD")}`)
         },
-
+        getTripSheme(id, id_rout, id_from, id_to) {
+            return axios.get(`${apiUrl}Trip.GetSvMesta&id_trip=${id}&id_rout=${id_rout}&id_from=${id_from}&id_to=${id_to}`)
+        },
+        setDriver(id, id_car, id_car_last) {
+            return axios.get(`${apiUrl}Trip.SetCarInTrip&id=${id}&id_car=${id_car}&id_car_last=${id_car_last}`)
+        },
     },
 
     ticket: {
