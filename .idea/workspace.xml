@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dea06bd-7f6f-4bd8-84a3-10031ac33fcf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Page/CarPark/ChangeLicensePopup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/CarPark/CreateCarParkPopup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Page/Stock/CreateStockPopup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/CarPark/CarParkPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/CarPark/CarParkPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Stock/StockPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Stock/StockPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +47,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Page/CarPark" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Page/Stock" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -64,11 +62,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Work\orion_web\src\components\Page\Stock" />
       <recent name="D:\Work\orion_web\src\components\Page\CarPark" />
       <recent name="E:\Work\orion_web\src\components\Page\Prices" />
       <recent name="E:\Work\orion_web\src\components\Icons" />
       <recent name="E:\Work\orion_web\src\components\Page\Routs" />
-      <recent name="E:\Work\orion_web\src\components\Page\Routs\DictionaryLocality" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Work\orion_web\src\components\Page\Routs" />
@@ -157,14 +155,7 @@
       <workItem from="1605573451632" duration="93000" />
       <workItem from="1605583652003" duration="5572000" />
       <workItem from="1605594176823" duration="3880000" />
-      <workItem from="1605660101379" duration="6708000" />
-    </task>
-    <task id="LOCAL-00066" summary="5. на графиках в подсказках белый квадрат не нужен.. в подсказке и так все показывается&#10;14. режим отображения графика - Колонки&#10;пример посмотреть тут http://192.168.166.232/custom/dev/diagramm3.jsp&#10;в настройках можно поменять&#10;13. Сделать у дашборда окно настроек в нем пока 2 параметра. Гравитационный режим виджетов. И &quot;Частота обновления (секунд)&quot;. Поставить умолчательное значение 60. и пользоваться этим значением чтобы обновлять содержимое. (поставить валидацию - 5 секунд минимум). Делать это все не через setInterval, а setTimeout после того как предыдущий вызов завершился">
-      <created>1576568178271</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1576568178271</updated>
+      <workItem from="1605660101379" duration="8633000" />
     </task>
     <task id="LOCAL-00067" summary="- при удалении чего угодно (дашборда, виджета) запрашиваем подтверждение&#10;- в таблице событий по всем полям на клиенте сортировка по  значениям колонки.&#10;- отображать названия заголовков и у таблицы показателей.">
       <created>1576587022986</created>
@@ -502,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605589240136</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="- Закончен автопарк">
+      <created>1605858137076</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1605858137077</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TodoView">
@@ -531,7 +529,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- Ошибка и вечный спиннер если выбрать пункт &quot;Не выбрано&quot; в селекте &quot;Конфигурационная единица&quot;. Диалог настроек виджета&#10;- Ошибка создания виджета после перетаскивания других виджетов в дашборде&#10;- Перемещение новой группы в списке групп, после создания дашборда&#10;- Исправлена ошибка бесконечного зацикливания таблицы событий при изменении количества часов, бесконечно отправлялись запросы" />
     <MESSAGE value="- Прикручены библиотека Toast-сообщений&#10;- Сделана валидация и Toast-сообщения для попапа настроек дашборда&#10;- Сделана валидация и Toast-сообщения для попапов настроек виджетов&#10;- Не удаляется значение 5 в настройке интервала обновления дашбордов. При ручном вводе невозможно ввести значение = 10 - 40" />
     <MESSAGE value="- Исправлено некорректное поведение полей формы редактирования настроек виджета при смене типа виджета&#10;- Исправлено некорректное поведение размеров самого виджета при изменении типа виджета в настройках&#10;- Исправлены ошибки в конструкторах компонент: TypeEvents, TypeGraphic, TypeMeasList. Они приводили к выводу массивных ошибок в консоль и плавающим ошибкам в получении данных для виджетов.&#10;- Исправлена ошибка, при которой не получалось сохранить настройки виджета, если они заполнены не корректно. Добавлена детальная валидация полей и вывод Toast сообщений." />
     <MESSAGE value="- Сделаны проверки на больше число в инпутах на форме редактирования настроек графика:&#10;  -- Количество часов, выставлено максимально значение 1460 (2 месяца)&#10;  -- Толщина линии, выставлено максимально значение 20&#10;- Исправлены ошибки в конструкторах компонент: SettingsEvents, SettingsGraphic, SettingsList. Они приводили к выводу массивных ошибок в консоль и плавающим ошибкам в получении данных для виджетов." />
@@ -556,49 +553,53 @@
     <MESSAGE value="- Управление типами билетов" />
     <MESSAGE value="- Сделан справочник промежуточных пунктов&#10;- Сделан Архив маршрутов" />
     <MESSAGE value="- Закончены маршруты" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Закончены маршруты" />
+    <MESSAGE value="- Закончен автопарк" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Закончен автопарк" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="104" key="CommitChangelistDialog2" timestamp="1600546330202">
+    <state x="585" y="104" key="CommitChangelistDialog2" timestamp="1605858136662">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="585" y="104" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605858136662" />
     <state x="585" y="104" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1600546330202" />
     <state x="686" y="211" key="FileChooserDialogImpl" timestamp="1600494230037">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600494230037" />
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1605856046876">
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1605951698644">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605856046876" />
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605951698644" />
     <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600500944416" />
-    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1605856046875">
+    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1605951698643">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605856046875" />
+    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605951698643" />
     <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600500944416" />
-    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1605856046875">
+    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1605951698643">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605856046875" />
+    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605951698643" />
     <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600500944415" />
-    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1605856046876">
+    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1605951698644">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605856046876" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605951698644" />
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600500944416" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600546332414">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605858200740">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605858200740" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1600546332414" />
     <state x="932" y="164" width="762" height="677" key="find.popup" timestamp="1605856683237">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="932" y="164" width="762" height="677" key="find.popup/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605856683237" />
     <state x="932" y="164" width="762" height="677" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600606233160" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1600543208582">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1605952157638">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605952157638" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600543208582" />
     <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1600541428780">
       <screen x="0" y="0" width="1920" height="1040" />

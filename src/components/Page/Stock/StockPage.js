@@ -9,6 +9,7 @@ import moment from "moment";
 import Close from "components/Icons/Close";
 import Edit from "components/Icons/Edit";
 import {API} from "components/API";
+import CreateStockPopup from "./CreateStockPopup";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -69,7 +70,8 @@ class StockPage extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            stock: []
+            stock: [],
+            openPopupCreate: false
         };
         this.load();
     }
@@ -120,7 +122,7 @@ class StockPage extends PureComponent {
     ];
 
     render() {
-        let {stock} = this.state;
+        let {stock, openPopupCreate} = this.state;
         const {user} = this.props;
 
         stock = stock.map(i => {
@@ -132,10 +134,13 @@ class StockPage extends PureComponent {
                     {
                         user.role === "1" &&
                             <>
-                                <IconContainer onClick={() => {}}>
+                                <IconContainer onClick={() => this.setState({openPopupCreate: i})}>
                                     <Edit/>
                                 </IconContainer>
-                                <IconContainer onClick={() => {}}>
+                                <IconContainer onClick={async () => {
+                                    await API.stock.del(i.id);
+                                    this.load();
+                                }}>
                                     <Close/>
                                 </IconContainer>
                             </>
@@ -152,13 +157,19 @@ class StockPage extends PureComponent {
                         user.role === "1" &&
                         <Button title={"Создать акцию"}
                                 height="40px"
-                                onClick={() => {}}/>
+                                onClick={() => this.setState({openPopupCreate: "new"})}/>
                     }
                 </Header>
                 <Body>
                     <Table columns={this.columns}
                            items={stock}/>
                 </Body>
+                {
+                    openPopupCreate &&
+                    <CreateStockPopup onClose={() => this.setState({openPopupCreate: false})}
+                                        item={openPopupCreate}
+                                        onUpdate={this.load}/>
+                }
             </ContentWrapper>
         )
     }

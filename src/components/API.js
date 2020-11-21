@@ -161,7 +161,20 @@ const API = {
     stock: {
         get() {
             return axios.get(`${apiUrl}Action.Get`)
-        }
+        },
+        create(name, data_nach, data_konec, cost) {
+            data_nach = moment(data_nach).format("YYYY-MM-DD");
+            data_konec = moment(data_konec).format("YYYY-MM-DD");
+            return axios.get(`${apiUrl}Action.Create&name=${name}&data_nach=${data_nach}&data_konec=${data_konec}&cost=${cost}`)
+        },
+        edit(id, name, data_nach, data_konec, cost) {
+            data_nach = moment(data_nach).format("YYYY-MM-DD");
+            data_konec = moment(data_konec).format("YYYY-MM-DD");
+            return axios.get(`${apiUrl}Action.Set&id_akcia=${id}&name=${name}&data_nach=${data_nach}&data_konec=${data_konec}&cost=${cost}`)
+        },
+        del(id) {
+            return axios.get(`${apiUrl}Action.Delete&id_akcia=${id}`);
+        },
     },
 
     workPlan: {
