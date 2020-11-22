@@ -40,6 +40,10 @@ const API = {
         getPriceForMarsID(id_marsh) {
             return axios.get(`${apiUrl}Price.GetPriceForMarsID&id_marsh=${id_marsh}`)
         },
+        getPrice(id_from, id_to, id_rout) {
+            return axios.get(`${apiUrl}Price.GetPrice&id_rout=${id_rout}&id_from=${id_from}&id_to=${id_to}`)
+                .then(response => {return response.data});
+        },
         set(id, price) {
             return axios.get(`${apiUrl}Price.SetPrice&id=${id}&new_cost=${price}`)
         },

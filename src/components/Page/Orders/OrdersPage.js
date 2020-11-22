@@ -10,6 +10,7 @@ import {toast} from "react-toastify";
 import Table from "components/Elements/Table";
 import {CheckStatus} from "components/functions";
 import {API} from "../../API";
+import CreateOrderPopup from "./CreateOrderPopup";
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -102,7 +103,8 @@ class OrdersPage extends PureComponent {
     state = {
         date: new Date(),
         rout: null,
-        orders: []
+        orders: [],
+        openPopup: false
     };
 
     columns = [
@@ -222,7 +224,7 @@ class OrdersPage extends PureComponent {
     };
 
     render() {
-        let {date, rout, orders} = this.state;
+        let {date, rout, orders, openPopup} = this.state;
         const {routs} = this.props;
         const selectOptions = routs.map(i => {
             return {value:i.id, label: i.name};
@@ -232,7 +234,8 @@ class OrdersPage extends PureComponent {
             return {
                 ...item,
                 status: <Status status={item.status}>{CheckStatus(item.status)}</Status>,
-                number: i+1
+                number: i+1,
+                rowClick: () => this.setState({openPopup: item})
             }
         });
         return (
@@ -260,7 +263,7 @@ class OrdersPage extends PureComponent {
                         <Button title={"Новый"}
                                 height="40px"
                                 margin={"0 8px 0 0"}
-                                onClick={() => {}}/>
+                                onClick={() => this.setState({openPopup: "new"})}/>
                         <Button title={"Показать последние"}
                                 height="40px"
                                 onClick={this.lookLast}/>
@@ -270,6 +273,12 @@ class OrdersPage extends PureComponent {
                     <Table columns={this.columns}
                            items={orders}/>
                 </Body>
+                {
+                    openPopup &&
+                    <CreateOrderPopup onClose={() => this.setState({openPopup: false})}
+                                      item={openPopup}
+                                      onUpdate={this.search}/>
+                }
             </ContentWrapper>
         )
     }

@@ -167,7 +167,7 @@ class EditTripPopup extends PureComponent {
     };
 
     edit = async() => {
-        const {onClose, onUpdate, user} = this.props;
+        const {onClose, onUpdate} = this.props;
         const {car} = this.state;
         const {item} = this.props;
 

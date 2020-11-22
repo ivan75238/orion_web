@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dea06bd-7f6f-4bd8-84a3-10031ac33fcf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Page/Schedules/EditTripPopup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Page/Orders/CreateOrderPopup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Schedules/SchedulesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Schedules/SchedulesPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Orders/OrdersPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Orders/OrdersPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Schedules/EditTripPopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Schedules/EditTripPopup.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +48,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Page/Schedules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Page/Orders" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -62,11 +63,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Work\orion_web\src\components\Page\Orders" />
       <recent name="D:\Work\orion_web\src\components\Page\Schedules" />
       <recent name="D:\Work\orion_web\src\components\Page\Clients" />
       <recent name="D:\Work\orion_web\src\components\Icons" />
       <recent name="D:\Work\orion_web\src\components\Page\Stock" />
-      <recent name="D:\Work\orion_web\src\components\Page\CarPark" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Work\orion_web\src\components\Page\Routs" />
@@ -155,14 +156,7 @@
       <workItem from="1605573451632" duration="93000" />
       <workItem from="1605583652003" duration="5572000" />
       <workItem from="1605594176823" duration="3880000" />
-      <workItem from="1605660101379" duration="17353000" />
-    </task>
-    <task id="LOCAL-00069" summary="- в левой панели где список дашбордов драг энд дропом перемещение дашбордов между категориями&#10;- Попытки разбора IE11">
-      <created>1576656684142</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1576656684142</updated>
+      <workItem from="1605660101379" duration="24953000" />
     </task>
     <task id="LOCAL-00070" summary="- Сделаны настройки и много разных фич">
       <created>1576662615939</created>
@@ -500,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605957829780</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="- Закончено расписание">
+      <created>1605961435800</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1605961435800</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TodoView">
@@ -529,7 +530,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- Сделаны проверки на больше число в инпутах на форме редактирования настроек графика:&#10;  -- Количество часов, выставлено максимально значение 1460 (2 месяца)&#10;  -- Толщина линии, выставлено максимально значение 20&#10;- Исправлены ошибки в конструкторах компонент: SettingsEvents, SettingsGraphic, SettingsList. Они приводили к выводу массивных ошибок в консоль и плавающим ошибкам в получении данных для виджетов." />
     <MESSAGE value="- Исправлена ошибка получения данных в браузере IE 11&#10;- Решена проблема отображения контента виджета &quot;Таблица событий&quot; в IE 11" />
     <MESSAGE value="- Внедрен компонент выбора из древа в найстроки виджета таблицы показателей" />
     <MESSAGE value="- И начал я все сначала =(" />
@@ -554,13 +554,14 @@
     <MESSAGE value="- Закончен автопарк" />
     <MESSAGE value="- Закончены акции" />
     <MESSAGE value="- Закончены клиенты" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Закончены клиенты" />
+    <MESSAGE value="- Закончено расписание" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Закончено расписание" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="104" key="CommitChangelistDialog2" timestamp="1605957829288">
+    <state x="585" y="104" key="CommitChangelistDialog2" timestamp="1605961435382">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="104" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605957829288" />
+    <state x="585" y="104" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605961435382" />
     <state x="585" y="104" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1600546330202" />
     <state x="686" y="211" key="FileChooserDialogImpl" timestamp="1600494230037">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -586,15 +587,15 @@
     </state>
     <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605951698644" />
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600500944416" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605957833413">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605961436867">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605957833413" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605961436867" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1600546332414" />
-    <state x="932" y="164" width="762" height="677" key="find.popup" timestamp="1605960793280">
+    <state x="932" y="164" width="762" height="677" key="find.popup" timestamp="1606054033711">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="932" y="164" width="762" height="677" key="find.popup/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605960793280" />
+    <state x="932" y="164" width="762" height="677" key="find.popup/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606054033711" />
     <state x="932" y="164" width="762" height="677" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600606233160" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1605952157638">
       <screen x="0" y="0" width="1920" height="1040" />
